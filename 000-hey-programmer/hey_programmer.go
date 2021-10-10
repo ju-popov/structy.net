@@ -1,4 +1,4 @@
-package _00_hey_programmer
+package _000_hey_programmer
 
 import "fmt"
 
