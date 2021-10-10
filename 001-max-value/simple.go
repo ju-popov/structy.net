@@ -1,6 +1,6 @@
-package _001_max_value
+package maxvalue
 
-func MaxValue(nums []float64) float64  {
+func Simple(nums []float64) float64 {
 	var result float64
 
 	for i, num := range nums {
