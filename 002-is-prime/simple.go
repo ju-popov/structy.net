@@ -1,6 +1,6 @@
 package isprime
 
-func Naive(n int64) bool {
+func Simple(n int64) bool {
 	//nolint:gomnd
 	if n < 2 {
 		return false
