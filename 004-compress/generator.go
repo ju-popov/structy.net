@@ -1,40 +1,47 @@
 package compress
 
 import (
-	"fmt"
+	"strconv"
 	"strings"
 )
 
 func findAllStringSubmatchGenerator(s string) chan struct {
-	count int64
-	char  string
+	number int64
+	char   int32
 } {
 	c := make(chan struct {
-		count int64
-		char  string
+		number int64
+		char   int32
 	})
 
 	go func() {
-		count := int64(0)
-		char := ""
+		var (
+			count int64
+			char  int32
+		)
 
-		for _, elem := range s {
-			if string(elem) == char {
-				count++
-			} else {
-				c <- struct {
-					count int64
-					char  string
-				}{count: count, char: char}
-				char = string(elem)
+		for index, elem := range s {
+			if index == 0 {
+				char = elem
 				count = 1
+			} else {
+				if elem == char {
+					count++
+				} else {
+					c <- struct {
+						number int64
+						char   int32
+					}{number: count, char: char}
+					char = elem
+					count = 1
+				}
 			}
 		}
 
 		c <- struct {
-			count int64
-			char  string
-		}{count: count, char: char}
+			number int64
+			char   int32
+		}{number: count, char: char}
 
 		close(c)
 	}()
@@ -46,10 +53,12 @@ func Generator(s string) (string, error) {
 	var result strings.Builder
 
 	for match := range findAllStringSubmatchGenerator(s) {
-		if match.count == 1 {
-			result.WriteString(match.char)
-		} else if match.count > 1 {
-			result.WriteString(fmt.Sprintf("%d%s", match.count, match.char))
+		if match.number == 1 {
+			result.WriteRune(match.char)
+		} else if match.number > 1 {
+			//nolint:gomnd
+			result.WriteString(strconv.FormatInt(match.number, 10))
+			result.WriteRune(match.char)
 		}
 	}
 

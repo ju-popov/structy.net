@@ -1,39 +1,46 @@
 package compress
 
 import (
-	"fmt"
+	"strconv"
 	"strings"
 )
 
 func findAllStringSubmatch(s string) []struct {
-	count int64
-	char  string
+	number int64
+	char   int32
 } {
 	var result []struct {
-		count int64
-		char  string
+		number int64
+		char   int32
 	}
 
-	count := int64(0)
-	char := ""
+	var (
+		count int64
+		char  int32
+	)
 
-	for _, elem := range s {
-		if string(elem) == char {
-			count++
-		} else {
-			result = append(result, struct {
-				count int64
-				char  string
-			}{count: count, char: char})
-			char = string(elem)
+	for index, elem := range s {
+		if index == 0 {
+			char = elem
 			count = 1
+		} else {
+			if elem == char {
+				count++
+			} else {
+				result = append(result, struct {
+					number int64
+					char   int32
+				}{number: count, char: char})
+				char = elem
+				count = 1
+			}
 		}
 	}
 
 	result = append(result, struct {
-		count int64
-		char  string
-	}{count: count, char: char})
+		number int64
+		char   int32
+	}{number: count, char: char})
 
 	return result
 }
@@ -42,10 +49,12 @@ func Simple(s string) (string, error) {
 	var result strings.Builder
 
 	for _, match := range findAllStringSubmatch(s) {
-		if match.count == 1 {
-			result.WriteString(match.char)
-		} else if match.count > 1 {
-			result.WriteString(fmt.Sprintf("%d%s", match.count, match.char))
+		if match.number == 1 {
+			result.WriteRune(match.char)
+		} else if match.number > 1 {
+			//nolint:gomnd
+			result.WriteString(strconv.FormatInt(match.number, 10))
+			result.WriteRune(match.char)
 		}
 	}
 
