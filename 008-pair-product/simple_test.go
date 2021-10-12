@@ -30,9 +30,9 @@ func benchmarkSimple(b *testing.B, tc testCase) {
 	}
 }
 
-func BenchmarkOnePass000(b *testing.B) { benchmarkSimple(b, testCases[0]) }
-func BenchmarkOnePass001(b *testing.B) { benchmarkSimple(b, testCases[1]) }
-func BenchmarkOnePass002(b *testing.B) { benchmarkSimple(b, testCases[2]) }
-func BenchmarkOnePass003(b *testing.B) { benchmarkSimple(b, testCases[3]) }
-func BenchmarkOnePass004(b *testing.B) { benchmarkSimple(b, testCases[4]) }
-func BenchmarkOnePass005(b *testing.B) { benchmarkSimple(b, testCases[5]) }
+func BenchmarkSimple000(b *testing.B) { benchmarkSimple(b, testCases[0]) }
+func BenchmarkSimple001(b *testing.B) { benchmarkSimple(b, testCases[1]) }
+func BenchmarkSimple002(b *testing.B) { benchmarkSimple(b, testCases[2]) }
+func BenchmarkSimple003(b *testing.B) { benchmarkSimple(b, testCases[3]) }
+func BenchmarkSimple004(b *testing.B) { benchmarkSimple(b, testCases[4]) }
+func BenchmarkSimple005(b *testing.B) { benchmarkSimple(b, testCases[5]) }
