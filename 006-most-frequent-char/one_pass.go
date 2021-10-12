@@ -6,9 +6,7 @@ func OnePass(input string) string {
 		index int
 	}{}
 
-	var (
-		mostFrequentChar int32
-	)
+	var mostFrequentChar int32
 
 	for index, element := range input {
 		if val, ok := chars[element]; ok {
