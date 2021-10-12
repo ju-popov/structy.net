@@ -6,18 +6,27 @@ import (
 	"strings"
 )
 
-func findAllStringSubmatch(s string) [][3]string {
-	var result [][3]string
+func findAllStringSubmatch(s string) []struct {
+	number string
+	char   int32
+} {
+	var result []struct {
+		number string
+		char   int32
+	}
 
-	count := ""
+	var number string
 
 	for _, elem := range s {
 		if (elem >= '0') && (elem <= '9') {
-			count += string(elem)
+			number += string(elem)
 		} else {
-			char := string(elem)
-			result = append(result, [3]string{count + char, count, char})
-			count = ""
+			char := elem
+			result = append(result, struct {
+				number string
+				char   int32
+			}{number: number, char: char})
+			number = ""
 		}
 	}
 
@@ -28,14 +37,12 @@ func Simple(s string) (string, error) {
 	var result strings.Builder
 
 	for _, match := range findAllStringSubmatch(s) {
-		count, err := strconv.Atoi(match[1])
+		count, err := strconv.Atoi(match.number)
 		if err != nil {
-			return "", fmt.Errorf("failed to convert '%s' to int: %w", match[1], err)
+			return "", fmt.Errorf("failed to convert '%s' to int: %w", match.number, err)
 		}
 
-		char := match[2]
-
-		result.WriteString(strings.Repeat(char, count))
+		result.WriteString(strings.Repeat(string(match.char), count))
 	}
 
 	return result.String(), nil
