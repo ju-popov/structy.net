@@ -1,7 +1,7 @@
 package pairproduct_test
 
 type testCase struct {
-	name      string
+	name          string
 	numbers       []int64
 	targetProduct int64
 	expected      [2]int

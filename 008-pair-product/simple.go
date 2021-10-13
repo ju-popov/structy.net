@@ -4,8 +4,8 @@ func Simple(numbers []int64, targetProduct int64) [2]int {
 	numbersIndexes := map[int64]int{}
 
 	for index, element := range numbers {
-		if targetProduct % element == 0 {
-			if val, ok := numbersIndexes[targetProduct / element]; ok {
+		if targetProduct%element == 0 {
+			if val, ok := numbersIndexes[targetProduct/element]; ok {
 				return [2]int{val, index}
 			}
 		}
