@@ -49,7 +49,7 @@ c.next = d;
 
 // a -> b -> c -> d
 
-getNodeValue(a, 7); // null
+getNodeValue(a, 7); // ''
 ```
 
 test_03:
