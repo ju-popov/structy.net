@@ -1,27 +1,26 @@
 package zipperlists
 
-func AddNode(head *Node, head1 *Node, head2 *Node) *Node {
-	var next *Node
-	var current *Node
-	if head1 != nil {
-		next = head1.Next
-		head1.Next = nil
-		if head == nil {
-			head = head1
-			current = head
+func AddNode(current *Node, head1 *Node, head2 *Node) *Node {
+	if head1 == nil {
+		if head2 == nil {
+			return current
 		} else {
-			head.Next = head1
-			current = head1
+			head1, head2 = head2, head1
 		}
 	}
 
-	if head2 != nil {
-		AddNode(current, head2, next)
-	} else if next != nil {
-		AddNode(current, next, head2)
+	next := head1.Next
+	head1.Next = nil
+
+	if current != nil {
+		current.Next = head1
 	}
 
-	return head
+	current = head1
+
+	AddNode(current, head2, next)
+
+	return current
 }
 
 func Recursive(head1 *Node, head2 *Node) *Node {
