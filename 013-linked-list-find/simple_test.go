@@ -17,7 +17,7 @@ func TestSimple(t *testing.T) {
 
 			actual := linkedlistfind.Simple(tc.head, tc.target)
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for test '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
+				t.Errorf("Expected result for head: '%v' and target: '%v' is: '%v', but the actual result is: '%v'", tc.head, tc.target, tc.expected, actual)
 			}
 		})
 	}

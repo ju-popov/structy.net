@@ -16,7 +16,7 @@ func TestSimple(t *testing.T) {
 			t.Parallel()
 			actual := pairproduct.Simple(tc.numbers, tc.targetProduct)
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for numbers '%v' and targetProduct '%v' is: '%v', but the actual result is: '%v'", tc.numbers, tc.targetProduct, tc.expected, actual)
+				t.Errorf("Expected result for numbers: '%v' and targetProduct: '%v' is: '%v', but the actual result is: '%v'", tc.numbers, tc.targetProduct, tc.expected, actual)
 			}
 		})
 	}

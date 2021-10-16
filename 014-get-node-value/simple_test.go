@@ -17,7 +17,7 @@ func TestSimple(t *testing.T) {
 
 			actual := getnodevalue.Simple(tc.head, tc.index)
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for test '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
+				t.Errorf("Expected result for head: '%v' and index: '%v' is: '%v', but the actual result is: '%v'", tc.head, tc.index, tc.expected, actual)
 			}
 		})
 	}

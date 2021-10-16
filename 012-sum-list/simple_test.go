@@ -17,7 +17,7 @@ func TestSimple(t *testing.T) {
 
 			actual := sumlist.Simple(tc.head)
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for test '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
+				t.Errorf("Expected result for head: '%v' is: '%v', but the actual result is: '%v'", tc.head, tc.expected, actual)
 			}
 		})
 	}

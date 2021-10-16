@@ -16,7 +16,7 @@ func TestSimple(t *testing.T) {
 			t.Parallel()
 			actual := pairsum.Simple(tc.numbers, tc.targetSum)
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for numbers '%v' and targetSum '%v' is: '%v', but the actual result is: '%v'", tc.numbers, tc.targetSum, tc.expected, actual)
+				t.Errorf("Expected result for numbers: '%v' and targetSum: '%v' is: '%v', but the actual result is: '%v'", tc.numbers, tc.targetSum, tc.expected, actual)
 			}
 		})
 	}

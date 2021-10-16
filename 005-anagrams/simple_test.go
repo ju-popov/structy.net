@@ -16,7 +16,7 @@ func TestSimple(t *testing.T) {
 			t.Parallel()
 			actual := anagrams.Simple(tc.s1, tc.s2)
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for input '%v', '%v' is: '%v', but the actual result is: '%v'", tc.s1, tc.s2, tc.expected, actual)
+				t.Errorf("Expected result for input: '%v', '%v' is: '%v', but the actual result is: '%v'", tc.s1, tc.s2, tc.expected, actual)
 			}
 		})
 	}

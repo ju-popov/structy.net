@@ -16,7 +16,7 @@ func TestSimple(t *testing.T) {
 			t.Parallel()
 			actual := maxvalue.Simple(tc.input)
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for input '%v' is: '%v', but the actual result is: '%v'", tc.input, tc.expected, actual)
+				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is: '%v'", tc.input, tc.expected, actual)
 			}
 		})
 	}

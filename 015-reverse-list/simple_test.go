@@ -15,9 +15,9 @@ func TestSimple(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
 
-			actual := reverselist.Simple(tc.head)
+			actual := reverselist.Simple(tc.head.Copy())
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for test '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
+				t.Errorf("Expected result for head: '%v' is: '%v', but the actual result is: '%v'", tc.head, tc.expected, actual)
 			}
 		})
 	}

@@ -20,7 +20,7 @@ func TestSimple(t *testing.T) {
 
 			actual := fivesort.Simple(numsCopy)
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for nums '%v' is: '%v', but the actual result is: '%v'", tc.nums, tc.expected, actual)
+				t.Errorf("Expected result for nums: '%v' is: '%v', but the actual result is: '%v'", tc.nums, tc.expected, actual)
 			}
 		})
 	}

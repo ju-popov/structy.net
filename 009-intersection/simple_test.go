@@ -16,7 +16,7 @@ func TestSimple(t *testing.T) {
 			t.Parallel()
 			actual := intersection.Simple(tc.a, tc.b)
 			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for a '%v' and b '%v' is: '%v', but the actual result is: '%v'", tc.a, tc.b, tc.expected, actual)
+				t.Errorf("Expected result for a: '%v' and b: '%v' is: '%v', but the actual result is: '%v'", tc.a, tc.b, tc.expected, actual)
 			}
 		})
 	}
