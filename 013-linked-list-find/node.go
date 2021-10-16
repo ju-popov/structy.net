@@ -23,6 +23,7 @@ func (head *Node) String() string {
 				panic(err)
 			}
 		}
+
 		if _, err := fmt.Fprintf(buf, "%v", current.Value); err != nil {
 			panic(err)
 		}
@@ -33,7 +34,7 @@ func (head *Node) String() string {
 
 func (head *Node) Copy() *Node {
 	var (
-		last *Node
+		last  *Node
 		first *Node
 	)
 
@@ -42,7 +43,9 @@ func (head *Node) Copy() *Node {
 		if last != nil {
 			last.Next = n
 		}
+
 		last = n
+
 		if first == nil {
 			first = last
 		}
