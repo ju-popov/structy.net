@@ -11,19 +11,19 @@ func Iterative(root *Node) []string {
 
 	var node *Node
 	for len(stack) > 0 {
-		// get first
-		node, stack = stack[0], stack[1:]
+		// remove last
+		node, stack = stack[len(stack)-1], stack[:len(stack)-1]
 
 		result = append(result, node.Value)
 
-		// add first
+		// add last
 		if node.Right != nil {
-			stack = append([]*Node{node.Right}, stack...)
+			stack = append(stack, node.Right)
 		}
 
-		// add first
+		// add last
 		if node.Left != nil {
-			stack = append([]*Node{node.Left}, stack...)
+			stack = append(stack, node.Left)
 		}
 	}
 
