@@ -1,6 +1,6 @@
 package treeincludes
 
-func BreadthFirstSearch(root *Node, target string) bool {
+func BreadthFirst(root *Node, target string) bool {
 	if root == nil {
 		return false
 	}

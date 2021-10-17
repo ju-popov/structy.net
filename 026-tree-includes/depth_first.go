@@ -1,6 +1,6 @@
 package treeincludes
 
-func DepthFirstSearch(root *Node, target string) bool {
+func DepthFirst(root *Node, target string) bool {
 	if root == nil {
 		return false
 	}
@@ -9,11 +9,11 @@ func DepthFirstSearch(root *Node, target string) bool {
 		return true
 	}
 
-	if DepthFirstSearch(root.Left, target) {
+	if DepthFirst(root.Left, target) {
 		return true
 	}
 
-	if DepthFirstSearch(root.Right, target) {
+	if DepthFirst(root.Right, target) {
 		return true
 	}
 
