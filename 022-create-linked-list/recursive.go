@@ -1,7 +1,7 @@
 package createlinkedlist
 
 func Recursive(values []interface{}) *Node {
-	if len(values) <= 0 {
+	if len(values) == 0 {
 		return nil
 	}
 
