@@ -3,8 +3,8 @@ package longeststreak
 func Iterative(head *Node) int {
 	var (
 		lastNode *Node
-	    count int
-	    maxCount int
+		count    int
+		maxCount int
 	)
 
 	for current := head; current != nil; current = current.Next {
