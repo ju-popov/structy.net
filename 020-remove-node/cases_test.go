@@ -5,10 +5,10 @@ import (
 )
 
 type testCase struct {
-	name     string
-	head     *removenode.Node
+	name      string
+	head      *removenode.Node
 	targetVal string
-	expected *removenode.Node
+	expected  *removenode.Node
 }
 
 func createLinkedList(values ...string) *removenode.Node {
@@ -26,33 +26,33 @@ func createLinkedList(values ...string) *removenode.Node {
 //nolint:gochecknoglobals
 var testCases = []testCase{
 	{
-		name:     "test_00",
-		head:     createLinkedList("a", "b", "c", "d", "e", "f"),
+		name:      "test_00",
+		head:      createLinkedList("a", "b", "c", "d", "e", "f"),
 		targetVal: "c",
-		expected: createLinkedList("a", "b", "d", "e", "f"),
+		expected:  createLinkedList("a", "b", "d", "e", "f"),
 	},
 	{
-		name:     "test_01",
-		head:     createLinkedList("x", "y", "z"),
+		name:      "test_01",
+		head:      createLinkedList("x", "y", "z"),
 		targetVal: "z",
-		expected: createLinkedList("x", "y"),
+		expected:  createLinkedList("x", "y"),
 	},
 	{
-		name:     "test_02",
-		head:     createLinkedList("q", "r", "s"),
+		name:      "test_02",
+		head:      createLinkedList("q", "r", "s"),
 		targetVal: "q",
-		expected: createLinkedList("r", "s"),
+		expected:  createLinkedList("r", "s"),
 	},
 	{
-		name:     "test_03",
-		head:     createLinkedList("h", "i", "j", "i"),
+		name:      "test_03",
+		head:      createLinkedList("h", "i", "j", "i"),
 		targetVal: "i",
-		expected: createLinkedList("h", "j", "i"),
+		expected:  createLinkedList("h", "j", "i"),
 	},
 	{
-		name:     "test_04",
-		head:     createLinkedList("t"),
+		name:      "test_04",
+		head:      createLinkedList("t"),
 		targetVal: "t",
-		expected: nil,
+		expected:  nil,
 	},
 }
