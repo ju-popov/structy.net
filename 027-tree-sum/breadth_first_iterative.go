@@ -1,6 +1,6 @@
 package treesum
 
-func BreadthFirst(root *Node) int64 {
+func BreadthFirstIterative(root *Node) int64 {
 	if root == nil {
 		return 0
 	}
