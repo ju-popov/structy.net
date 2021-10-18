@@ -7,14 +7,14 @@ func DepthFirstIterative(root *Node) int64 {
 
 	var (
 		result int64
-		node *Node
+		node   *Node
 	)
 
 	stack := []*Node{root}
 
 	for len(stack) > 0 {
 		// get last
-		node, stack = stack[len(stack) - 1], stack[:len(stack) - 1]
+		node, stack = stack[len(stack)-1], stack[:len(stack)-1]
 
 		result += node.Value
 
