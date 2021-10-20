@@ -12,11 +12,11 @@ func depthFirstRecursiveFillLevels(root *Node, level int, result *[][]float64) {
 	(*result)[level] = append((*result)[level], root.Value)
 
 	if root.Left != nil {
-		depthFirstRecursiveFillLevels(root.Left, level + 1, result)
+		depthFirstRecursiveFillLevels(root.Left, level+1, result)
 	}
 
 	if root.Right != nil {
-		depthFirstRecursiveFillLevels(root.Right, level + 1, result)
+		depthFirstRecursiveFillLevels(root.Right, level+1, result)
 	}
 }
 

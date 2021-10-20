@@ -32,7 +32,7 @@ var testCases = []testCase{
 				},
 			},
 		},
-		expected: []float64{3.0, (11.0+4.0)/2.0, (4.0-2.0+1.0)/3.0},
+		expected: []float64{3.0, (11.0 + 4.0) / 2.0, (4.0 - 2.0 + 1.0) / 3.0},
 	},
 	{
 		name: "test_01",
@@ -57,7 +57,7 @@ var testCases = []testCase{
 				Value: 54,
 			},
 		},
-		expected: []float64{5.0, (11.0+54.0)/2.0, (20.0+15.0)/2.0, (1.0+3.0)/2},
+		expected: []float64{5.0, (11.0 + 54.0) / 2.0, (20.0 + 15.0) / 2.0, (1.0 + 3.0) / 2},
 	},
 	{
 		name: "test_02",
@@ -85,7 +85,7 @@ var testCases = []testCase{
 				},
 			},
 		},
-		expected: []float64{-1.0, (-6.0-5.0)/2.0, (-3.0+0.0+45.0)/3.0, (-1.0-2.0)/2},
+		expected: []float64{-1.0, (-6.0 - 5.0) / 2.0, (-3.0 + 0.0 + 45.0) / 3.0, (-1.0 - 2.0) / 2},
 	},
 	{
 		name: "test_03",
@@ -107,11 +107,11 @@ var testCases = []testCase{
 				Value: 2,
 			},
 		},
-		expected: []float64{13.0, (4.0+2.0)/2.0, 9.0, 2.0, 42.0},
+		expected: []float64{13.0, (4.0 + 2.0) / 2.0, 9.0, 2.0, 42.0},
 	},
 	{
-		name: "test_04",
-		root: nil,
+		name:     "test_04",
+		root:     nil,
 		expected: []float64{},
 	},
 }
