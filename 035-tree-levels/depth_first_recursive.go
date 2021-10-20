@@ -12,11 +12,11 @@ func helper(root *Node, level int, result *[][]string) {
 	(*result)[level] = append((*result)[level], root.Value)
 
 	if root.Left != nil {
-		helper(root.Left, level + 1, result)
+		helper(root.Left, level+1, result)
 	}
 
 	if root.Right != nil {
-		helper(root.Right, level + 1, result)
+		helper(root.Right, level+1, result)
 	}
 }
 

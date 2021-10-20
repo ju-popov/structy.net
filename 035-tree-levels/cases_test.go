@@ -88,8 +88,8 @@ var testCases = []testCase{
 		expected: [][]string{{"q"}, {"r", "s"}, {"t"}, {"u"}, {"v"}},
 	},
 	{
-		name: "test_03",
-		root: nil,
+		name:     "test_03",
+		root:     nil,
 		expected: [][]string{},
 	},
 }

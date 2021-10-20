@@ -7,13 +7,13 @@ func BreadthFirstIterative(root *Node) [][]string {
 		return result
 	}
 
-	queue := []struct{
-		Node *Node
+	queue := []struct {
+		Node  *Node
 		Index int
 	}{{Node: root, Index: 0}}
 
-	var current struct{
-		Node *Node
+	var current struct {
+		Node  *Node
 		Index int
 	}
 
@@ -29,16 +29,16 @@ func BreadthFirstIterative(root *Node) [][]string {
 
 		// add last
 		if current.Node.Left != nil {
-			queue = append(queue, struct{
-				Node *Node
+			queue = append(queue, struct {
+				Node  *Node
 				Index int
 			}{Node: current.Node.Left, Index: current.Index + 1})
 		}
 
 		// add last
 		if current.Node.Right != nil {
-			queue = append(queue, struct{
-				Node *Node
+			queue = append(queue, struct {
+				Node  *Node
 				Index int
 			}{Node: current.Node.Right, Index: current.Index + 1})
 		}
