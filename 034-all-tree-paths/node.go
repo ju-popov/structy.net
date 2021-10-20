@@ -1,7 +1,7 @@
-package treevaluecount
+package alltreepaths
 
 type Node struct {
-	Value int64
+	Value string
 	Left  *Node
 	Right *Node
 }

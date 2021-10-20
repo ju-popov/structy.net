@@ -1,23 +1,33 @@
-package treevaluecount
+package alltreepaths
 
-func DepthFirstRecursive(root *Node, target int64) int {
-	var result int
+func helper(root *Node, path []string) [][]string {
+	path = append(path, root.Value)
 
-	if root == nil {
-		return result
+	if (root.Left == nil) && (root.Right == nil) {
+		// Important: Copy path array
+		pathCopy := make([]string, len(path))
+		copy(pathCopy, path)
+
+		return [][]string{pathCopy}
 	}
 
-	if root.Value == target {
-		result++
-	}
+	var result [][]string
 
 	if root.Left != nil {
-		result += DepthFirstRecursive(root.Left, target)
+		result = append(result, helper(root.Left, path)...)
 	}
 
 	if root.Right != nil {
-		result += DepthFirstRecursive(root.Right, target)
+		result = append(result, helper(root.Right, path)...)
 	}
 
 	return result
+}
+
+func DepthFirstRecursive(root *Node) [][]string {
+	if root == nil {
+		return [][]string{}
+	}
+
+	return helper(root, []string{})
 }

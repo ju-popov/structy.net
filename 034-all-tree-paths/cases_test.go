@@ -1,126 +1,97 @@
-package treevaluecount_test
+package alltreepaths_test
 
 import (
-	treevaluecount "github.com/ju-popov/structy.net/031-tree-value-count"
+	alltreepaths "github.com/ju-popov/structy.net/034-all-tree-paths"
 )
 
 type testCase struct {
 	name     string
-	root     *treevaluecount.Node
-	target   int64
-	expected int
+	root     *alltreepaths.Node
+	expected [][]string
 }
 
 //nolint:gochecknoglobals
 var testCases = []testCase{
 	{
 		name: "test_00",
-		root: &treevaluecount.Node{
-			Value: 12,
-			Left: &treevaluecount.Node{
-				Value: 6,
-				Left: &treevaluecount.Node{
-					Value: 4,
+		root: &alltreepaths.Node{
+			Value: "a",
+			Left: &alltreepaths.Node{
+				Value: "b",
+				Left: &alltreepaths.Node{
+					Value: "d",
 				},
-				Right: &treevaluecount.Node{
-					Value: 6,
+				Right: &alltreepaths.Node{
+					Value: "e",
 				},
 			},
-			Right: &treevaluecount.Node{
-				Value: 6,
-				Right: &treevaluecount.Node{
-					Value: 12,
+			Right: &alltreepaths.Node{
+				Value: "c",
+				Right: &alltreepaths.Node{
+					Value: "f",
 				},
 			},
 		},
-		target:   6,
-		expected: 3,
+		expected: [][]string{{"a", "b", "d"}, {"a", "b", "e"}, {"a", "c", "f"}},
 	},
 	{
 		name: "test_01",
-		root: &treevaluecount.Node{
-			Value: 12,
-			Left: &treevaluecount.Node{
-				Value: 6,
-				Left: &treevaluecount.Node{
-					Value: 4,
+		root: &alltreepaths.Node{
+			Value: "a",
+			Left: &alltreepaths.Node{
+				Value: "b",
+				Left: &alltreepaths.Node{
+					Value: "d",
 				},
-				Right: &treevaluecount.Node{
-					Value: 6,
+				Right: &alltreepaths.Node{
+					Value: "e",
+					Left: &alltreepaths.Node{
+						Value: "g",
+					},
+					Right: &alltreepaths.Node{
+						Value: "h",
+					},
 				},
 			},
-			Right: &treevaluecount.Node{
-				Value: 6,
-				Right: &treevaluecount.Node{
-					Value: 12,
+			Right: &alltreepaths.Node{
+				Value: "c",
+				Right: &alltreepaths.Node{
+					Value: "f",
+					Left: &alltreepaths.Node{
+						Value: "i",
+					},
 				},
 			},
 		},
-		target:   12,
-		expected: 2,
+		expected: [][]string{{"a", "b", "d"}, {"a", "b", "e", "g"}, {"a", "b", "e", "h"}, {"a", "c", "f", "i"}},
 	},
 	{
 		name: "test_02",
-		root: &treevaluecount.Node{
-			Value: 7,
-			Left: &treevaluecount.Node{
-				Value: 5,
-				Left: &treevaluecount.Node{
-					Value: 1,
-				},
-				Right: &treevaluecount.Node{
-					Value: 8,
-					Left: &treevaluecount.Node{
-						Value: 1,
+		root: &alltreepaths.Node{
+			Value: "q",
+			Left: &alltreepaths.Node{
+				Value: "r",
+				Right: &alltreepaths.Node{
+					Value: "t",
+					Left: &alltreepaths.Node{
+						Value: "u",
+						Left: &alltreepaths.Node{
+							Value: "v",
+						},
 					},
 				},
 			},
-			Right: &treevaluecount.Node{
-				Value: 1,
-				Right: &treevaluecount.Node{
-					Value: 7,
-					Right: &treevaluecount.Node{
-						Value: 1,
-					},
-				},
+			Right: &alltreepaths.Node{
+				Value: "s",
 			},
 		},
-		target:   1,
-		expected: 4,
+		expected: [][]string{{"q", "r", "t", "u", "v"}, {"q", "s"}},
 	},
 	{
 		name: "test_03",
-		root: &treevaluecount.Node{
-			Value: 7,
-			Left: &treevaluecount.Node{
-				Value: 5,
-				Left: &treevaluecount.Node{
-					Value: 1,
-				},
-				Right: &treevaluecount.Node{
-					Value: 8,
-					Left: &treevaluecount.Node{
-						Value: 1,
-					},
-				},
-			},
-			Right: &treevaluecount.Node{
-				Value: 1,
-				Right: &treevaluecount.Node{
-					Value: 7,
-					Right: &treevaluecount.Node{
-						Value: 1,
-					},
-				},
-			},
+		root: &alltreepaths.Node{
+			Value: "z",
 		},
-		target:   9,
-		expected: 0,
-	},
-	{
-		name:     "test_04",
-		root:     nil,
-		target:   42,
-		expected: 0,
+		expected: [][]string{{"z"}},
 	},
 }
