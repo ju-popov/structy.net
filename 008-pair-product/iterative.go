@@ -1,6 +1,6 @@
 package pairproduct
 
-func Simple(numbers []int64, targetProduct int64) [2]int {
+func Iterative(numbers []int64, targetProduct int64) [2]int {
 	numbersIndexes := map[int64]int{}
 
 	for index, element := range numbers {

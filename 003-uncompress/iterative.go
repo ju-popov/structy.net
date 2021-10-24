@@ -33,7 +33,7 @@ func findAllStringSubmatch(s string) []struct {
 	return result
 }
 
-func Simple(s string) (string, error) {
+func Iterative(s string) (string, error) {
 	var result strings.Builder
 
 	for _, match := range findAllStringSubmatch(s) {

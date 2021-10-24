@@ -1,6 +1,6 @@
 package reverselist
 
-func Simple(head *Node) *Node {
+func Iterative(head *Node) *Node {
 	var prev *Node
 
 	for current := head; current != nil; {

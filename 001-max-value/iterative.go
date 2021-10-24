@@ -1,6 +1,6 @@
 package maxvalue
 
-func Simple(nums []float64) float64 {
+func Iterative(nums []float64) float64 {
 	var result float64
 
 	for i, num := range nums {

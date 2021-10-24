@@ -1,6 +1,6 @@
 package isprime
 
-func Simple6K(n int64) bool {
+func Pair6K(n int64) bool {
 	//nolint:gomnd
 	if n < 2 {
 		return false

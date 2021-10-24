@@ -7,7 +7,7 @@ import (
 	reverselist "github.com/ju-popov/structy.net/015-reverse-list"
 )
 
-func TestSimple(t *testing.T) {
+func TestIterative(t *testing.T) {
 	t.Parallel()
 
 	for _, tc := range testCases {
@@ -15,7 +15,7 @@ func TestSimple(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
 
-			actual := reverselist.Simple(tc.head.Copy())
+			actual := reverselist.Iterative(tc.head.Copy())
 			if !reflect.DeepEqual(actual, tc.expected) {
 				t.Errorf("Expected result for head: '%v' is: '%v', but the actual result is: '%v'", tc.head, tc.expected, actual)
 			}
@@ -23,14 +23,14 @@ func TestSimple(t *testing.T) {
 	}
 }
 
-func benchmarkSimple(b *testing.B, tc testCase) {
+func benchmarkIterative(b *testing.B, tc testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		reverselist.Simple(tc.head)
+		reverselist.Iterative(tc.head)
 	}
 }
 
-func BenchmarkSimple000(b *testing.B) { benchmarkSimple(b, testCases[0]) }
-func BenchmarkSimple001(b *testing.B) { benchmarkSimple(b, testCases[1]) }
-func BenchmarkSimple002(b *testing.B) { benchmarkSimple(b, testCases[2]) }
+func BenchmarkIterative000(b *testing.B) { benchmarkIterative(b, testCases[0]) }
+func BenchmarkIterative001(b *testing.B) { benchmarkIterative(b, testCases[1]) }
+func BenchmarkIterative002(b *testing.B) { benchmarkIterative(b, testCases[2]) }

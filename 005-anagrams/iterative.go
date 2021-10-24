@@ -1,6 +1,6 @@
 package anagrams
 
-func Simple(s1 string, s2 string) bool {
+func Iterative(s1 string, s2 string) bool {
 	if len(s1) != len(s2) {
 		return false
 	}

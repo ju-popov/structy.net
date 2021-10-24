@@ -1,6 +1,6 @@
 package intersection
 
-func Simple(a []int64, b []int64) []int64 {
+func Iterative(a []int64, b []int64) []int64 {
 	result := []int64{}
 
 	set := map[int64]struct{}{}

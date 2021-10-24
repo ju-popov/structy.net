@@ -12,7 +12,7 @@ func find(nums []int64, minIndex int, maxIndex int, value int64) int {
 
 const targetValue = int64(5)
 
-func Simple(nums []int64) []int64 {
+func Iterative(nums []int64) []int64 {
 	indexLeft := -1
 	for indexRight := len(nums) - 1; indexLeft < indexRight; indexRight-- {
 		if nums[indexRight] != targetValue {
