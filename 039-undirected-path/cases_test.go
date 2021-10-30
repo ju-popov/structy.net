@@ -24,19 +24,6 @@ var testCases = []testCase{
 		expected: true,
 	},
 	{
-		name: "test_00",
-		edges: [][2]string{
-			{"i", "j"},
-			{"k", "i"},
-			{"m", "k"},
-			{"k", "l"},
-			{"o", "n"},
-		},
-		nodeA:    "j",
-		nodeB:    "m",
-		expected: true,
-	},
-	{
 		name: "test_01",
 		edges: [][2]string{
 			{"i", "j"},
