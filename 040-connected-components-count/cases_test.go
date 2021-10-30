@@ -18,7 +18,7 @@ var testCases = []testCase{
 			2: {3, 4},
 			3: {2, 4},
 			4: {3, 2},
-        },
+		},
 		expected: 2,
 	},
 	{
@@ -48,9 +48,8 @@ var testCases = []testCase{
 		expected: 3,
 	},
 	{
-		name: "test_03",
-		graph: map[int][]int{
-		},
+		name:     "test_03",
+		graph:    map[int][]int{},
 		expected: 0,
 	},
 	{
