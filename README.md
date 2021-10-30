@@ -101,30 +101,30 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 
 ## IX. Mixed Recall
 
-74. linked palindrome  
-75. middle value  
-76. linked list cycle  
-77. lowest common ancestor  
-78. flip tree  
-79. lefty nodes  
-80. can color  
-81. tolerant teams  
-82. rare routing  
-83. max increasing subseq  
-84. positioning plants  
-85. breaking boundaries  
-86. merge sort  
-87. combine intervals  
-88. binary search  
-89. binary search tree includes  
-90. is binary search tree  
-91. post order  
-92. build tree in post  
-93. build tree in pre  
-94. lexical order  
-95. detect dictionary  
-96. topological order  
-97. safe cracking  
-98. string search  
-99. token replace  
-100. token transform  
+074. linked palindrome  
+075. middle value  
+076. linked list cycle  
+077. lowest common ancestor  
+078. flip tree  
+079. lefty nodes  
+080. can color  
+081. tolerant teams  
+082. rare routing  
+083. max increasing subseq  
+084. positioning plants  
+085. breaking boundaries  
+086. merge sort  
+087. combine intervals  
+088. binary search  
+089. binary search tree includes  
+090. is binary search tree  
+091. post order  
+092. build tree in post  
+093. build tree in pre  
+094. lexical order  
+095. detect dictionary  
+096. topological order  
+097. safe cracking  
+098. string search  
+099. token replace  
+token transform  
