@@ -69,62 +69,62 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 
 ## VI. Dynamic Programming
 
-051. fib
-052. tribonacci
-053. sum possible
-054. min change
-055. count paths
-056. max path sum
-057. non-adjacent sum
-058. summing squares
-059. counting change
-060. array stepper
-061. max palin subsequence
-062. overlap subsequence
-063. can concat
-064. quickest concat
+051. fib  
+052. tribonacci  
+053. sum possible  
+054. min change  
+055. count paths  
+056. max path sum  
+057. non-adjacent sum  
+058. summing squares  
+059. counting change  
+060. array stepper  
+061. max palin subsequence  
+062. overlap subsequence  
+063. can concat  
+064. quickest concat  
 
 ## VII. Stack
 
-065. paired parentheses
-066. befitting brackets
-067. decompress braces
-068. nesting score
+065. paired parentheses  
+066. befitting brackets  
+067. decompress braces  
+068. nesting score  
 
 ## VIII. Exhaustive Recursion
 
-069. subsets
-070. permutations
-071. create combinations
-072. parenthetical possibilities
-073. substitute synonyms
+069. subsets  
+070. permutations  
+071. create combinations  
+072. parenthetical possibilities  
+073. substitute synonyms  
 
 ## IX. Mixed Recall
 
-74. linked palindrome
-75. middle value
-76. linked list cycle
-77. lowest common ancestor
-78. flip tree
-79. lefty nodes
-80. can color
-81. tolerant teams
-82. rare routing
-83. max increasing subseq
-84. positioning plants
-85. breaking boundaries
-86. merge sort
-87. combine intervals
-88. binary search
-89. binary search tree includes
-90. is binary search tree
-91. post order
-92. build tree in post
-93. build tree in pre
-94. lexical order
-95. detect dictionary
-96. topological order
-97. safe cracking
-98. string search
-99. token replace
-100. token transform
+74. linked palindrome  
+75. middle value  
+76. linked list cycle  
+77. lowest common ancestor  
+78. flip tree  
+79. lefty nodes  
+80. can color  
+81. tolerant teams  
+82. rare routing  
+83. max increasing subseq  
+84. positioning plants  
+85. breaking boundaries  
+86. merge sort  
+87. combine intervals  
+88. binary search  
+89. binary search tree includes  
+90. is binary search tree  
+91. post order  
+92. build tree in post  
+93. build tree in pre  
+94. lexical order  
+95. detect dictionary  
+96. topological order  
+97. safe cracking  
+98. string search  
+99. token replace  
+100. token transform  
