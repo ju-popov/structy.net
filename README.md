@@ -58,14 +58,14 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [040. connected components count](https://github.com/ju-popov/structy.net/blob/main/040-connected-components-count/README.md)  
 [041. largest component](https://github.com/ju-popov/structy.net/blob/main/041-largest-component/README.md)  
 [042. shortest path](https://github.com/ju-popov/structy.net/blob/main/042-shortest-path/README.md)  
-043. island count
-044. minimum island
-045. closest carrot
-046. longest path
-047. semesters required
-048. best bridge
-049. has cycle
-050. prereqs possible
+043. island count  
+044. minimum island  
+045. closest carrot  
+046. longest path  
+047. semesters required  
+048. best bridge  
+049. has cycle  
+050. prereqs possible  
 
 ## VI. Dynamic Programming
 
