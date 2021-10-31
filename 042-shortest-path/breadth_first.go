@@ -1,4 +1,4 @@
-package largestcomponent
+package shortestpath
 
 func createGraph(edges [][2]string) map[string][]string {
 	graph := make(map[string][]string)

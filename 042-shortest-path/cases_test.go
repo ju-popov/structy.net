@@ -1,4 +1,4 @@
-package largestcomponent_test
+package shortestpath_test
 
 type testCase struct {
 	name     string

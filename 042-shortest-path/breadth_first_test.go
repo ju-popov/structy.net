@@ -1,10 +1,10 @@
-package largestcomponent_test
+package shortestpath_test
 
 import (
 	"reflect"
 	"testing"
 
-	largestcomponent "github.com/ju-popov/structy.net/042-shortest-path"
+	shortestpath "github.com/ju-popov/structy.net/042-shortest-path"
 )
 
 func TestBreadthFirst(t *testing.T) {
@@ -14,7 +14,7 @@ func TestBreadthFirst(t *testing.T) {
 		tc := tc
 		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
-			actual := largestcomponent.BreadthFirst(tc.edges, tc.nodeA, tc.nodeB)
+			actual := shortestpath.BreadthFirst(tc.edges, tc.nodeA, tc.nodeB)
 			if !reflect.DeepEqual(actual, tc.expected) {
 				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
 			}
@@ -26,7 +26,7 @@ func benchmarkBreadthFirst(b *testing.B, tc testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		largestcomponent.BreadthFirst(tc.edges, tc.nodeA, tc.nodeB)
+		shortestpath.BreadthFirst(tc.edges, tc.nodeA, tc.nodeB)
 	}
 }
 
