@@ -58,9 +58,9 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [040. connected components count](https://github.com/ju-popov/structy.net/blob/main/040-connected-components-count)  
 [041. largest component](https://github.com/ju-popov/structy.net/blob/main/041-largest-component)  
 [042. shortest path](https://github.com/ju-popov/structy.net/blob/main/042-shortest-path)  
-043. island count  
-044. minimum island  
-045. closest carrot  
+[043. island count](https://github.com/ju-popov/structy.net/tree/main/043-island-count)  
+[044. minimum island](https://github.com/ju-popov/structy.net/tree/main/044-minimum-island)  
+[045. closest carrot](https://github.com/ju-popov/structy.net/tree/main/045-closest-carrot)  
 046. longest path  
 047. semesters required  
 048. best bridge  
