@@ -11,7 +11,7 @@ func explore(grid [][]string, y int, x int, visited [][]bool) bool {
 		return false
 	}
 
-	if row[x] != "L" || visited[y][x] {
+	if (row[x] != "L") || visited[y][x] {
 		return false
 	}
 

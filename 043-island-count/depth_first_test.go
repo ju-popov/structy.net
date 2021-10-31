@@ -34,7 +34,3 @@ func BenchmarkDepthFirst000(b *testing.B) { benchmarkDepthFirst(b, testCases[0])
 func BenchmarkDepthFirst001(b *testing.B) { benchmarkDepthFirst(b, testCases[1]) }
 func BenchmarkDepthFirst002(b *testing.B) { benchmarkDepthFirst(b, testCases[2]) }
 func BenchmarkDepthFirst003(b *testing.B) { benchmarkDepthFirst(b, testCases[3]) }
-func BenchmarkDepthFirst004(b *testing.B) { benchmarkDepthFirst(b, testCases[4]) }
-func BenchmarkDepthFirst005(b *testing.B) { benchmarkDepthFirst(b, testCases[5]) }
-func BenchmarkDepthFirst006(b *testing.B) { benchmarkDepthFirst(b, testCases[6]) }
-func BenchmarkDepthFirst007(b *testing.B) { benchmarkDepthFirst(b, testCases[7]) }
