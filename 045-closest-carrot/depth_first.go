@@ -44,6 +44,7 @@ func BreadthFirst(grid [][]string, startRow int, startCol int) int {
 			nextRow, nextCol, nextDistance := cell.row+next[0], cell.col+next[1], cell.distance+1
 
 			if (nextRow >= 0) && (nextRow < len(grid)) && (nextCol >= 0) && (nextCol < len(grid[nextRow])) {
+				// Helpful: Premature return
 				if grid[nextRow][nextCol] == carrot {
 					return nextDistance
 				}
