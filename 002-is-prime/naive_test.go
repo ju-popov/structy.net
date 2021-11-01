@@ -7,7 +7,7 @@ import (
 	isprime "github.com/ju-popov/structy.net/002-is-prime"
 )
 
-func TesNaive(t *testing.T) {
+func TestNaive(t *testing.T) {
 	t.Parallel()
 
 	for _, tc := range testCases {
