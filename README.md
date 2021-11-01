@@ -61,7 +61,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [043. island count](https://github.com/ju-popov/structy.net/tree/main/043-island-count)  
 [044. minimum island](https://github.com/ju-popov/structy.net/tree/main/044-minimum-island)  
 [045. closest carrot](https://github.com/ju-popov/structy.net/tree/main/045-closest-carrot)  
-046. longest path  
+[046. longest path](https://github.com/ju-popov/structy.net/tree/main/046-longest-path)  
 047. semesters required  
 048. best bridge  
 049. has cycle  
