@@ -63,7 +63,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [045. closest carrot](https://github.com/ju-popov/structy.net/tree/main/045-closest-carrot)  
 [046. longest path](https://github.com/ju-popov/structy.net/tree/main/046-longest-path)  
 [047. semesters required](https://github.com/ju-popov/structy.net/tree/main/047-semesters-required)  
-048. best bridge  
+[048. best bridge](https://github.com/ju-popov/structy.net/tree/main/048-best-bridge)  
 049. has cycle  
 050. prereqs possible  
 
