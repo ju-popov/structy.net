@@ -70,7 +70,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 ## VI. Dynamic Programming
 
 [051. fib](https://github.com/ju-popov/structy.net/tree/main/051-fib)  
-052. tribonacci  
+[052. tribonacci](https://github.com/ju-popov/structy.net/tree/main/052-tribonacci)  
 053. sum possible  
 054. min change  
 055. count paths  
