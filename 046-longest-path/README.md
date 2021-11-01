@@ -57,19 +57,4 @@ const graph = {
 };
 
 longestPath(graph); // -> 3
-```js
-
-test_04:
-```js
-const graph = {
-  a: ['f'],
-  b: ['g'],
-  f: [],
-  c: ['d', 'e'],
-  d: ['e'],
-  e: [],
-  g: ['c'],
-};
-
-longestPath(graph); // -> 4
-```js
+```
