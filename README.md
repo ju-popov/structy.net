@@ -73,7 +73,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [052. tribonacci](https://github.com/ju-popov/structy.net/tree/main/052-tribonacci)  
 [053. sum possible](https://github.com/ju-popov/structy.net/tree/main/053-sum-possible)  
 [054. min change](https://github.com/ju-popov/structy.net/tree/main/054-min-change)  
-055. count paths  
+[055. count paths](https://github.com/ju-popov/structy.net/tree/main/055-count-paths)  
 056. max path sum  
 057. non-adjacent sum  
 058. summing squares  
