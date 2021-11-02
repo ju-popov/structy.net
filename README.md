@@ -77,7 +77,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [056. max path sum](https://github.com/ju-popov/structy.net/tree/main/056-max-path-sum)  
 [057. non-adjacent sum](https://github.com/ju-popov/structy.net/tree/main/057-non-adjacent-sum)  
 [058. summing squares](https://github.com/ju-popov/structy.net/tree/main/058-summing-squares)  
-059. counting change  
+[059. counting change](https://github.com/ju-popov/structy.net/tree/main/059-counting-change)  
 060. array stepper  
 061. max palin subsequence  
 062. overlap subsequence  
