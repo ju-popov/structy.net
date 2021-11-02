@@ -4,6 +4,7 @@ Write a function, summingSquares, that takes a target number as an argument. The
 
 For example: 1, 4, 9, 16 are perfect squares, but 8 is not perfect square.
 
+```
 Given 12:
 
 summingSquares(12) -> 3
@@ -11,6 +12,7 @@ summingSquares(12) -> 3
 The minimum squares required for 12 is three, by doing 4 + 4 + 4.
 
 Another way to make 12 is 9 + 1 + 1 + 1, but that requires four perfect squares.
+```
 
 test_00:
 ```js
