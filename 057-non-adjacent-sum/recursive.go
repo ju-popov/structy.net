@@ -6,11 +6,6 @@ func helper(nums []int, pos int, memory []int) int {
 		return 0
 	}
 
-	// last element
-	if pos == len(nums)-1 {
-		return nums[pos]
-	}
-
 	if memory[pos] >= 0 {
 		return memory[pos]
 	}
