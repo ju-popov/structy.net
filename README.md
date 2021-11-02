@@ -78,7 +78,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [057. non-adjacent sum](https://github.com/ju-popov/structy.net/tree/main/057-non-adjacent-sum)  
 [058. summing squares](https://github.com/ju-popov/structy.net/tree/main/058-summing-squares)  
 [059. counting change](https://github.com/ju-popov/structy.net/tree/main/059-counting-change)  
-060. array stepper  
+[060. array stepper](https://github.com/ju-popov/structy.net/tree/main/060-array-stepper)  
 061. max palin subsequence  
 062. overlap subsequence  
 063. can concat  
