@@ -1,13 +1,16 @@
 package countingchange
 
-import "fmt"
+type memoryKey struct {
+	amount    int
+	coinIndex int
+}
 
-func helper(amount int, coins []int, coinIndex int, memory map[string]int) int {
+func helper(amount int, coins []int, coinIndex int, memory map[memoryKey]int) int {
 	if coinIndex >= len(coins) {
 		return 0
 	}
 
-	key := fmt.Sprintf("%d,%d", amount, coinIndex)
+	key := memoryKey{amount: amount, coinIndex: coinIndex}
 	if value, ok := memory[key]; ok {
 		return value
 	}
@@ -30,7 +33,7 @@ func helper(amount int, coins []int, coinIndex int, memory map[string]int) int {
 }
 
 func Recursive(amount int, coins []int) int {
-	memory := make(map[string]int)
+	memory := make(map[memoryKey]int)
 
 	return helper(amount, coins, 0, memory)
 }
