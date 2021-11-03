@@ -1,21 +1,23 @@
 package arraystepper
 
 func helper(nums []int, index int, memory map[int]bool) bool {
-	if index == len(nums)-1 {
-		return true
-	}
-
 	if value, ok := memory[index]; ok {
 		return value
 	}
 
-	result := false
-
-	for i := 1; (i <= nums[index]) && !result; i++ {
-		result = helper(nums, index+i, memory)
+	if index == len(nums)-1 {
+		return true
 	}
 
-	memory[index] = result
+	for i := 1; i <= nums[index]; i++ {
+		if helper(nums, index+i, memory) {
+			memory[index] = true
+
+			return memory[index]
+		}
+	}
+
+	memory[index] = false
 
 	return memory[index]
 }
