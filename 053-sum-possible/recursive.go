@@ -1,6 +1,10 @@
 package sumpossible
 
 func helper(amount int, numbers []int, memory map[int]bool) bool {
+	if value, ok := memory[amount]; ok {
+		return value
+	}
+
 	if amount < 0 {
 		return false
 	}
@@ -9,19 +13,17 @@ func helper(amount int, numbers []int, memory map[int]bool) bool {
 		return true
 	}
 
-	if value, ok := memory[amount]; ok {
-		return value
-	}
-
 	for _, number := range numbers {
 		if helper(amount-number, numbers, memory) {
-			return true
+			memory[amount] = true
+
+			return memory[amount]
 		}
 	}
 
 	memory[amount] = false
 
-	return false
+	return memory[amount]
 }
 
 func Recursive(amount int, numbers []int) bool {
