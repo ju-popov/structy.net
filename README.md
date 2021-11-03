@@ -82,7 +82,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [061. max palin subsequence](https://github.com/ju-popov/structy.net/tree/main/061-max-palin-subsequence)  
 [062. overlap subsequence](https://github.com/ju-popov/structy.net/tree/main/062-overlap-subsequence)  
 [063. can concat](https://github.com/ju-popov/structy.net/tree/main/063-can-concat)  
-064. quickest concat  
+[064. quickest concat](https://github.com/ju-popov/structy.net/tree/main/064-quickest-concat)  
 
 ## VII. Stack
 
