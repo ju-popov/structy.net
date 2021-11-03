@@ -1,10 +1,10 @@
-package countingchange_test
+package arraystepper_test
 
 import (
 	"reflect"
 	"testing"
 
-	countingchange "github.com/ju-popov/structy.net/060-array-stepper"
+	arraystepper "github.com/ju-popov/structy.net/060-array-stepper"
 )
 
 func TestRecursive(t *testing.T) {
@@ -14,7 +14,7 @@ func TestRecursive(t *testing.T) {
 		tc := tc
 		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
-			actual := countingchange.Recursive(tc.nums)
+			actual := arraystepper.Recursive(tc.nums)
 			if !reflect.DeepEqual(actual, tc.expected) {
 				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
 			}
@@ -26,7 +26,7 @@ func benchmarkRecursive(b *testing.B, tc testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		countingchange.Recursive(tc.nums)
+		arraystepper.Recursive(tc.nums)
 	}
 }
 

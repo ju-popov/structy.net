@@ -1,4 +1,4 @@
-package countingchange_test
+package arraystepper_test
 
 type testCase struct {
 	name     string

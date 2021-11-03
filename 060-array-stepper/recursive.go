@@ -1,4 +1,4 @@
-package countingchange
+package arraystepper
 
 func helper(nums []int, index int, memory map[int]bool) bool {
 	if index == len(nums)-1 {
