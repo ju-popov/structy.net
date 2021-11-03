@@ -1,6 +1,28 @@
 package maxpathsum
 
-func helper(grid [][]int, y int, x int, memory [][]int) int {
+type memoryKey struct {
+	y int
+	x int
+}
+
+func maxInt(values ...int) int {
+	maxValue := values[0]
+
+	for i := 1; i < len(values); i++ {
+		if values[i] > maxValue {
+			maxValue = values[i]
+		}
+	}
+
+	return maxValue
+}
+
+func helper(grid [][]int, y int, x int, memory map[memoryKey]int) int {
+	key := memoryKey{y: y, x: x}
+	if value, ok := memory[key]; ok {
+		return value
+	}
+
 	if y >= len(grid) {
 		return 0
 	}
@@ -9,32 +31,16 @@ func helper(grid [][]int, y int, x int, memory [][]int) int {
 		return 0
 	}
 
-	if value := memory[y][x]; value > -1 {
-		return value
-	}
-
-	memory[y][x] = grid[y][x]
-
 	down := helper(grid, y+1, x, memory)
 	right := helper(grid, y, x+1, memory)
 
-	if down > right {
-		memory[y][x] += down
-	} else {
-		memory[y][x] += right
-	}
+	memory[key] = grid[y][x] + maxInt(down, right)
 
-	return memory[y][x]
+	return memory[key]
 }
 
 func Recursive(grid [][]int) int {
-	memory := make([][]int, len((grid)))
-	for y, row := range grid {
-		memory[y] = make([]int, len(row))
-		for x := range row {
-			memory[y][x] = -1
-		}
-	}
+	memory := make(map[memoryKey]int)
 
 	return helper(grid, 0, 0, memory)
 }
