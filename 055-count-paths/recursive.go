@@ -2,7 +2,17 @@ package countpaths
 
 const wall = "X"
 
-func helper(grid [][]string, y int, x int, memory [][]int) int {
+type memoryKey struct {
+	y int
+	x int
+}
+
+func helper(grid [][]string, y int, x int, memory map[memoryKey]int) int {
+	key := memoryKey{y: y, x: x}
+	if value, ok := memory[key]; ok {
+		return value
+	}
+
 	if y >= len(grid) {
 		return 0
 	}
@@ -11,31 +21,21 @@ func helper(grid [][]string, y int, x int, memory [][]int) int {
 		return 0
 	}
 
-	if value := memory[y][x]; value > -1 {
-		return value
-	}
-
 	if grid[y][x] == wall {
 		return 0
 	}
 
 	if (y == len(grid)-1) && (x == len(grid[y])-1) {
-		memory[y][x] = 1
+		memory[key] = 1
 	} else {
-		memory[y][x] = helper(grid, y+1, x, memory) + helper(grid, y, x+1, memory)
+		memory[key] = helper(grid, y+1, x, memory) + helper(grid, y, x+1, memory)
 	}
 
-	return memory[y][x]
+	return memory[key]
 }
 
 func Recursive(grid [][]string) int {
-	memory := make([][]int, len((grid)))
-	for y, row := range grid {
-		memory[y] = make([]int, len(row))
-		for x := range row {
-			memory[y][x] = -1
-		}
-	}
+	memory := make(map[memoryKey]int)
 
 	return helper(grid, 0, 0, memory)
 }
