@@ -14,9 +14,9 @@ func BreadthFirst(graph map[string][]string, src string, dst string) bool {
 
 		visited[node] = true
 
-		for _, next := range graph[node] {
-			if !visited[next] {
-				queue = append(queue, next)
+		for _, neighbor := range graph[node] {
+			if !visited[neighbor] {
+				queue = append(queue, neighbor)
 			}
 		}
 	}
