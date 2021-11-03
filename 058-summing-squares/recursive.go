@@ -1,32 +1,34 @@
 package summingsquares
 
-func helper(n int, squares []int, memory map[int]int) int {
-	if n == 0 {
-		return 0
-	}
-
+func helper(n int, perfectSquares []int, memory map[int]int) int {
 	if value, ok := memory[n]; ok {
 		return value
 	}
 
+	if n == 0 {
+		return 0
+	}
+
 	minResult := -1
 
-	for _, square := range squares {
-		if n < square {
+	for _, perfectSquare := range perfectSquares {
+		if n < perfectSquare {
 			break
 		}
 
-		if result := helper(n-square, squares, memory); (minResult == -1) || (result < minResult) {
+		result := helper(n-perfectSquare, perfectSquares, memory)
+		if (minResult == -1) || (result < minResult) {
 			minResult = result
 		}
 	}
 
+	// minResult is always >= 0
 	memory[n] = minResult + 1
 
 	return memory[n]
 }
 
-func findPerfectSquares(max int) []int {
+func calcPerfectSquares(max int) []int {
 	result := make([]int, 0)
 	for i := 1; i*i <= max; i++ {
 		result = append(result, i*i)
@@ -36,8 +38,8 @@ func findPerfectSquares(max int) []int {
 }
 
 func Recursive(n int) int {
-	squares := findPerfectSquares(n)
+	perfectSquares := calcPerfectSquares(n)
 	memory := make(map[int]int)
 
-	return helper(n, squares, memory)
+	return helper(n, perfectSquares, memory)
 }
