@@ -12,6 +12,7 @@ func helper(s string, words []string, memory map[string]int) int {
 	}
 
 	minResult := -1
+
 	for _, word := range words {
 		if strings.HasPrefix(s, word) {
 			if result := helper(s[len(word):], words, memory); result >= 0 {
