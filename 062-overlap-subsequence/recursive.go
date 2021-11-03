@@ -27,8 +27,9 @@ func helper(str1 string, str2 string, memory map[memoryKey]int) int {
 		return 0
 	}
 
-	if str1[0] == str2[0] {
-		memory[key] = helper(str1[1:], str2[1:], memory) + 1
+	if firstCharStr1, firstCharStr2 := str1[0], str2[0]; firstCharStr1 == firstCharStr2 {
+		removeFirstCharStr1AndStr2 := helper(str1[1:], str2[1:], memory)
+		memory[key] = removeFirstCharStr1AndStr2 + 1
 	} else {
 		removeFirstCharStr1 := helper(str1[1:], str2, memory)
 		removeFirstCharStr2 := helper(str1, str2[1:], memory)
