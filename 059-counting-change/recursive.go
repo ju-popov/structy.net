@@ -11,10 +11,6 @@ func helper(amount int, coins []int, coinIndex int, memory map[memoryKey]int) in
 		return value
 	}
 
-	if amount == 0 {
-		return 1
-	}
-
 	if coinIndex >= len(coins) {
 		return 0
 	}
@@ -24,7 +20,11 @@ func helper(amount int, coins []int, coinIndex int, memory map[memoryKey]int) in
 
 	for qty := 0; (qty * coin) <= amount; qty++ {
 		remainder := amount - qty*coin
-		count += helper(remainder, coins, coinIndex+1, memory)
+		if remainder == 0 {
+			count++
+		} else {
+			count += helper(remainder, coins, coinIndex+1, memory)
+		}
 	}
 
 	memory[key] = count
