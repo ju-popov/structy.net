@@ -18,9 +18,9 @@ func helper(graph map[string][]string, src string, dst string, visited map[strin
 
 	visited[src] = true
 
-	for _, next := range graph[src] {
-		if !visited[next] {
-			if helper(graph, next, dst, visited) {
+	for _, neighbor := range graph[src] {
+		if !visited[neighbor] {
+			if helper(graph, neighbor, dst, visited) {
 				return true
 			}
 		}
@@ -30,8 +30,8 @@ func helper(graph map[string][]string, src string, dst string, visited map[strin
 }
 
 func DepthFirstRecursive(edges [][2]string, nodeA string, nodeB string) bool {
-	visited := make(map[string]bool)
 	graph := createGraphDepthFirstRecursive(edges)
+	visited := make(map[string]bool)
 
 	return helper(graph, nodeA, nodeB, visited)
 }
