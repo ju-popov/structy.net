@@ -1,6 +1,10 @@
 package minchange
 
 func helper(amount int, coins []int, memory map[int]int) int {
+	if value, ok := memory[amount]; ok {
+		return value
+	}
+
 	if amount < 0 {
 		return -1
 	}
@@ -9,22 +13,18 @@ func helper(amount int, coins []int, memory map[int]int) int {
 		return 0
 	}
 
-	if value, ok := memory[amount]; ok {
-		return value
-	}
-
-	minCoins := -1
+	minResult := -1
 
 	for _, number := range coins {
-		if coinsCount := helper(amount-number, coins, memory); coinsCount >= 0 {
-			if (minCoins == -1) || (coinsCount < minCoins) {
-				minCoins = coinsCount
+		if result := helper(amount-number, coins, memory); result >= 0 {
+			if (minResult == -1) || (result < minResult) {
+				minResult = result
 			}
 		}
 	}
 
-	if minCoins >= 0 {
-		memory[amount] = minCoins + 1
+	if minResult >= 0 {
+		memory[amount] = minResult + 1
 	} else {
 		memory[amount] = -1
 	}
