@@ -1,9 +1,14 @@
 package closestcarrot
 
-type cellData struct {
+type queueValue struct {
 	row      int
 	col      int
 	distance int
+}
+
+type visitedKey struct {
+	row int
+	col int
 }
 
 const (
@@ -11,46 +16,55 @@ const (
 	carrot = "C"
 )
 
+func offsets() [4][2]int {
+	return [4][2]int{
+		{-1, 0}, // top
+		{+1, 0}, // down
+		{0, -1}, // left
+		{0, +1}, // right
+	}
+}
+
 func BreadthFirst(grid [][]string, startRow int, startCol int) int {
 	if grid[startRow][startCol] == wall {
 		return -1
 	}
 
-	visited := make([][]bool, len(grid))
-	for index, row := range grid {
-		visited[index] = make([]bool, len(row))
-	}
+	visited := make(map[visitedKey]bool)
 
-	queue := []cellData{
+	queue := []queueValue{
 		{row: startRow, col: startCol, distance: 0},
 	}
 
 	for len(queue) > 0 {
-		cell := queue[0]
+		row := queue[0].row
+		col := queue[0].col
+		distance := queue[0].distance
 		queue = queue[1:]
 
-		if grid[cell.row][cell.col] == carrot {
-			return cell.distance
+		if grid[row][col] == carrot {
+			return distance
 		}
 
-		visited[cell.row][cell.col] = true
+		key := visitedKey{row: row, col: col}
 
-		for _, next := range [4][2]int{
-			{-1, 0}, // up
-			{+1, 0}, // down
-			{0, -1}, // left
-			{0, +1}, // right
-		} {
-			nextRow, nextCol, nextDistance := cell.row+next[0], cell.col+next[1], cell.distance+1
+		visited[key] = true
 
-			if (nextRow >= 0) && (nextRow < len(grid)) && (nextCol >= 0) && (nextCol < len(grid[nextRow])) {
+		for _, neighborOffset := range offsets() {
+			neighborRow := row + neighborOffset[0]
+			neighborCol := col + neighborOffset[1]
+			neighborDistance := distance + 1
+
+			if (neighborRow >= 0) && (neighborRow < len(grid)) && (neighborCol >= 0) && (neighborCol < len(grid[neighborRow])) {
 				// Helpful: Premature return
-				if grid[nextRow][nextCol] == carrot {
-					return nextDistance
+				if grid[neighborRow][neighborCol] == carrot {
+					return neighborDistance
 				}
 
-				if !visited[nextRow][nextCol] && (grid[nextRow][nextCol] != wall) {
-					queue = append(queue, cellData{row: nextRow, col: nextCol, distance: nextDistance})
+				neighborKey := visitedKey{row: neighborRow, col: neighborCol}
+
+				if !visited[neighborKey] && (grid[neighborRow][neighborCol] != wall) {
+					queue = append(queue, queueValue{row: neighborRow, col: neighborCol, distance: neighborDistance})
 				}
 			}
 		}
