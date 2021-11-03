@@ -8,16 +8,16 @@ func explore(graph map[int][]int, node int, visited map[int]bool) int {
 	result := 1
 	visited[node] = true
 
-	for _, next := range graph[node] {
-		if !visited[next] {
-			result += explore(graph, next, visited)
+	for _, neighbor := range graph[node] {
+		if !visited[neighbor] {
+			result += explore(graph, neighbor, visited)
 		}
 	}
 
 	return result
 }
 
-func Recursive(graph map[int][]int) int {
+func DepthFirstRecursive(graph map[int][]int) int {
 	maxResult := 0
 
 	visited := map[int]bool{}
