@@ -1,6 +1,6 @@
 package undirectedpath
 
-func createGraphRecursive(edges [][2]string) map[string][]string {
+func createGraphDepthFirstRecursive(edges [][2]string) map[string][]string {
 	graph := make(map[string][]string)
 
 	for _, edge := range edges {
@@ -11,13 +11,6 @@ func createGraphRecursive(edges [][2]string) map[string][]string {
 	return graph
 }
 
-func Recursive(edges [][2]string, nodeA string, nodeB string) bool {
-	visited := make(map[string]bool)
-	graph := createGraphRecursive(edges)
-
-	return helper(graph, nodeA, nodeB, visited)
-}
-
 func helper(graph map[string][]string, src string, dst string, visited map[string]bool) bool {
 	if src == dst {
 		return true
@@ -25,13 +18,20 @@ func helper(graph map[string][]string, src string, dst string, visited map[strin
 
 	visited[src] = true
 
-	for _, node := range graph[src] {
-		if !visited[node] {
-			if helper(graph, node, dst, visited) {
+	for _, next := range graph[src] {
+		if !visited[next] {
+			if helper(graph, next, dst, visited) {
 				return true
 			}
 		}
 	}
 
 	return false
+}
+
+func DepthFirstRecursive(edges [][2]string, nodeA string, nodeB string) bool {
+	visited := make(map[string]bool)
+	graph := createGraphDepthFirstRecursive(edges)
+
+	return helper(graph, nodeA, nodeB, visited)
 }
