@@ -25,11 +25,9 @@ func helper(str string, memory map[string]int) int {
 		return 1
 	}
 
-	firstChar := str[0]
-	lastChar := str[len(str)-1]
-
-	if firstChar == lastChar {
+	if firstChar, lastChar := str[0], str[len(str)-1]; firstChar == lastChar {
 		removeFirstAndLastChar := helper(str[1:len(str)-1], memory)
+		//nolint:gomnd
 		memory[str] = removeFirstAndLastChar + 2
 	} else {
 		removeFirstChar := helper(str[1:], memory)
