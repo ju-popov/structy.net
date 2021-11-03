@@ -1,6 +1,12 @@
 package islandcount
 
-func explore(grid [][]string, y int, x int, visited [][]bool) bool {
+type visitedKey struct {
+	y int
+	x int
+}
+
+//nolint:varnamelen
+func explore(grid [][]string, y int, x int, visited map[visitedKey]bool) bool {
 	if (y < 0) || (y >= len(grid)) {
 		return false
 	}
@@ -11,11 +17,17 @@ func explore(grid [][]string, y int, x int, visited [][]bool) bool {
 		return false
 	}
 
-	if (row[x] != "L") || visited[y][x] {
+	if row[x] != "L" {
 		return false
 	}
 
-	visited[y][x] = true
+	key := visitedKey{y: y, x: x}
+
+	if visited[key] {
+		return false
+	}
+
+	visited[key] = true
 
 	explore(grid, y-1, x, visited)
 	explore(grid, y+1, x, visited)
@@ -28,10 +40,7 @@ func explore(grid [][]string, y int, x int, visited [][]bool) bool {
 func DepthFirst(grid [][]string) int {
 	result := 0
 
-	visited := make([][]bool, len(grid))
-	for index, row := range grid {
-		visited[index] = make([]bool, len(row))
-	}
+	visited := make(map[visitedKey]bool)
 
 	for y, row := range grid {
 		for x := range row {
