@@ -1,6 +1,12 @@
 package minimumisland
 
-func explore(grid [][]string, y int, x int, visited [][]bool) int {
+type visitedKey struct {
+	y int
+	x int
+}
+
+//nolint:varnamelen
+func explore(grid [][]string, y int, x int, visited map[visitedKey]bool) int {
 	if (y < 0) || (y >= len(grid)) {
 		return 0
 	}
@@ -11,11 +17,17 @@ func explore(grid [][]string, y int, x int, visited [][]bool) int {
 		return 0
 	}
 
-	if (row[x] != "L") || visited[y][x] {
+	if row[x] != "L" {
 		return 0
 	}
 
-	visited[y][x] = true
+	key := visitedKey{y: y, x: x}
+
+	if visited[key] {
+		return 0
+	}
+
+	visited[key] = true
 
 	result := 1
 
@@ -30,15 +42,14 @@ func explore(grid [][]string, y int, x int, visited [][]bool) int {
 func DepthFirst(grid [][]string) int {
 	minResult := 0
 
-	visited := make([][]bool, len(grid))
-	for index, row := range grid {
-		visited[index] = make([]bool, len(row))
-	}
+	visited := make(map[visitedKey]bool)
 
 	for y, row := range grid {
 		for x := range row {
-			if result := explore(grid, y, x, visited); (minResult == 0) || ((result > 0) && (result < minResult)) {
-				minResult = result
+			if result := explore(grid, y, x, visited); result > 0 {
+				if (minResult == 0) || (result < minResult) {
+					minResult = result
+				}
 			}
 		}
 	}
