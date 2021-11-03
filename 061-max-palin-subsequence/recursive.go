@@ -1,5 +1,17 @@
 package maxpalinsubsequence
 
+func maxInt(values ...int) int {
+	maxValue := values[0]
+
+	for i := 1; i < len(values); i++ {
+		if values[i] > maxValue {
+			maxValue = values[i]
+		}
+	}
+
+	return maxValue
+}
+
 func helper(str string, memory map[string]int) int {
 	if value, ok := memory[str]; ok {
 		return value
@@ -17,16 +29,12 @@ func helper(str string, memory map[string]int) int {
 	lastChar := str[len(str)-1]
 
 	if firstChar == lastChar {
-		removeFirstAndLast := helper(str[1:len(str)-1], memory)
-		memory[str] = removeFirstAndLast + 2
+		removeFirstAndLastChar := helper(str[1:len(str)-1], memory)
+		memory[str] = removeFirstAndLastChar + 2
 	} else {
-		removeFirst := helper(str[1:], memory)
-		removeLast := helper(str[:len(str)-1], memory)
-		if removeFirst > removeLast {
-			memory[str] = removeFirst
-		} else {
-			memory[str] = removeLast
-		}
+		removeFirstChar := helper(str[1:], memory)
+		removeLastChar := helper(str[:len(str)-1], memory)
+		memory[str] = maxInt(removeFirstChar, removeLastChar)
 	}
 
 	return memory[str]
