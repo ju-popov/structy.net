@@ -7,22 +7,22 @@ func explore(graph map[int][]int, node int, visited map[int]bool) bool {
 
 	visited[node] = true
 
-	for _, next := range graph[node] {
-		if !visited[next] {
-			explore(graph, next, visited)
+	for _, neighbor := range graph[node] {
+		if !visited[neighbor] {
+			explore(graph, neighbor, visited)
 		}
 	}
 
 	return true
 }
 
-func Recursive(graph map[int][]int) int {
+func DepthFirstRecursive(graph map[int][]int) int {
 	result := 0
 
 	visited := map[int]bool{}
 
-	for node := range graph {
-		if explore(graph, node, visited) {
+	for neighbor := range graph {
+		if explore(graph, neighbor, visited) {
 			result++
 		}
 	}
