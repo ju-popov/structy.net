@@ -7,8 +7,8 @@ func explore(graph map[string][]string, node string, visited map[string]int) int
 
 	maxResult := 0
 
-	for _, nextNode := range graph[node] {
-		result := explore(graph, nextNode, visited)
+	for _, neighbor := range graph[node] {
+		result := explore(graph, neighbor, visited)
 		if result > maxResult {
 			maxResult = result
 		}
@@ -19,12 +19,12 @@ func explore(graph map[string][]string, node string, visited map[string]int) int
 	return visited[node]
 }
 
-func DepthFirst(graph map[string][]string) int {
+func DepthFirstRecursive(graph map[string][]string) int {
 	visited := make(map[string]int)
 
 	// Mark end-nodes
-	for node, nexts := range graph {
-		if len(nexts) == 0 {
+	for node, neighbors := range graph {
+		if len(neighbors) == 0 {
 			visited[node] = 0
 		}
 	}
