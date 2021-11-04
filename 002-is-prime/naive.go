@@ -7,8 +7,8 @@ func Naive(n int) bool {
 		return false
 	}
 
-	//nolint:gomnd
-	for i := int(2); i < n; i++ {
+	
+	for i := 2; i < n; i++ {
 		if n%i == 0 {
 			return false
 		}

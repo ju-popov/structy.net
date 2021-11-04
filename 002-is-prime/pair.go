@@ -7,8 +7,8 @@ func Pair(n int) bool {
 		return false
 	}
 
-	//nolint:gomnd
-	for i := int(2); i*i <= n; i++ {
+	
+	for i := 2; i*i <= n; i++ {
 		if n%i == 0 {
 			return false
 		}

@@ -17,7 +17,7 @@ func Pair6K(n int) bool {
 	}
 
 	//nolint:gomnd
-	for i := int(5); i*i <= n; i += 6 {
+	for i := 5; i*i <= n; i += 6 {
 		if (n%i == 0) || (n%(i+2) == 0) {
 			return false
 		}
