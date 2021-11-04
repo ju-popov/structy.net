@@ -15,7 +15,7 @@ func TestIterative(t *testing.T) {
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			numsCopy := make([]int64, len(testCase.nums))
+			numsCopy := make([]int, len(testCase.nums))
 			copy(numsCopy, testCase.nums)
 
 			actual := fivesort.Iterative(numsCopy)

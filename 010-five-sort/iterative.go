@@ -1,6 +1,6 @@
 package fivesort
 
-func find(nums []int64, minIndex int, maxIndex int, value int64) int {
+func find(nums []int, minIndex int, maxIndex int, value int) int {
 	for index := minIndex; index <= maxIndex; index++ {
 		if nums[index] == value {
 			return index
@@ -10,9 +10,9 @@ func find(nums []int64, minIndex int, maxIndex int, value int64) int {
 	return -1
 }
 
-const targetValue = int64(5)
+const targetValue = int(5)
 
-func Iterative(nums []int64) []int64 {
+func Iterative(nums []int) []int {
 	indexLeft := -1
 	for indexRight := len(nums) - 1; indexLeft < indexRight; indexRight-- {
 		if nums[indexRight] != targetValue {

@@ -6,10 +6,12 @@ import (
 	"strings"
 )
 
+//nolint:varnamelen
 func findAllStringSubmatchGenerator(s string) chan struct {
 	number string
 	char   int32
 } {
+	//nolint:varnamelen
 	c := make(chan struct {
 		number string
 		char   int32

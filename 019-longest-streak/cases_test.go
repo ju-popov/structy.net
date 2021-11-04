@@ -10,7 +10,7 @@ type testCase struct {
 	expected int
 }
 
-func createLinkedList(values ...int64) *longeststreak.Node {
+func createLinkedList(values ...int) *longeststreak.Node {
 	var head *longeststreak.Node
 
 	for index := len(values) - 1; index >= 0; index-- {

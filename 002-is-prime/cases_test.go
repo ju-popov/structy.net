@@ -2,7 +2,7 @@ package isprime_test
 
 type testCase struct {
 	name     string
-	input    int64
+	input    int
 	expected bool
 }
 

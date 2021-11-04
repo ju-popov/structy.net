@@ -1,11 +1,12 @@
 package anagrams
 
+//nolint:varnamelen
 func Iterative(s1 string, s2 string) bool {
 	if len(s1) != len(s2) {
 		return false
 	}
 
-	charsCount := map[int32]int64{}
+	charsCount := make(map[int32]int)
 
 	for _, element := range s1 {
 		charsCount[element]++

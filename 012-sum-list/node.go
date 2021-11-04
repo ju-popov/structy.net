@@ -6,11 +6,11 @@ import (
 )
 
 type Node struct {
-	Value int64
+	Value int
 	Next  *Node
 }
 
-func NewNode(value int64) *Node {
+func NewNode(value int) *Node {
 	return &Node{Value: value}
 }
 

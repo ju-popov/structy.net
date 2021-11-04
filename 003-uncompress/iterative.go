@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+//nolint:varnamelen
 func findAllStringSubmatch(s string) []struct {
 	number string
 	char   int32

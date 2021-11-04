@@ -7,10 +7,10 @@ import (
 type testCase struct {
 	name     string
 	head     *sumlist.Node
-	expected int64
+	expected int
 }
 
-func createLinkedList(values ...int64) *sumlist.Node {
+func createLinkedList(values ...int) *sumlist.Node {
 	var head *sumlist.Node
 
 	for index := len(values) - 1; index >= 0; index-- {

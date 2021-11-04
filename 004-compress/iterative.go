@@ -5,17 +5,18 @@ import (
 	"strings"
 )
 
+//nolint:varnamelen
 func findAllStringSubmatch(s string) []struct {
-	number int64
+	number int
 	char   int32
 } {
 	var result []struct {
-		number int64
+		number int
 		char   int32
 	}
 
 	var (
-		count int64
+		count int
 		char  int32
 	)
 
@@ -28,7 +29,7 @@ func findAllStringSubmatch(s string) []struct {
 				count++
 			} else {
 				result = append(result, struct {
-					number int64
+					number int
 					char   int32
 				}{number: count, char: char})
 				char = elem
@@ -38,7 +39,7 @@ func findAllStringSubmatch(s string) []struct {
 	}
 
 	result = append(result, struct {
-		number int64
+		number int
 		char   int32
 	}{number: count, char: char})
 
@@ -53,7 +54,7 @@ func Iterative(s string) (string, error) {
 			result.WriteRune(match.char)
 		} else if match.number > 1 {
 			//nolint:gomnd
-			result.WriteString(strconv.FormatInt(match.number, 10))
+			result.WriteString(strconv.FormatInt(int64(match.number), 10))
 			result.WriteRune(match.char)
 		}
 	}

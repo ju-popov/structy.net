@@ -1,8 +1,8 @@
 package mostfrequentchar
 
 func OnePass(input string) string {
-	charsCount := map[int32]int64{}
-	charsIndex := map[int32]int{}
+	charsCount := make(map[int32]int)
+	charsIndex := make(map[int32]int)
 
 	var mostFrequentChar int32
 

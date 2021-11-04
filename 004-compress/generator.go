@@ -5,18 +5,20 @@ import (
 	"strings"
 )
 
+//nolint:varnamelen
 func findAllStringSubmatchGenerator(s string) chan struct {
-	number int64
+	number int
 	char   int32
 } {
+	//nolint:varnamelen
 	c := make(chan struct {
-		number int64
+		number int
 		char   int32
 	})
 
 	go func() {
 		var (
-			count int64
+			count int
 			char  int32
 		)
 
@@ -29,7 +31,7 @@ func findAllStringSubmatchGenerator(s string) chan struct {
 					count++
 				} else {
 					c <- struct {
-						number int64
+						number int
 						char   int32
 					}{number: count, char: char}
 					char = elem
@@ -39,7 +41,7 @@ func findAllStringSubmatchGenerator(s string) chan struct {
 		}
 
 		c <- struct {
-			number int64
+			number int
 			char   int32
 		}{number: count, char: char}
 
@@ -57,7 +59,7 @@ func Generator(s string) (string, error) {
 			result.WriteRune(match.char)
 		} else if match.number > 1 {
 			//nolint:gomnd
-			result.WriteString(strconv.FormatInt(match.number, 10))
+			result.WriteString(strconv.FormatInt(int64(match.number), 10))
 			result.WriteRune(match.char)
 		}
 	}

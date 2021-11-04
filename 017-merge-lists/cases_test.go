@@ -11,7 +11,7 @@ type testCase struct {
 	expected *mergelists.Node
 }
 
-func createLinkedList(values ...int64) *mergelists.Node {
+func createLinkedList(values ...int) *mergelists.Node {
 	var head *mergelists.Node
 
 	for index := len(values) - 1; index >= 0; index-- {

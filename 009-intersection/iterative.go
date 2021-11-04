@@ -1,9 +1,10 @@
 package intersection
 
-func Iterative(a []int64, b []int64) []int64 {
-	result := []int64{}
+//nolint:varnamelen
+func Iterative(a []int, b []int) []int {
+	result := []int{}
 
-	set := map[int64]struct{}{}
+	set := make(map[int]struct{})
 
 	for _, element := range a {
 		set[element] = struct{}{}

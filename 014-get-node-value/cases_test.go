@@ -7,7 +7,7 @@ import (
 type testCase struct {
 	name     string
 	head     *getnodevalue.Node
-	index    int64
+	index    int
 	expected string
 }
 

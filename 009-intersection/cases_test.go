@@ -2,13 +2,13 @@ package intersection_test
 
 type testCase struct {
 	name     string
-	a        []int64
-	b        []int64
-	expected []int64
+	a        []int
+	b        []int
+	expected []int
 }
 
-func makeRange(min int64, max int64) []int64 {
-	var result []int64
+func makeRange(min int, max int) []int {
+	var result []int
 
 	for i := min; i < max; i++ {
 		result = append(result, i)
@@ -21,27 +21,27 @@ func makeRange(min int64, max int64) []int64 {
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		a:        []int64{4, 2, 1, 6},
-		b:        []int64{3, 6, 9, 2, 10},
-		expected: []int64{6, 2},
+		a:        []int{4, 2, 1, 6},
+		b:        []int{3, 6, 9, 2, 10},
+		expected: []int{6, 2},
 	},
 	{
 		name:     "test_01",
-		a:        []int64{2, 4, 6},
-		b:        []int64{4, 2},
-		expected: []int64{4, 2},
+		a:        []int{2, 4, 6},
+		b:        []int{4, 2},
+		expected: []int{4, 2},
 	},
 	{
 		name:     "test_02",
-		a:        []int64{4, 2, 1},
-		b:        []int64{1, 2, 4, 6},
-		expected: []int64{1, 2, 4},
+		a:        []int{4, 2, 1},
+		b:        []int{1, 2, 4, 6},
+		expected: []int{1, 2, 4},
 	},
 	{
 		name:     "test_03",
-		a:        []int64{0, 1, 2},
-		b:        []int64{10, 11},
-		expected: []int64{},
+		a:        []int{0, 1, 2},
+		b:        []int{10, 11},
+		expected: []int{},
 	},
 	{
 		name:     "test_04",
