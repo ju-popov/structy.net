@@ -10,16 +10,16 @@ type testCase struct {
 	expected *createlinkedlist.Node
 }
 
-func createLinkedList(values ...interface{}) *createlinkedlist.Node {
-	var head *createlinkedlist.Node
+func newLinkedList(values ...interface{}) *createlinkedlist.Node {
+	dummyHead := createlinkedlist.NewNode(nil)
+	current := dummyHead
 
-	for index := len(values) - 1; index >= 0; index-- {
-		node := createlinkedlist.NewNode(values[index])
-		node.Next = head
-		head = node
+	for _, value := range values {
+		current.Next = createlinkedlist.NewNode(value)
+		current = current.Next
 	}
 
-	return head
+	return dummyHead.Next
 }
 
 //nolint:gochecknoglobals
@@ -27,17 +27,17 @@ var testCases = []testCase{
 	{
 		name:     "test_00",
 		values:   []interface{}{"h", "e", "y"},
-		expected: createLinkedList("h", "e", "y"),
+		expected: newLinkedList("h", "e", "y"),
 	},
 	{
 		name:     "test_01",
 		values:   []interface{}{1, 7, 1, 8},
-		expected: createLinkedList(1, 7, 1, 8),
+		expected: newLinkedList(1, 7, 1, 8),
 	},
 	{
 		name:     "test_02",
 		values:   []interface{}{"a"},
-		expected: createLinkedList("a"),
+		expected: newLinkedList("a"),
 	},
 	{
 		name:     "test_03",

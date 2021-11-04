@@ -17,7 +17,7 @@ func TestRecursive(t *testing.T) {
 
 			actual := createlinkedlist.Recursive(testCase.values)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for values: '%v' is: '%v', but the actual result is: '%v'", testCase.values, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}

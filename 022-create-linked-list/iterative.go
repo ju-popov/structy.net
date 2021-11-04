@@ -1,24 +1,13 @@
 package createlinkedlist
 
 func Iterative(values []interface{}) *Node {
-	var (
-		head     *Node
-		previous *Node
-	)
+	dummyHead := NewNode(nil)
+	current := dummyHead
 
 	for _, value := range values {
-		newNode := NewNode(value)
-
-		if head == nil {
-			head = newNode
-		}
-
-		if previous != nil {
-			previous.Next = newNode
-		}
-
-		previous = newNode
+		current.Next = NewNode(value)
+		current = current.Next
 	}
 
-	return head
+	return dummyHead.Next
 }
