@@ -1,28 +1,5 @@
 package prereqspossible
 
-func isCyclic(graph map[int][]int, node int, visiting map[int]bool, visited map[int]bool) bool {
-	if visited[node] {
-		return false
-	}
-
-	if visiting[node] {
-		return true
-	}
-
-	visiting[node] = true
-
-	for _, next := range graph[node] {
-		if isCyclic(graph, next, visiting, visited) {
-			return true
-		}
-	}
-
-	visiting[node] = false
-	visited[node] = true
-
-	return false
-}
-
 func createGraph(numCourses int, prereqs [][2]int) map[int][]int {
 	graph := make(map[int][]int)
 
@@ -35,6 +12,29 @@ func createGraph(numCourses int, prereqs [][2]int) map[int][]int {
 	}
 
 	return graph
+}
+
+func isCyclic(graph map[int][]int, node int, visiting map[int]bool, visited map[int]bool) bool {
+	if visited[node] {
+		return false
+	}
+
+	if visiting[node] {
+		return true
+	}
+
+	visiting[node] = true
+
+	for _, neighbor := range graph[node] {
+		if isCyclic(graph, neighbor, visiting, visited) {
+			return true
+		}
+	}
+
+	visiting[node] = false
+	visited[node] = true
+
+	return false
 }
 
 func WhiteGreyBlack(numCourses int, prereqs [][2]int) bool {
