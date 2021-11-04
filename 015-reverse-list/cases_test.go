@@ -10,33 +10,44 @@ type testCase struct {
 	expected *reverselist.Node
 }
 
-func createLinkedList(values ...string) *reverselist.Node {
-	var head *reverselist.Node
+func newLinkedList(values ...string) *reverselist.Node {
+	var (
+		first *reverselist.Node
+		last  *reverselist.Node
+	)
 
-	for index := len(values) - 1; index >= 0; index-- {
-		node := reverselist.NewNode(values[index])
-		node.Next = head
-		head = node
+	for _, value := range values {
+		node := reverselist.NewNode(value)
+
+		if first == nil {
+			first = node
+		}
+
+		if last != nil {
+			last.Next = node
+		}
+
+		last = node
 	}
 
-	return head
+	return first
 }
 
 //nolint:gochecknoglobals
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		head:     createLinkedList("a", "b", "c", "d", "e", "f"),
-		expected: createLinkedList("f", "e", "d", "c", "b", "a"),
+		head:     newLinkedList("a", "b", "c", "d", "e", "f"),
+		expected: newLinkedList("f", "e", "d", "c", "b", "a"),
 	},
 	{
 		name:     "test_01",
-		head:     createLinkedList("x", "y"),
-		expected: createLinkedList("y", "x"),
+		head:     newLinkedList("x", "y"),
+		expected: newLinkedList("y", "x"),
 	},
 	{
 		name:     "test_02",
-		head:     createLinkedList("p"),
-		expected: createLinkedList("p"),
+		head:     newLinkedList("p"),
+		expected: newLinkedList("p"),
 	},
 }
