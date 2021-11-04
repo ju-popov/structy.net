@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	canconcat "github.com/ju-popov/structy.net/064-quickest-concat"
+	quickestconcat "github.com/ju-popov/structy.net/064-quickest-concat"
 )
 
 func TestDynamicProgramming(t *testing.T) {
@@ -14,7 +14,7 @@ func TestDynamicProgramming(t *testing.T) {
 		testCase := testCase
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := canconcat.DynamicProgramming(testCase.s, testCase.words)
+			actual := quickestconcat.DynamicProgramming(testCase.s, testCase.words)
 			if !reflect.DeepEqual(actual, testCase.expected) {
 				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
@@ -26,7 +26,7 @@ func benchmarkDynamicProgramming(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		canconcat.DynamicProgramming(testCase.s, testCase.words)
+		quickestconcat.DynamicProgramming(testCase.s, testCase.words)
 	}
 }
 
