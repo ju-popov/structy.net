@@ -20,7 +20,7 @@ func TestIterative(t *testing.T) {
 
 			actual := fivesort.Iterative(numsCopy)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for nums: '%v' is: '%v', but the actual result is: '%v'", testCase.nums, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
