@@ -5,7 +5,7 @@ func DepthFirstRecursive(root *Node, target string) bool {
 		return false
 	}
 
-	if root.Value == target {
+	if root.Val == target {
 		return true
 	}
 

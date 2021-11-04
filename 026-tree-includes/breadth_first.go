@@ -12,7 +12,7 @@ func BreadthFirst(root *Node, target string) bool {
 		node := queue[0]
 		queue = queue[1:]
 
-		if node.Value == target {
+		if node.Val == target {
 			return true
 		}
 

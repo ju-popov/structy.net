@@ -12,7 +12,7 @@ func DepthFirst(root *Node, target string) bool {
 		node := stack[len(stack)-1]
 		stack = stack[:len(stack)-1]
 
-		if node.Value == target {
+		if node.Val == target {
 			return true
 		}
 

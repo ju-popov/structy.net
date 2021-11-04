@@ -16,20 +16,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &treeincludes.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treeincludes.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treeincludes.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treeincludes.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &treeincludes.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treeincludes.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -39,20 +39,20 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &treeincludes.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treeincludes.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treeincludes.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treeincludes.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &treeincludes.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treeincludes.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -62,20 +62,20 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &treeincludes.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treeincludes.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treeincludes.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treeincludes.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &treeincludes.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treeincludes.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -85,25 +85,25 @@ var testCases = []testCase{
 	{
 		name: "test_03",
 		root: &treeincludes.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treeincludes.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treeincludes.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treeincludes.Node{
-					Value: "e",
+					Val: "e",
 					Left: &treeincludes.Node{
-						Value: "g",
+						Val: "g",
 					},
 				},
 			},
 			Right: &treeincludes.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treeincludes.Node{
-					Value: "f",
+					Val: "f",
 					Right: &treeincludes.Node{
-						Value: "h",
+						Val: "h",
 					},
 				},
 			},
@@ -114,25 +114,25 @@ var testCases = []testCase{
 	{
 		name: "test_04",
 		root: &treeincludes.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treeincludes.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treeincludes.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treeincludes.Node{
-					Value: "e",
+					Val: "e",
 					Left: &treeincludes.Node{
-						Value: "g",
+						Val: "g",
 					},
 				},
 			},
 			Right: &treeincludes.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treeincludes.Node{
-					Value: "f",
+					Val: "f",
 					Right: &treeincludes.Node{
-						Value: "h",
+						Val: "h",
 					},
 				},
 			},
