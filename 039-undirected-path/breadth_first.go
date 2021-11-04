@@ -14,7 +14,7 @@ func createGraphBreadthFirst(edges [][2]string) map[string][]string {
 func BreadthFirst(edges [][2]string, nodeA string, nodeB string) bool {
 	graph := createGraphBreadthFirst(edges)
 
-	visited := map[string]bool{}
+	visited := make(map[string]bool)
 	queue := []string{nodeA}
 
 	for len(queue) > 0 {
