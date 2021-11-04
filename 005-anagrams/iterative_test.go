@@ -16,7 +16,7 @@ func TestIterative(t *testing.T) {
 			t.Parallel()
 			actual := anagrams.Iterative(testCase.s1, testCase.s2)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for input: '%v', '%v' is: '%v', but the actual result is: '%v'", testCase.s1, testCase.s2, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
