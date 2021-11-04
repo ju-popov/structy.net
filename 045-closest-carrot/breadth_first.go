@@ -1,14 +1,14 @@
 package closestcarrot
 
 type queueValue struct {
-	row      int
-	col      int
+	y        int
+	x        int
 	distance int
 }
 
 type visitedKey struct {
-	row int
-	col int
+	y int
+	x int
 }
 
 const (
@@ -25,46 +25,48 @@ func offsets() [4][2]int {
 	}
 }
 
-func BreadthFirst(grid [][]string, startRow int, startCol int) int {
-	if grid[startRow][startCol] == wall {
+func BreadthFirst(grid [][]string, startY int, startX int) int {
+	if grid[startY][startX] == wall {
 		return -1
 	}
 
 	visited := make(map[visitedKey]bool)
 
 	queue := []queueValue{
-		{row: startRow, col: startCol, distance: 0},
+		{y: startY, x: startX, distance: 0},
 	}
 
 	for len(queue) > 0 {
-		row := queue[0].row
-		col := queue[0].col
+		//nolint:varnamelen
+		y := queue[0].y
+		//nolint:varnamelen
+		x := queue[0].x
 		distance := queue[0].distance
 		queue = queue[1:]
 
-		if grid[row][col] == carrot {
+		if grid[y][x] == carrot {
 			return distance
 		}
 
-		key := visitedKey{row: row, col: col}
+		key := visitedKey{y: y, x: x}
 
 		visited[key] = true
 
 		for _, neighborOffset := range offsets() {
-			neighborRow := row + neighborOffset[0]
-			neighborCol := col + neighborOffset[1]
+			neighborY := y + neighborOffset[0]
+			neighborX := x + neighborOffset[1]
 			neighborDistance := distance + 1
 
-			if (neighborRow >= 0) && (neighborRow < len(grid)) && (neighborCol >= 0) && (neighborCol < len(grid[neighborRow])) {
+			if (neighborY >= 0) && (neighborY < len(grid)) && (neighborX >= 0) && (neighborX < len(grid[neighborY])) {
 				// Helpful: Premature return
-				if grid[neighborRow][neighborCol] == carrot {
+				if grid[neighborY][neighborX] == carrot {
 					return neighborDistance
 				}
 
-				neighborKey := visitedKey{row: neighborRow, col: neighborCol}
+				neighborKey := visitedKey{y: neighborY, x: neighborX}
 
-				if !visited[neighborKey] && (grid[neighborRow][neighborCol] != wall) {
-					queue = append(queue, queueValue{row: neighborRow, col: neighborCol, distance: neighborDistance})
+				if !visited[neighborKey] && (grid[neighborY][neighborX] != wall) {
+					queue = append(queue, queueValue{y: neighborY, x: neighborX, distance: neighborDistance})
 				}
 			}
 		}
