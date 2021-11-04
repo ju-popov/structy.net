@@ -1,15 +1,15 @@
 package isunivaluelist
 
-func IsUniValue(first *Node, current *Node) bool {
-	if current == nil {
+func IsUniValue(head *Node, current *Node) bool {
+	if (head == nil) || (current == nil) {
 		return true
 	}
 
-	if first.Value != current.Value {
+	if head.Val != current.Val {
 		return false
 	}
 
-	return IsUniValue(first, current.Next)
+	return IsUniValue(head, current.Next)
 }
 
 func Recursive(head *Node) bool {

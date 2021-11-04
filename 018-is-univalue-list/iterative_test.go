@@ -17,7 +17,7 @@ func TestIterative(t *testing.T) {
 
 			actual := isunivaluelist.Iterative(testCase.head)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for head: '%v' is: '%v', but the actual result is: '%v'", testCase.head, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
