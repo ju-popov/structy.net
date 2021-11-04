@@ -22,7 +22,7 @@ func helper(nums []int, index int, memory map[int]bool) bool {
 	return memory[index]
 }
 
-func Recursive(nums []int) bool {
+func DynamicProgramming(nums []int) bool {
 	memory := make(map[int]bool)
 
 	return helper(nums, 0, memory)
