@@ -1,7 +1,7 @@
 package depthfirstvalues
 
 func DepthFirst(root *Node) []string {
-	result := []string{}
+	result := make([]string, 0)
 
 	if root == nil {
 		return result
