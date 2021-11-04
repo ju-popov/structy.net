@@ -10,43 +10,43 @@ type testCase struct {
 	expected int
 }
 
-func createLinkedList(values ...int) *longeststreak.Node {
-	var head *longeststreak.Node
+func newLinkedList(values ...int) *longeststreak.Node {
+	dummyHead := longeststreak.NewNode(0)
+	current := dummyHead
 
-	for index := len(values) - 1; index >= 0; index-- {
-		node := longeststreak.NewNode(values[index])
-		node.Next = head
-		head = node
+	for _, value := range values {
+		current.Next = longeststreak.NewNode(value)
+		current = current.Next
 	}
 
-	return head
+	return dummyHead.Next
 }
 
 //nolint:gochecknoglobals
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		head:     createLinkedList(5, 5, 7, 7, 7, 6),
+		head:     newLinkedList(5, 5, 7, 7, 7, 6),
 		expected: 3,
 	},
 	{
 		name:     "test_01",
-		head:     createLinkedList(3, 3, 3, 3, 9, 9),
+		head:     newLinkedList(3, 3, 3, 3, 9, 9),
 		expected: 4,
 	},
 	{
 		name:     "test_02",
-		head:     createLinkedList(9, 9, 1, 9, 9, 9),
+		head:     newLinkedList(9, 9, 1, 9, 9, 9),
 		expected: 3,
 	},
 	{
 		name:     "test_03",
-		head:     createLinkedList(5, 5),
+		head:     newLinkedList(5, 5),
 		expected: 2,
 	},
 	{
 		name:     "test_04",
-		head:     createLinkedList(4),
+		head:     newLinkedList(4),
 		expected: 1,
 	},
 	{
