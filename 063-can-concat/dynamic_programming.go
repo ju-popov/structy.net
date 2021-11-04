@@ -2,6 +2,7 @@ package canconcat
 
 import "strings"
 
+//nolint:varnamelen
 func helper(s string, words []string, memory map[string]bool) bool {
 	if value, ok := memory[s]; ok {
 		return value
@@ -24,7 +25,7 @@ func helper(s string, words []string, memory map[string]bool) bool {
 	return memory[s]
 }
 
-func Recursive(s string, words []string) bool {
+func DynamicProgramming(s string, words []string) bool {
 	memory := make(map[string]bool)
 
 	return helper(s, words, memory)
