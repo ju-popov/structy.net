@@ -86,7 +86,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 
 ## VII. Stack
 
-065. paired parentheses  
+[065. paired parentheses](https://github.com/ju-popov/structy.net/tree/main/065-paired-parentheses)  
 066. befitting brackets  
 067. decompress braces  
 068. nesting score  
