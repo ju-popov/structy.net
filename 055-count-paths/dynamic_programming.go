@@ -34,7 +34,7 @@ func helper(grid [][]string, y int, x int, memory map[memoryKey]int) int {
 	return memory[key]
 }
 
-func Recursive(grid [][]string) int {
+func DynamicProgramming(grid [][]string) int {
 	memory := make(map[memoryKey]int)
 
 	return helper(grid, 0, 0, memory)
