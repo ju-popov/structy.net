@@ -17,7 +17,7 @@ func TestIterative(t *testing.T) {
 
 			actual := getnodevalue.Iterative(testCase.head, testCase.index)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for head: '%v' and index: '%v' is: '%v', but the actual result is: '%v'", testCase.head, testCase.index, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}

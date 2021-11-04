@@ -11,47 +11,58 @@ type testCase struct {
 	expected string
 }
 
-func createLinkedList(values ...string) *getnodevalue.Node {
-	var head *getnodevalue.Node
+func newLinkedList(values ...string) *getnodevalue.Node {
+	var (
+		first *getnodevalue.Node
+		last  *getnodevalue.Node
+	)
 
-	for index := len(values) - 1; index >= 0; index-- {
-		node := getnodevalue.NewNode(values[index])
-		node.Next = head
-		head = node
+	for _, value := range values {
+		node := getnodevalue.NewNode(value)
+
+		if first == nil {
+			first = node
+		}
+
+		if last != nil {
+			last.Next = node
+		}
+
+		last = node
 	}
 
-	return head
+	return first
 }
 
 //nolint:gochecknoglobals
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		head:     createLinkedList("a", "b", "c", "d"),
+		head:     newLinkedList("a", "b", "c", "d"),
 		index:    2,
 		expected: "c",
 	},
 	{
 		name:     "test_01",
-		head:     createLinkedList("a", "b", "c", "d"),
+		head:     newLinkedList("a", "b", "c", "d"),
 		index:    3,
 		expected: "d",
 	},
 	{
 		name:     "test_02",
-		head:     createLinkedList("a", "b", "c", "d"),
+		head:     newLinkedList("a", "b", "c", "d"),
 		index:    7,
 		expected: "",
 	},
 	{
 		name:     "test_03",
-		head:     createLinkedList("banana", "mango"),
+		head:     newLinkedList("banana", "mango"),
 		index:    0,
 		expected: "banana",
 	},
 	{
 		name:     "test_04",
-		head:     createLinkedList("banana", "mango"),
+		head:     newLinkedList("banana", "mango"),
 		index:    1,
 		expected: "mango",
 	},
