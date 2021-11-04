@@ -1,30 +1,30 @@
 package mergelists
 
 func Iterative(head1 *Node, head2 *Node) *Node {
-	var (
-		first *Node
-		last  *Node
-	)
+	dummyHead := NewNode(0)
+	current := dummyHead
 
-	for (head1 != nil) || (head2 != nil) {
-		if (head1 == nil) || ((head2 != nil) && (head2.Value < head1.Value)) {
-			head1, head2 = head2, head1
+	for (head1 != nil) && (head2 != nil) {
+		if head1.Val <= head2.Val {
+			next := head1.Next
+			current.Next = head1
+			current = head1
+			head1 = next
+		} else {
+			next := head2.Next
+			current.Next = head2
+			current = head2
+			head2 = next
 		}
-
-		if first == nil {
-			first = head1
-		}
-
-		if last != nil {
-			last.Next = head1
-		}
-
-		last = head1
-
-		next := head1.Next
-		last.Next = nil
-		head1 = next
 	}
 
-	return first
+	if head1 != nil {
+		current.Next = head1
+	}
+
+	if head2 != nil {
+		current.Next = head2
+	}
+
+	return dummyHead.Next
 }

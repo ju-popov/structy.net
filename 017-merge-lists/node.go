@@ -6,12 +6,12 @@ import (
 )
 
 type Node struct {
-	Value int
-	Next  *Node
+	Val  int
+	Next *Node
 }
 
 func NewNode(value int) *Node {
-	return &Node{Value: value}
+	return &Node{Val: value}
 }
 
 func (head *Node) String() string {
@@ -24,7 +24,7 @@ func (head *Node) String() string {
 			}
 		}
 
-		if _, err := fmt.Fprintf(buf, "%v", current.Value); err != nil {
+		if _, err := fmt.Fprintf(buf, "%v", current.Val); err != nil {
 			panic(err)
 		}
 	}
@@ -33,23 +33,13 @@ func (head *Node) String() string {
 }
 
 func (head *Node) Copy() *Node {
-	var (
-		last  *Node
-		first *Node
-	)
+	dummyHead := NewNode(0)
+	last := dummyHead
 
 	for current := head; current != nil; current = current.Next {
-		n := NewNode(current.Value)
-		if last != nil {
-			last.Next = n
-		}
-
-		last = n
-
-		if first == nil {
-			first = last
-		}
+		last.Next = NewNode(current.Val)
+		last = last.Next
 	}
 
-	return first
+	return dummyHead.Next
 }
