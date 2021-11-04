@@ -1,5 +1,6 @@
 package tribonacci
 
+//nolint:varnamelen
 func helper(n int, memory map[int]int) int {
 	if value, ok := memory[n]; ok {
 		return value
