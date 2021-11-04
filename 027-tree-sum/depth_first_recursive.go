@@ -5,5 +5,5 @@ func DepthFirstRecursive(root *Node) int64 {
 		return 0
 	}
 
-	return root.Value + DepthFirstRecursive(root.Left) + DepthFirstRecursive(root.Right)
+	return root.Val + DepthFirstRecursive(root.Left) + DepthFirstRecursive(root.Right)
 }

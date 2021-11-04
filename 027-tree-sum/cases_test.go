@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &treesum.Node{
-			Value: 3,
+			Val: 3,
 			Left: &treesum.Node{
-				Value: 11,
+				Val: 11,
 				Left: &treesum.Node{
-					Value: 4,
+					Val: 4,
 				},
 				Right: &treesum.Node{
-					Value: -2,
+					Val: -2,
 				},
 			},
 			Right: &treesum.Node{
-				Value: 4,
+				Val: 4,
 				Right: &treesum.Node{
-					Value: 1,
+					Val: 1,
 				},
 			},
 		},
@@ -37,25 +37,25 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &treesum.Node{
-			Value: 1,
+			Val: 1,
 			Left: &treesum.Node{
-				Value: 6,
+				Val: 6,
 				Left: &treesum.Node{
-					Value: 3,
+					Val: 3,
 				},
 				Right: &treesum.Node{
-					Value: -6,
+					Val: -6,
 					Left: &treesum.Node{
-						Value: 2,
+						Val: 2,
 					},
 				},
 			},
 			Right: &treesum.Node{
-				Value: 0,
+				Val: 0,
 				Right: &treesum.Node{
-					Value: 2,
+					Val: 2,
 					Right: &treesum.Node{
-						Value: 2,
+						Val: 2,
 					},
 				},
 			},

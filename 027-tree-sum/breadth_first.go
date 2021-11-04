@@ -1,22 +1,20 @@
 package treesum
 
-func BreadthFirstIterative(root *Node) int64 {
+func BreadthFirst(root *Node) int64 {
 	if root == nil {
 		return 0
 	}
 
 	queue := []*Node{root}
 
-	var (
-		node   *Node
-		result int64
-	)
+	var result int64
 
 	for len(queue) > 0 {
 		// get first
-		node, queue = queue[0], queue[1:]
+		node := queue[0]
+		queue = queue[1:]
 
-		result += node.Value
+		result += node.Val
 
 		// put last
 		if node.Left != nil {

@@ -1,22 +1,20 @@
 package treesum
 
-func DepthFirstIterative(root *Node) int64 {
+func DepthFirst(root *Node) int64 {
 	if root == nil {
 		return 0
 	}
 
-	var (
-		result int64
-		node   *Node
-	)
+	var result int64
 
 	stack := []*Node{root}
 
 	for len(stack) > 0 {
 		// get last
-		node, stack = stack[len(stack)-1], stack[:len(stack)-1]
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
 
-		result += node.Value
+		result += node.Val
 
 		// add last
 		if node.Right != nil {
