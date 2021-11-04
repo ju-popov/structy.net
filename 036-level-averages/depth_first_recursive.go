@@ -1,29 +1,29 @@
 package levelaverages
 
-func depthFirstRecursiveFillLevels(root *Node, level int, result *[][]float64) {
+func depthFirstRecursiveFillLevels(root *Node, level int, result [][]float64) [][]float64 {
 	if root == nil {
-		return
+		return result
 	}
 
-	for len(*result) <= level {
-		*result = append(*result, []float64{})
+	for level >= len(result) {
+		result = append(result, make([]float64, 0))
 	}
 
-	(*result)[level] = append((*result)[level], root.Value)
+	result[level] = append(result[level], root.Val)
 
 	if root.Left != nil {
-		depthFirstRecursiveFillLevels(root.Left, level+1, result)
+		result = depthFirstRecursiveFillLevels(root.Left, level+1, result)
 	}
 
 	if root.Right != nil {
-		depthFirstRecursiveFillLevels(root.Right, level+1, result)
+		result = depthFirstRecursiveFillLevels(root.Right, level+1, result)
 	}
+
+	return result
 }
 
 func DepthFirstRecursive(root *Node) []float64 {
-	levels := [][]float64{}
-
-	depthFirstRecursiveFillLevels(root, 0, &levels)
+	levels := depthFirstRecursiveFillLevels(root, 0, make([][]float64, 0))
 
 	result := []float64{}
 
