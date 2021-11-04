@@ -17,7 +17,7 @@ func TestIterative(t *testing.T) {
 
 			actual := removenode.Iterative(testCase.head.Copy(), testCase.targetVal)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for head: '%v' and targetVal: '%v' is: '%v', but the actual result is: '%v'", testCase.head, testCase.targetVal, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
@@ -27,7 +27,7 @@ func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		removenode.Iterative(testCase.head, testCase.targetVal)
+		removenode.Iterative(testCase.head.Copy(), testCase.targetVal)
 	}
 }
 

@@ -5,7 +5,7 @@ func Recursive(head *Node, targetVal string) *Node {
 		return nil
 	}
 
-	if head.Value == targetVal {
+	if head.Val == targetVal {
 		return head.Next
 	}
 
