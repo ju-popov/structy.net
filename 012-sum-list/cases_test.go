@@ -10,38 +10,49 @@ type testCase struct {
 	expected int
 }
 
-func createLinkedList(values ...int) *sumlist.Node {
-	var head *sumlist.Node
+func newLinkedList(values ...int) *sumlist.Node {
+	var (
+		first *sumlist.Node
+		last  *sumlist.Node
+	)
 
-	for index := len(values) - 1; index >= 0; index-- {
-		node := sumlist.NewNode(values[index])
-		node.Next = head
-		head = node
+	for _, value := range values {
+		node := sumlist.NewNode(value)
+
+		if first == nil {
+			first = node
+		}
+
+		if last != nil {
+			last.Next = node
+		}
+
+		last = node
 	}
 
-	return head
+	return first
 }
 
 //nolint:gochecknoglobals
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		head:     createLinkedList(2, 8, 3, -1, 7),
+		head:     newLinkedList(2, 8, 3, -1, 7),
 		expected: 19,
 	},
 	{
 		name:     "test_01",
-		head:     createLinkedList(38, 4),
+		head:     newLinkedList(38, 4),
 		expected: 42,
 	},
 	{
 		name:     "test_02",
-		head:     createLinkedList(100),
+		head:     newLinkedList(100),
 		expected: 100,
 	},
 	{
 		name:     "test_03",
-		head:     createLinkedList(),
+		head:     newLinkedList(),
 		expected: 0,
 	},
 }

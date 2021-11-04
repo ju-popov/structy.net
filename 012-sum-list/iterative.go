@@ -1,10 +1,10 @@
 package sumlist
 
 func Iterative(head *Node) int {
-	result := int(0)
+	var result int
 
 	for current := head; current != nil; current = current.Next {
-		result += current.Value
+		result += current.Val
 	}
 
 	return result
