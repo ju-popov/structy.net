@@ -17,6 +17,7 @@ func maxInt(values ...int) int {
 	return maxValue
 }
 
+//nolint:varnamelen
 func helper(grid [][]int, y int, x int, memory map[memoryKey]int) int {
 	key := memoryKey{y: y, x: x}
 	if value, ok := memory[key]; ok {
@@ -39,7 +40,7 @@ func helper(grid [][]int, y int, x int, memory map[memoryKey]int) int {
 	return memory[key]
 }
 
-func Recursive(grid [][]int) int {
+func DynamicProgramming(grid [][]int) int {
 	memory := make(map[memoryKey]int)
 
 	return helper(grid, 0, 0, memory)
