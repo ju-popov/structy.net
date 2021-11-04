@@ -20,7 +20,7 @@ func explore(graph map[int][]int, node int, visited map[int]bool) int {
 func DepthFirstRecursive(graph map[int][]int) int {
 	maxResult := 0
 
-	visited := map[int]bool{}
+	visited := make(map[int]bool)
 
 	for node := range graph {
 		if result := explore(graph, node, visited); result > maxResult {
