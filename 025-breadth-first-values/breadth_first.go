@@ -1,7 +1,7 @@
 package breadthfirstvalues
 
-func Iterative(root *Node) []string {
-	result := []string{}
+func BreadthFirst(root *Node) []string {
+	result := make([]string, 0)
 
 	if root == nil {
 		return result
@@ -9,12 +9,12 @@ func Iterative(root *Node) []string {
 
 	queue := []*Node{root}
 
-	var node *Node
 	for len(queue) > 0 {
 		// get first
-		node, queue = queue[0], queue[1:]
+		node := queue[0]
+		queue = queue[1:]
 
-		result = append(result, node.Value)
+		result = append(result, node.Val)
 
 		// add last
 		if node.Left != nil {

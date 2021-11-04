@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &breadthfirstvalues.Node{
-			Value: "a",
+			Val: "a",
 			Left: &breadthfirstvalues.Node{
-				Value: "b",
+				Val: "b",
 				Left: &breadthfirstvalues.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &breadthfirstvalues.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &breadthfirstvalues.Node{
-				Value: "c",
+				Val: "c",
 				Right: &breadthfirstvalues.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -37,25 +37,25 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &breadthfirstvalues.Node{
-			Value: "a",
+			Val: "a",
 			Left: &breadthfirstvalues.Node{
-				Value: "b",
+				Val: "b",
 				Left: &breadthfirstvalues.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &breadthfirstvalues.Node{
-					Value: "e",
+					Val: "e",
 					Left: &breadthfirstvalues.Node{
-						Value: "g",
+						Val: "g",
 					},
 				},
 			},
 			Right: &breadthfirstvalues.Node{
-				Value: "c",
+				Val: "c",
 				Right: &breadthfirstvalues.Node{
-					Value: "f",
+					Val: "f",
 					Right: &breadthfirstvalues.Node{
-						Value: "h",
+						Val: "h",
 					},
 				},
 			},
@@ -65,25 +65,25 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &breadthfirstvalues.Node{
-			Value: "a",
+			Val: "a",
 		},
 		expected: []string{"a"},
 	},
 	{
 		name: "test_03",
 		root: &breadthfirstvalues.Node{
-			Value: "a",
+			Val: "a",
 			Right: &breadthfirstvalues.Node{
-				Value: "b",
+				Val: "b",
 				Left: &breadthfirstvalues.Node{
-					Value: "c",
+					Val: "c",
 					Left: &breadthfirstvalues.Node{
-						Value: "x",
+						Val: "x",
 					},
 					Right: &breadthfirstvalues.Node{
-						Value: "d",
+						Val: "d",
 						Right: &breadthfirstvalues.Node{
-							Value: "e",
+							Val: "e",
 						},
 					},
 				},
