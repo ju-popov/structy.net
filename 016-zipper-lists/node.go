@@ -33,23 +33,13 @@ func (head *Node) String() string {
 }
 
 func (head *Node) Copy() *Node {
-	var (
-		first *Node
-		last  *Node
-	)
+	dummyHead := NewNode(0)
+	last := dummyHead
 
 	for current := head; current != nil; current = current.Next {
-		n := NewNode(current.Val)
-		if last != nil {
-			last.Next = n
-		}
-
-		last = n
-
-		if first == nil {
-			first = last
-		}
+		last.Next = NewNode(current.Val)
+		last = last.Next
 	}
 
-	return first
+	return dummyHead.Next
 }

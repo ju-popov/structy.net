@@ -12,26 +12,15 @@ type testCase struct {
 }
 
 func newLinkedList(values ...interface{}) *zipperlists.Node {
-	var (
-		first *zipperlists.Node
-		last  *zipperlists.Node
-	)
+	dummyHead := zipperlists.NewNode(0)
+	current := dummyHead
 
 	for _, value := range values {
-		node := zipperlists.NewNode(value)
-
-		if first == nil {
-			first = node
-		}
-
-		if last != nil {
-			last.Next = node
-		}
-
-		last = node
+		current.Next = zipperlists.NewNode(value)
+		current = current.Next
 	}
 
-	return first
+	return dummyHead.Next
 }
 
 //nolint:gochecknoglobals
