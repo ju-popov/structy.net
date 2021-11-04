@@ -23,7 +23,5 @@ func helper(root *Node, level int, result [][]string) [][]string {
 }
 
 func DepthFirstRecursive(root *Node) [][]string {
-	result := make([][]string, 0)
-
-	return helper(root, 0, result)
+	return helper(root, 0, make([][]string, 0))
 }
