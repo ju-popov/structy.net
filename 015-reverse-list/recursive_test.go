@@ -27,7 +27,7 @@ func benchmarkRecursive(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		reverselist.Recursive(testCase.head)
+		reverselist.Recursive(testCase.head.Copy())
 	}
 }
 

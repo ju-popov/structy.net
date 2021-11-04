@@ -27,7 +27,7 @@ func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		reverselist.Iterative(testCase.head)
+		reverselist.Iterative(testCase.head.Copy())
 	}
 }
 
