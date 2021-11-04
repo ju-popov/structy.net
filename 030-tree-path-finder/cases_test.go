@@ -19,7 +19,7 @@ func rangeRightTree(max int) *treepathfinder.Node {
 
 	for index := 0; index <= max; index++ {
 		node := &treepathfinder.Node{
-			Value: index,
+			Val: index,
 		}
 
 		if root == nil {
@@ -51,20 +51,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &treepathfinder.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treepathfinder.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treepathfinder.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treepathfinder.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &treepathfinder.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treepathfinder.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -74,20 +74,20 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &treepathfinder.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treepathfinder.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treepathfinder.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treepathfinder.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &treepathfinder.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treepathfinder.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -97,25 +97,25 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &treepathfinder.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treepathfinder.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treepathfinder.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treepathfinder.Node{
-					Value: "e",
+					Val: "e",
 					Left: &treepathfinder.Node{
-						Value: "g",
+						Val: "g",
 					},
 				},
 			},
 			Right: &treepathfinder.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treepathfinder.Node{
-					Value: "f",
+					Val: "f",
 					Right: &treepathfinder.Node{
-						Value: "h",
+						Val: "h",
 					},
 				},
 			},
@@ -126,25 +126,25 @@ var testCases = []testCase{
 	{
 		name: "test_03",
 		root: &treepathfinder.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treepathfinder.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treepathfinder.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treepathfinder.Node{
-					Value: "e",
+					Val: "e",
 					Left: &treepathfinder.Node{
-						Value: "g",
+						Val: "g",
 					},
 				},
 			},
 			Right: &treepathfinder.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treepathfinder.Node{
-					Value: "f",
+					Val: "f",
 					Right: &treepathfinder.Node{
-						Value: "h",
+						Val: "h",
 					},
 				},
 			},
@@ -155,7 +155,7 @@ var testCases = []testCase{
 	{
 		name: "test_04",
 		root: &treepathfinder.Node{
-			Value: "x",
+			Val: "x",
 		},
 		target:   "x",
 		expected: []interface{}{"x"},

@@ -1,29 +1,25 @@
 package treepathfinder
 
-func depthFirstRecursiveHelper(root *Node, target interface{}, path []interface{}) []interface{} {
+func DepthFirstRecursive(root *Node, target interface{}) []interface{} {
 	if root == nil {
 		return nil
 	}
 
-	if root.Value == target {
-		return append(path, root.Value)
+	result := []interface{}{root.Val}
+
+	if root.Val == target {
+		return result
 	}
 
-	if root.Left != nil {
-		if result := depthFirstRecursiveHelper(root.Left, target, append(path, root.Value)); result != nil {
-			return result
-		}
+	left := DepthFirstRecursive(root.Left, target)
+	if left != nil {
+		return append(result, left...)
 	}
 
-	if root.Right != nil {
-		if result := depthFirstRecursiveHelper(root.Right, target, append(path, root.Value)); result != nil {
-			return result
-		}
+	right := DepthFirstRecursive(root.Right, target)
+	if right != nil {
+		return append(result, right...)
 	}
 
 	return nil
-}
-
-func DepthFirstRecursive(root *Node, target interface{}) []interface{} {
-	return depthFirstRecursiveHelper(root, target, []interface{}{})
 }
