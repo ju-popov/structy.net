@@ -11,26 +11,15 @@ type testCase struct {
 }
 
 func newLinkedList(values ...string) *reverselist.Node {
-	var (
-		first *reverselist.Node
-		last  *reverselist.Node
-	)
+	dummyHead := reverselist.NewNode("")
+	current := dummyHead
 
 	for _, value := range values {
-		node := reverselist.NewNode(value)
-
-		if first == nil {
-			first = node
-		}
-
-		if last != nil {
-			last.Next = node
-		}
-
-		last = node
+		current.Next = reverselist.NewNode(value)
+		current = current.Next
 	}
 
-	return first
+	return dummyHead.Next
 }
 
 //nolint:gochecknoglobals
