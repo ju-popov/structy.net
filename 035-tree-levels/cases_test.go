@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &treelevels.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treelevels.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treelevels.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treelevels.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &treelevels.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treelevels.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -37,28 +37,28 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &treelevels.Node{
-			Value: "a",
+			Val: "a",
 			Left: &treelevels.Node{
-				Value: "b",
+				Val: "b",
 				Left: &treelevels.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &treelevels.Node{
-					Value: "e",
+					Val: "e",
 					Left: &treelevels.Node{
-						Value: "g",
+						Val: "g",
 					},
 					Right: &treelevels.Node{
-						Value: "h",
+						Val: "h",
 					},
 				},
 			},
 			Right: &treelevels.Node{
-				Value: "c",
+				Val: "c",
 				Right: &treelevels.Node{
-					Value: "f",
+					Val: "f",
 					Left: &treelevels.Node{
-						Value: "i",
+						Val: "i",
 					},
 				},
 			},
@@ -68,21 +68,21 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &treelevels.Node{
-			Value: "q",
+			Val: "q",
 			Left: &treelevels.Node{
-				Value: "r",
+				Val: "r",
 				Right: &treelevels.Node{
-					Value: "t",
+					Val: "t",
 					Left: &treelevels.Node{
-						Value: "u",
+						Val: "u",
 						Left: &treelevels.Node{
-							Value: "v",
+							Val: "v",
 						},
 					},
 				},
 			},
 			Right: &treelevels.Node{
-				Value: "s",
+				Val: "s",
 			},
 		},
 		expected: [][]string{{"q"}, {"r", "s"}, {"t"}, {"u"}, {"v"}},
