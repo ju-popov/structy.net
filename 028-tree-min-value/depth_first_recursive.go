@@ -1,7 +1,7 @@
 package treeminvalue
 
 func DepthFirstRecursive(root *Node) int64 {
-	result := root.Value
+	result := root.Val
 
 	if root.Left != nil {
 		if resultLeft := DepthFirstRecursive(root.Left); resultLeft < result {

@@ -1,18 +1,17 @@
 package treeminvalue
 
-func DepthFirstIterative(root *Node) int64 {
-	result := root.Value
+func DepthFirst(root *Node) int64 {
+	result := root.Val
 
 	stack := []*Node{root}
 
-	var node *Node
-
 	for len(stack) > 0 {
 		// get last
-		node, stack = stack[len(stack)-1], stack[:len(stack)-1]
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
 
-		if node.Value < result {
-			result = node.Value
+		if node.Val < result {
+			result = node.Val
 		}
 
 		// add last

@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &treeminvalue.Node{
-			Value: 3,
+			Val: 3,
 			Left: &treeminvalue.Node{
-				Value: 11,
+				Val: 11,
 				Left: &treeminvalue.Node{
-					Value: 4,
+					Val: 4,
 				},
 				Right: &treeminvalue.Node{
-					Value: -2,
+					Val: -2,
 				},
 			},
 			Right: &treeminvalue.Node{
-				Value: 4,
+				Val: 4,
 				Right: &treeminvalue.Node{
-					Value: 1,
+					Val: 1,
 				},
 			},
 		},
@@ -37,20 +37,20 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &treeminvalue.Node{
-			Value: 5,
+			Val: 5,
 			Left: &treeminvalue.Node{
-				Value: 11,
+				Val: 11,
 				Left: &treeminvalue.Node{
-					Value: 4,
+					Val: 4,
 				},
 				Right: &treeminvalue.Node{
-					Value: 15,
+					Val: 15,
 				},
 			},
 			Right: &treeminvalue.Node{
-				Value: 3,
+				Val: 3,
 				Right: &treeminvalue.Node{
-					Value: 12,
+					Val: 12,
 				},
 			},
 		},
@@ -59,25 +59,25 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &treeminvalue.Node{
-			Value: -1,
+			Val: -1,
 			Left: &treeminvalue.Node{
-				Value: -6,
+				Val: -6,
 				Left: &treeminvalue.Node{
-					Value: -3,
+					Val: -3,
 				},
 				Right: &treeminvalue.Node{
-					Value: -4,
+					Val: -4,
 					Left: &treeminvalue.Node{
-						Value: -2,
+						Val: -2,
 					},
 				},
 			},
 			Right: &treeminvalue.Node{
-				Value: -5,
+				Val: -5,
 				Right: &treeminvalue.Node{
-					Value: -13,
+					Val: -13,
 					Right: &treeminvalue.Node{
-						Value: -2,
+						Val: -2,
 					},
 				},
 			},
@@ -87,7 +87,7 @@ var testCases = []testCase{
 	{
 		name: "test_03",
 		root: &treeminvalue.Node{
-			Value: 42,
+			Val: 42,
 		},
 		expected: 42,
 	},

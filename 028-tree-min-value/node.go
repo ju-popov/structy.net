@@ -1,7 +1,7 @@
 package treeminvalue
 
 type Node struct {
-	Value int64
+	Val   int64
 	Left  *Node
 	Right *Node
 }
