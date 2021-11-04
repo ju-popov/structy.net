@@ -1,6 +1,6 @@
 package treesum
 
-func DepthFirstRecursive(root *Node) int64 {
+func DepthFirstRecursive(root *Node) int {
 	if root == nil {
 		return 0
 	}

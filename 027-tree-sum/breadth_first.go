@@ -1,13 +1,13 @@
 package treesum
 
-func BreadthFirst(root *Node) int64 {
+func BreadthFirst(root *Node) int {
 	if root == nil {
 		return 0
 	}
 
 	queue := []*Node{root}
 
-	var result int64
+	var result int
 
 	for len(queue) > 0 {
 		// get first

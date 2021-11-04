@@ -7,7 +7,7 @@ import (
 type testCase struct {
 	name     string
 	root     *treesum.Node
-	expected int64
+	expected int
 }
 
 //nolint:gochecknoglobals

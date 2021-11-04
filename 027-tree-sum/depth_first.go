@@ -1,11 +1,11 @@
 package treesum
 
-func DepthFirst(root *Node) int64 {
+func DepthFirst(root *Node) int {
 	if root == nil {
 		return 0
 	}
 
-	var result int64
+	var result int
 
 	stack := []*Node{root}
 
