@@ -7,6 +7,7 @@ type memoryKey struct {
 	x int
 }
 
+//nolint:varnamelen
 func helper(grid [][]string, y int, x int, memory map[memoryKey]int) int {
 	key := memoryKey{y: y, x: x}
 	if value, ok := memory[key]; ok {
