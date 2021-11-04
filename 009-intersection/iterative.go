@@ -2,7 +2,7 @@ package intersection
 
 //nolint:varnamelen
 func Iterative(a []int, b []int) []int {
-	result := []int{}
+	result := make([]int, 0)
 
 	set := make(map[int]struct{})
 

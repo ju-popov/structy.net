@@ -16,7 +16,7 @@ func TestIterative(t *testing.T) {
 			t.Parallel()
 			actual := intersection.Iterative(testCase.a, testCase.b)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for a: '%v' and b: '%v' is: '%v', but the actual result is: '%v'", testCase.a, testCase.b, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
