@@ -1,4 +1,4 @@
-package canconcat
+package quickestconcat
 
 import "strings"
 

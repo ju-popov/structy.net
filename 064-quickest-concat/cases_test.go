@@ -1,4 +1,4 @@
-package canconcat_test
+package quickestconcat_test
 
 type testCase struct {
 	name     string
