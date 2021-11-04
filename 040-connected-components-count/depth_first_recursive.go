@@ -19,7 +19,7 @@ func explore(graph map[int][]int, node int, visited map[int]bool) bool {
 func DepthFirstRecursive(graph map[int][]int) int {
 	result := 0
 
-	visited := map[int]bool{}
+	visited := make(map[int]bool)
 
 	for neighbor := range graph {
 		if explore(graph, neighbor, visited) {
