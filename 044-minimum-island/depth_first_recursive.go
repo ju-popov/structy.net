@@ -39,7 +39,7 @@ func explore(grid [][]string, y int, x int, visited map[visitedKey]bool) int {
 	return result
 }
 
-func DepthFirst(grid [][]string) int {
+func DepthFirstRecursive(grid [][]string) int {
 	minResult := 0
 
 	visited := make(map[visitedKey]bool)
