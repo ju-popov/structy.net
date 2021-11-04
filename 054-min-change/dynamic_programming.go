@@ -32,7 +32,7 @@ func helper(amount int, coins []int, memory map[int]int) int {
 	return memory[amount]
 }
 
-func Recursive(amount int, coins []int) int {
+func DynamicProgramming(amount int, coins []int) int {
 	memory := make(map[int]int)
 
 	return helper(amount, coins, memory)
