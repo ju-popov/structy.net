@@ -31,7 +31,7 @@ func helper(nums []int, pos int, memory map[int]int) int {
 	return memory[pos]
 }
 
-func Recursive(nums []int) int {
+func DynamicProgramming(nums []int) int {
 	memory := make(map[int]int)
 
 	return helper(nums, 0, memory)
