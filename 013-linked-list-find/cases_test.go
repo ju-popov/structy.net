@@ -12,26 +12,15 @@ type testCase struct {
 }
 
 func newLinkedList(values ...interface{}) *linkedlistfind.Node {
-	var (
-		first *linkedlistfind.Node
-		last  *linkedlistfind.Node
-	)
+	dummyHead := linkedlistfind.NewNode(0)
+	current := dummyHead
 
 	for _, value := range values {
-		node := linkedlistfind.NewNode(value)
-
-		if first == nil {
-			first = node
-		}
-
-		if last != nil {
-			last.Next = node
-		}
-
-		last = node
+		current.Next = linkedlistfind.NewNode(value)
+		current = current.Next
 	}
 
-	return first
+	return dummyHead.Next
 }
 
 //nolint:gochecknoglobals
