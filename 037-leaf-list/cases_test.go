@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &leaflist.Node{
-			Value: "a",
+			Val: "a",
 			Left: &leaflist.Node{
-				Value: "b",
+				Val: "b",
 				Left: &leaflist.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &leaflist.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &leaflist.Node{
-				Value: "c",
+				Val: "c",
 				Right: &leaflist.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -37,25 +37,25 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &leaflist.Node{
-			Value: "a",
+			Val: "a",
 			Left: &leaflist.Node{
-				Value: "b",
+				Val: "b",
 				Left: &leaflist.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &leaflist.Node{
-					Value: "e",
+					Val: "e",
 					Left: &leaflist.Node{
-						Value: "g",
+						Val: "g",
 					},
 				},
 			},
 			Right: &leaflist.Node{
-				Value: "c",
+				Val: "c",
 				Right: &leaflist.Node{
-					Value: "f",
+					Val: "f",
 					Right: &leaflist.Node{
-						Value: "h",
+						Val: "h",
 					},
 				},
 			},
@@ -65,24 +65,24 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &leaflist.Node{
-			Value: 5,
+			Val: 5,
 			Left: &leaflist.Node{
-				Value: 11,
+				Val: 11,
 				Left: &leaflist.Node{
-					Value: 20,
+					Val: 20,
 				},
 				Right: &leaflist.Node{
-					Value: 15,
+					Val: 15,
 					Left: &leaflist.Node{
-						Value: 1,
+						Val: 1,
 					},
 					Right: &leaflist.Node{
-						Value: 3,
+						Val: 3,
 					},
 				},
 			},
 			Right: &leaflist.Node{
-				Value: 54,
+				Val: 54,
 			},
 		},
 		expected: []interface{}{20, 1, 3, 54},
@@ -90,7 +90,7 @@ var testCases = []testCase{
 	{
 		name: "test_03",
 		root: &leaflist.Node{
-			Value: "x",
+			Val: "x",
 		},
 		expected: []interface{}{"x"},
 	},

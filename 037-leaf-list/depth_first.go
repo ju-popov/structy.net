@@ -1,7 +1,7 @@
 package leaflist
 
-func DepthFirstIterative(root *Node) []interface{} {
-	result := []interface{}{}
+func DepthFirst(root *Node) []interface{} {
+	result := make([]interface{}, 0)
 
 	if root == nil {
 		return result
@@ -9,14 +9,13 @@ func DepthFirstIterative(root *Node) []interface{} {
 
 	stack := []*Node{root}
 
-	var node *Node
-
 	for len(stack) > 0 {
 		// get last
-		node, stack = stack[len(stack)-1], stack[:len(stack)-1]
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
 
 		if (node.Left == nil) && (node.Right == nil) {
-			result = append(result, node.Value)
+			result = append(result, node.Val)
 		}
 
 		// add last
