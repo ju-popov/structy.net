@@ -39,7 +39,7 @@ func helper(str1 string, str2 string, memory map[memoryKey]int) int {
 	return memory[key]
 }
 
-func Recursive(str1 string, str2 string) int {
+func DynamicProgramming(str1 string, str2 string) int {
 	memory := make(map[memoryKey]int)
 
 	return helper(str1, str2, memory)
