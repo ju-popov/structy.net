@@ -11,48 +11,59 @@ type testCase struct {
 	expected *zipperlists.Node
 }
 
-func createLinkedList(values ...interface{}) *zipperlists.Node {
-	var head *zipperlists.Node
+func newLinkedList(values ...interface{}) *zipperlists.Node {
+	var (
+		first *zipperlists.Node
+		last  *zipperlists.Node
+	)
 
-	for index := len(values) - 1; index >= 0; index-- {
-		node := zipperlists.NewNode(values[index])
-		node.Next = head
-		head = node
+	for _, value := range values {
+		node := zipperlists.NewNode(value)
+
+		if first == nil {
+			first = node
+		}
+
+		if last != nil {
+			last.Next = node
+		}
+
+		last = node
 	}
 
-	return head
+	return first
 }
 
 //nolint:gochecknoglobals
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		head1:    createLinkedList("a", "b", "c"),
-		head2:    createLinkedList("x", "y", "z"),
-		expected: createLinkedList("a", "x", "b", "y", "c", "z"),
+		head1:    newLinkedList("a", "b", "c"),
+		head2:    newLinkedList("x", "y", "z"),
+		expected: newLinkedList("a", "x", "b", "y", "c", "z"),
 	},
 	{
 		name:     "test_01",
-		head1:    createLinkedList("a", "b", "c", "d", "e", "f"),
-		head2:    createLinkedList("x", "y", "z"),
-		expected: createLinkedList("a", "x", "b", "y", "c", "z", "d", "e", "f"),
+		head1:    newLinkedList("a", "b", "c", "d", "e", "f"),
+		head2:    newLinkedList("x", "y", "z"),
+		expected: newLinkedList("a", "x", "b", "y", "c", "z", "d", "e", "f"),
 	},
 	{
 		name:     "test_02",
-		head1:    createLinkedList("s", "t"),
-		head2:    createLinkedList(1, 2, 3, 4),
-		expected: createLinkedList("s", 1, "t", 2, 3, 4),
+		head1:    newLinkedList("s", "t"),
+		head2:    newLinkedList(1, 2, 3, 4),
+		expected: newLinkedList("s", 1, "t", 2, 3, 4),
 	},
 	{
 		name:     "test_03",
-		head1:    createLinkedList("w"),
-		head2:    createLinkedList(1, 2, 3),
-		expected: createLinkedList("w", 1, 2, 3),
+		head1:    newLinkedList("w"),
+		head2:    newLinkedList(1, 2, 3),
+		expected: newLinkedList("w", 1, 2, 3),
 	},
 	{
 		name:     "test_04",
-		head1:    createLinkedList(1, 2, 3),
-		head2:    createLinkedList("w"),
-		expected: createLinkedList(1, "w", 2, 3),
+		head1:    newLinkedList(1, 2, 3),
+		head2:    newLinkedList("w"),
+		expected: newLinkedList(1, "w", 2, 3),
 	},
 }

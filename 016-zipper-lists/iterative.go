@@ -1,32 +1,32 @@
 package zipperlists
 
 func Iterative(head1 *Node, head2 *Node) *Node {
-	var (
-		first *Node
-		last  *Node
-	)
+	dummyHead := NewNode(nil)
+	current := dummyHead
 
-	for (head1 != nil) || (head2 != nil) {
-		if head1 == nil {
-			head1, head2 = head2, head1
-		}
+	for (head1 != nil) && (head2 != nil) {
+		next1 := head1.Next
+		next2 := head2.Next
 
-		if first == nil {
-			first = head1
-		}
+		current.Next = head1
+		head1.Next = head2
+		current = head2
 
-		if last != nil {
-			last.Next = head1
-		}
-
-		last = head1
-
-		next := last.Next
-		last.Next = nil
-		head1 = next
-
-		head1, head2 = head2, head1
+		head1 = next1
+		head2 = next2
 	}
 
-	return first
+	if head1 != nil {
+		if current != nil {
+			current.Next = head1
+		}
+	}
+
+	if head2 != nil {
+		if current != nil {
+			current.Next = head2
+		}
+	}
+
+	return dummyHead.Next
 }
