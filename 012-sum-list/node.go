@@ -31,25 +31,3 @@ func (head *Node) String() string {
 
 	return buf.String()
 }
-
-func (head *Node) Copy() *Node {
-	var (
-		first *Node
-		last  *Node
-	)
-
-	for current := head; current != nil; current = current.Next {
-		n := NewNode(current.Val)
-		if last != nil {
-			last.Next = n
-		}
-
-		last = n
-
-		if first == nil {
-			first = last
-		}
-	}
-
-	return first
-}

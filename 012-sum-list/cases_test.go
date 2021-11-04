@@ -11,26 +11,15 @@ type testCase struct {
 }
 
 func newLinkedList(values ...int) *sumlist.Node {
-	var (
-		first *sumlist.Node
-		last  *sumlist.Node
-	)
+	dummyHead := sumlist.NewNode(0)
+	current := dummyHead
 
 	for _, value := range values {
-		node := sumlist.NewNode(value)
-
-		if first == nil {
-			first = node
-		}
-
-		if last != nil {
-			last.Next = node
-		}
-
-		last = node
+		current.Next = sumlist.NewNode(value)
+		current = current.Next
 	}
 
-	return first
+	return dummyHead.Next
 }
 
 //nolint:gochecknoglobals
