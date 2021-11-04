@@ -1,7 +1,7 @@
 package maxroottoleafpathsum
 
 type Node struct {
-	Value int64
+	Val   int
 	Left  *Node
 	Right *Node
 }

@@ -1,32 +1,33 @@
 package maxroottoleafpathsum
 
-func DepthFirstRecursive(root *Node) int64 {
+func maxInt(values ...int) int {
+	maxValue := values[0]
+
+	for i := 1; i < len(values); i++ {
+		if values[i] > maxValue {
+			maxValue = values[i]
+		}
+	}
+
+	return maxValue
+}
+
+func DepthFirstRecursive(root *Node) int {
 	if root.Left != nil {
 		if root.Right != nil {
 			// left != nil, right != nil
-			var (
-				left  int64
-				right int64
-			)
-
-			if left, right = DepthFirstRecursive(root.Left), DepthFirstRecursive(root.Right); left > right {
-				// left != nil, right != nil, left > right
-				return root.Value + left
-			}
-
-			// left != nil, right != nil, left <= right
-			return root.Value + right
+			return root.Val + maxInt(DepthFirstRecursive(root.Left), DepthFirstRecursive(root.Right))
 		}
 
 		// left != nil, right == nil
-		return root.Value + DepthFirstRecursive(root.Left)
+		return root.Val + DepthFirstRecursive(root.Left)
 	}
 
 	if root.Right != nil {
 		// left == nil, right != nil
-		return root.Value + DepthFirstRecursive(root.Right)
+		return root.Val + DepthFirstRecursive(root.Right)
 	}
 
 	// left == nil, right == nil
-	return root.Value
+	return root.Val
 }

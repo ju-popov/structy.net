@@ -7,7 +7,7 @@ import (
 type testCase struct {
 	name     string
 	root     *maxroottoleafpathsum.Node
-	expected int64
+	expected int
 }
 
 //nolint:gochecknoglobals
@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &maxroottoleafpathsum.Node{
-			Value: 3,
+			Val: 3,
 			Left: &maxroottoleafpathsum.Node{
-				Value: 11,
+				Val: 11,
 				Left: &maxroottoleafpathsum.Node{
-					Value: 4,
+					Val: 4,
 				},
 				Right: &maxroottoleafpathsum.Node{
-					Value: -2,
+					Val: -2,
 				},
 			},
 			Right: &maxroottoleafpathsum.Node{
-				Value: 4,
+				Val: 4,
 				Right: &maxroottoleafpathsum.Node{
-					Value: 1,
+					Val: 1,
 				},
 			},
 		},
@@ -37,24 +37,24 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &maxroottoleafpathsum.Node{
-			Value: 5,
+			Val: 5,
 			Left: &maxroottoleafpathsum.Node{
-				Value: 11,
+				Val: 11,
 				Left: &maxroottoleafpathsum.Node{
-					Value: 20,
+					Val: 20,
 				},
 				Right: &maxroottoleafpathsum.Node{
-					Value: 15,
+					Val: 15,
 					Left: &maxroottoleafpathsum.Node{
-						Value: 1,
+						Val: 1,
 					},
 					Right: &maxroottoleafpathsum.Node{
-						Value: 3,
+						Val: 3,
 					},
 				},
 			},
 			Right: &maxroottoleafpathsum.Node{
-				Value: 54,
+				Val: 54,
 			},
 		},
 		expected: 59,
@@ -62,25 +62,25 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &maxroottoleafpathsum.Node{
-			Value: -1,
+			Val: -1,
 			Left: &maxroottoleafpathsum.Node{
-				Value: -6,
+				Val: -6,
 				Left: &maxroottoleafpathsum.Node{
-					Value: -3,
+					Val: -3,
 				},
 				Right: &maxroottoleafpathsum.Node{
-					Value: 0,
+					Val: 0,
 					Left: &maxroottoleafpathsum.Node{
-						Value: -1,
+						Val: -1,
 					},
 				},
 			},
 			Right: &maxroottoleafpathsum.Node{
-				Value: -5,
+				Val: -5,
 				Right: &maxroottoleafpathsum.Node{
-					Value: -13,
+					Val: -13,
 					Right: &maxroottoleafpathsum.Node{
-						Value: -2,
+						Val: -2,
 					},
 				},
 			},
@@ -90,7 +90,7 @@ var testCases = []testCase{
 	{
 		name: "test_03",
 		root: &maxroottoleafpathsum.Node{
-			Value: 42,
+			Val: 42,
 		},
 		expected: 42,
 	},
