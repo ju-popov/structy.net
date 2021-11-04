@@ -10,23 +10,23 @@ import (
 func TestBreadthFirst(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := closestcarrot.BreadthFirst(tc.grid, tc.startRow, tc.startCol)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
+			actual := closestcarrot.BreadthFirst(testCase.grid, testCase.startRow, testCase.startCol)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkBreadthFirst(b *testing.B, tc testCase) {
+func benchmarkBreadthFirst(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		closestcarrot.BreadthFirst(tc.grid, tc.startRow, tc.startCol)
+		closestcarrot.BreadthFirst(testCase.grid, testCase.startRow, testCase.startCol)
 	}
 }
 

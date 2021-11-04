@@ -10,24 +10,24 @@ import (
 func TestRecursive(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			actual := zipperlists.Recursive(tc.head1.Copy(), tc.head2.Copy())
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for head1: '%v' and head2: '%v' is: '%v', but the actual result is: '%v'", tc.head1, tc.head2, tc.expected, actual)
+			actual := zipperlists.Recursive(testCase.head1.Copy(), testCase.head2.Copy())
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for head1: '%v' and head2: '%v' is: '%v', but the actual result is: '%v'", testCase.head1, testCase.head2, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkRecursive(b *testing.B, tc testCase) {
+func benchmarkRecursive(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		zipperlists.Recursive(tc.head1, tc.head2)
+		zipperlists.Recursive(testCase.head1, testCase.head2)
 	}
 }
 

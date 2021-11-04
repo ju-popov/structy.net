@@ -10,23 +10,23 @@ import (
 func TestWhiteGreyBlack(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := prereqspossible.WhiteGreyBlack(tc.numCourses, tc.prereqs)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
+			actual := prereqspossible.WhiteGreyBlack(testCase.numCourses, testCase.prereqs)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkWhiteGreyBlack(b *testing.B, tc testCase) {
+func benchmarkWhiteGreyBlack(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		prereqspossible.WhiteGreyBlack(tc.numCourses, tc.prereqs)
+		prereqspossible.WhiteGreyBlack(testCase.numCourses, testCase.prereqs)
 	}
 }
 

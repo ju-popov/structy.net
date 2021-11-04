@@ -10,24 +10,24 @@ import (
 func TestIterative(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			actual := removenode.Iterative(tc.head.Copy(), tc.targetVal)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for head: '%v' and targetVal: '%v' is: '%v', but the actual result is: '%v'", tc.head, tc.targetVal, tc.expected, actual)
+			actual := removenode.Iterative(testCase.head.Copy(), testCase.targetVal)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for head: '%v' and targetVal: '%v' is: '%v', but the actual result is: '%v'", testCase.head, testCase.targetVal, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkIterative(b *testing.B, tc testCase) {
+func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		removenode.Iterative(tc.head, tc.targetVal)
+		removenode.Iterative(testCase.head, testCase.targetVal)
 	}
 }
 

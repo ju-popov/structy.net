@@ -10,24 +10,24 @@ import (
 func TestIterative(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			actual := createlinkedlist.Iterative(tc.values)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for values: '%v' is: '%v', but the actual result is: '%v'", tc.values, tc.expected, actual)
+			actual := createlinkedlist.Iterative(testCase.values)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for values: '%v' is: '%v', but the actual result is: '%v'", testCase.values, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkIterative(b *testing.B, tc testCase) {
+func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		createlinkedlist.Iterative(tc.values)
+		createlinkedlist.Iterative(testCase.values)
 	}
 }
 

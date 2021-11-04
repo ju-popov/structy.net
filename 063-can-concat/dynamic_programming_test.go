@@ -10,23 +10,23 @@ import (
 func TestDynamicProgramming(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := canconcat.DynamicProgramming(tc.s, tc.words)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
+			actual := canconcat.DynamicProgramming(testCase.s, testCase.words)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkDynamicProgramming(b *testing.B, tc testCase) {
+func benchmarkDynamicProgramming(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		canconcat.DynamicProgramming(tc.s, tc.words)
+		canconcat.DynamicProgramming(testCase.s, testCase.words)
 	}
 }
 

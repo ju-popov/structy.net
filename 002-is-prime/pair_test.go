@@ -10,23 +10,23 @@ import (
 func TestPair(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := isprime.Pair(tc.input)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is: '%v'", tc.input, tc.expected, actual)
+			actual := isprime.Pair(testCase.input)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is: '%v'", testCase.input, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkPair(b *testing.B, tc testCase) {
+func benchmarkPair(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		isprime.Pair(tc.input)
+		isprime.Pair(testCase.input)
 	}
 }
 

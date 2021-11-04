@@ -10,27 +10,27 @@ import (
 func TestIterative(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			numsCopy := make([]int64, len(tc.nums))
-			copy(numsCopy, tc.nums)
+			numsCopy := make([]int64, len(testCase.nums))
+			copy(numsCopy, testCase.nums)
 
 			actual := fivesort.Iterative(numsCopy)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for nums: '%v' is: '%v', but the actual result is: '%v'", tc.nums, tc.expected, actual)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for nums: '%v' is: '%v', but the actual result is: '%v'", testCase.nums, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkIterative(b *testing.B, tc testCase) {
+func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		fivesort.Iterative(tc.nums)
+		fivesort.Iterative(testCase.nums)
 	}
 }
 

@@ -10,23 +10,23 @@ import (
 func TestIterative(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := intersection.Iterative(tc.a, tc.b)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for a: '%v' and b: '%v' is: '%v', but the actual result is: '%v'", tc.a, tc.b, tc.expected, actual)
+			actual := intersection.Iterative(testCase.a, testCase.b)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for a: '%v' and b: '%v' is: '%v', but the actual result is: '%v'", testCase.a, testCase.b, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkIterative(b *testing.B, tc testCase) {
+func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		intersection.Iterative(tc.a, tc.b)
+		intersection.Iterative(testCase.a, testCase.b)
 	}
 }
 

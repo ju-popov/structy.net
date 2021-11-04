@@ -10,24 +10,24 @@ import (
 func TestDepthFirstIterative(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			actual := treeminvalue.DepthFirstIterative(tc.root)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", tc.name, tc.expected, actual)
+			actual := treeminvalue.DepthFirstIterative(testCase.root)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkDepthFirstIterative(b *testing.B, tc testCase) {
+func benchmarkDepthFirstIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		treeminvalue.DepthFirstIterative(tc.root)
+		treeminvalue.DepthFirstIterative(testCase.root)
 	}
 }
 

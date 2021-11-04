@@ -10,24 +10,24 @@ import (
 func TestIterative(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			actual := insertnode.Iterative(tc.head.Copy(), tc.value, tc.index)
-			if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for head: '%v' value: '%v' and index: '%v' is: '%v', but the actual result is: '%v'", tc.head, tc.value, tc.index, tc.expected, actual)
+			actual := insertnode.Iterative(testCase.head.Copy(), testCase.value, testCase.index)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for head: '%v' value: '%v' and index: '%v' is: '%v', but the actual result is: '%v'", testCase.head, testCase.value, testCase.index, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkIterative(b *testing.B, tc testCase) {
+func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		insertnode.Iterative(tc.head, tc.value, tc.index)
+		insertnode.Iterative(testCase.head, testCase.value, testCase.index)
 	}
 }
 

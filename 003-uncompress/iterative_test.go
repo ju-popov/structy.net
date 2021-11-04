@@ -10,25 +10,25 @@ import (
 func TestIterative(t *testing.T) {
 	t.Parallel()
 
-	for _, tc := range testCases {
-		tc := tc
-		t.Run(tc.name, func(t *testing.T) {
+	for _, testCase := range testCases {
+		testCase := testCase
+		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual, err := uncompress.Iterative(tc.input)
+			actual, err := uncompress.Iterative(testCase.input)
 			if err != nil {
-				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is error: '%v'", tc.input, tc.expected, err)
-			} else if !reflect.DeepEqual(actual, tc.expected) {
-				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is: '%v'", tc.input, tc.expected, actual)
+				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is error: '%v'", testCase.input, testCase.expected, err)
+			} else if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is: '%v'", testCase.input, testCase.expected, actual)
 			}
 		})
 	}
 }
 
-func benchmarkIterative(b *testing.B, tc testCase) {
+func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		_, err := uncompress.Iterative(tc.input)
+		_, err := uncompress.Iterative(testCase.input)
 		if err != nil {
 			b.Errorf("Unexpected error: '%v'", err)
 		}
