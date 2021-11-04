@@ -16,7 +16,7 @@ func TestConcatenation(t *testing.T) {
 			t.Parallel()
 			actual := heyprogrammer.Concatenation(testCase.input)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is: '%v'", testCase.input, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
