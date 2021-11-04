@@ -1,6 +1,6 @@
 package treeminvalue
 
-func DepthFirst(root *Node) int64 {
+func DepthFirst(root *Node) int {
 	result := root.Val
 
 	stack := []*Node{root}

@@ -1,6 +1,6 @@
 package treeminvalue
 
-func DepthFirstRecursive(root *Node) int64 {
+func DepthFirstRecursive(root *Node) int {
 	result := root.Val
 
 	if root.Left != nil {

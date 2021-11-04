@@ -1,6 +1,6 @@
 package treeminvalue
 
-func BreadthFirst(root *Node) int64 {
+func BreadthFirst(root *Node) int {
 	result := root.Val
 
 	queue := []*Node{root}
