@@ -2,13 +2,18 @@ package bestbridge
 
 const water = "W"
 
-type cellData struct {
+type queueValue struct {
 	y        int
 	x        int
 	distance int
 }
 
-func offsets() [4][2]int {
+type visitedKey struct {
+	y int
+	x int
+}
+
+func neighborOffsets() [4][2]int {
 	return [4][2]int{
 		{-1, 0}, // top
 		{+1, 0}, // down
@@ -29,17 +34,23 @@ func inRange(grid [][]string, y int, x int) bool {
 	return true
 }
 
-func traverseIsland(grid [][]string, y int, x int, visited [][]bool) bool {
+//nolint:varnamelen
+func traverseIsland(grid [][]string, y int, x int, visited map[visitedKey]bool) bool {
 	if grid[y][x] == water {
 		return false
 	}
 
-	visited[y][x] = true
+	key := visitedKey{y: y, x: x}
 
-	for _, offset := range offsets() {
-		nextY, nextX := y+offset[0], x+offset[1]
-		if inRange(grid, nextY, nextX) && !visited[nextY][nextX] {
-			traverseIsland(grid, nextY, nextX, visited)
+	visited[key] = true
+
+	for _, offset := range neighborOffsets() {
+		neighborY := y + offset[0]
+		neighborX := x + offset[1]
+		neighborKey := visitedKey{y: neighborY, x: neighborX}
+
+		if inRange(grid, neighborY, neighborX) && !visited[neighborKey] {
+			traverseIsland(grid, neighborY, neighborX, visited)
 		}
 	}
 
@@ -47,11 +58,7 @@ func traverseIsland(grid [][]string, y int, x int, visited [][]bool) bool {
 }
 
 func BreadthFirst(grid [][]string) int {
-	// Visited
-	visited := make([][]bool, len(grid))
-	for y, row := range grid {
-		visited[y] = make([]bool, len(row))
-	}
+	visited := make(map[visitedKey]bool)
 
 	// Look for and mark an island
 out:
@@ -64,37 +71,42 @@ out:
 	}
 
 	// Initial queue
-	queue := make([]cellData, 0)
+	queue := make([]queueValue, 0)
 
-	for y, row := range visited {
-		for x, value := range row {
-			if value {
-				queue = append(queue, cellData{y: y, x: x, distance: 0})
-			}
-		}
+	for key := range visited {
+		queue = append(queue, queueValue{y: key.y, x: key.x, distance: 0})
 	}
 
 	// Breadth first
 	for len(queue) > 0 {
-		cell := queue[0]
+		//nolint:varnamelen
+		y := queue[0].y
+		//nolint:varnamelen
+		x := queue[0].x
+		distance := queue[0].distance
 		queue = queue[1:]
 
-		if !visited[cell.y][cell.x] && (grid[cell.y][cell.x] != water) {
-			return cell.distance - 1
+		key := visitedKey{y: y, x: x}
+
+		if !visited[key] && (grid[y][x] != water) {
+			return distance - 1
 		}
 
-		visited[cell.y][cell.x] = true
+		visited[key] = true
 
-		for _, offset := range offsets() {
-			nextY, nextX, nextDistance := cell.y+offset[0], cell.x+offset[1], cell.distance+1
+		for _, neighborOffset := range neighborOffsets() {
+			neighborY := y + neighborOffset[0]
+			neighborX := x + neighborOffset[1]
+			neighborDistance := distance + 1
+			neighborKey := visitedKey{y: neighborY, x: neighborX}
 
-			if inRange(grid, nextY, nextX) && !visited[nextY][nextX] {
+			if inRange(grid, neighborY, neighborX) && !visited[neighborKey] {
 				// Helpful: Premature return
-				if grid[nextY][nextX] != water {
-					return nextDistance - 1
+				if grid[neighborY][neighborX] != water {
+					return neighborDistance - 1
 				}
 
-				queue = append(queue, cellData{y: nextY, x: nextX, distance: nextDistance})
+				queue = append(queue, queueValue{y: neighborY, x: neighborX, distance: neighborDistance})
 			}
 		}
 	}
