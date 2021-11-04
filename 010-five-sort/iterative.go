@@ -1,6 +1,6 @@
 package fivesort
 
-const targetValue = int(5)
+const targetValue = 5
 
 func Iterative(nums []int) []int {
 	indexLeft := 0
