@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &bottomrightvalue.Node{
-			Value: 3,
+			Val: 3,
 			Left: &bottomrightvalue.Node{
-				Value: 11,
+				Val: 11,
 				Left: &bottomrightvalue.Node{
-					Value: 4,
+					Val: 4,
 				},
 				Right: &bottomrightvalue.Node{
-					Value: -2,
+					Val: -2,
 				},
 			},
 			Right: &bottomrightvalue.Node{
-				Value: 10,
+				Val: 10,
 				Right: &bottomrightvalue.Node{
-					Value: 1,
+					Val: 1,
 				},
 			},
 		},
@@ -37,26 +37,26 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &bottomrightvalue.Node{
-			Value: -1,
+			Val: -1,
 			Left: &bottomrightvalue.Node{
-				Value: -6,
+				Val: -6,
 				Left: &bottomrightvalue.Node{
-					Value: -3,
+					Val: -3,
 				},
 				Right: &bottomrightvalue.Node{
-					Value: -4,
+					Val: -4,
 					Left: &bottomrightvalue.Node{
-						Value: -2,
+						Val: -2,
 					},
 					Right: &bottomrightvalue.Node{
-						Value: 6,
+						Val: 6,
 					},
 				},
 			},
 			Right: &bottomrightvalue.Node{
-				Value: -5,
+				Val: -5,
 				Right: &bottomrightvalue.Node{
-					Value: -13,
+					Val: -13,
 				},
 			},
 		},
@@ -65,28 +65,28 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &bottomrightvalue.Node{
-			Value: -1,
+			Val: -1,
 			Left: &bottomrightvalue.Node{
-				Value: -6,
+				Val: -6,
 				Left: &bottomrightvalue.Node{
-					Value: -3,
+					Val: -3,
 				},
 				Right: &bottomrightvalue.Node{
-					Value: -4,
+					Val: -4,
 					Left: &bottomrightvalue.Node{
-						Value: -2,
+						Val: -2,
 					},
 					Right: &bottomrightvalue.Node{
-						Value: 6,
+						Val: 6,
 					},
 				},
 			},
 			Right: &bottomrightvalue.Node{
-				Value: -5,
+				Val: -5,
 				Right: &bottomrightvalue.Node{
-					Value: -13,
+					Val: -13,
 					Left: &bottomrightvalue.Node{
-						Value: 7,
+						Val: 7,
 					},
 				},
 			},
@@ -96,21 +96,21 @@ var testCases = []testCase{
 	{
 		name: "test_03",
 		root: &bottomrightvalue.Node{
-			Value: "a",
+			Val: "a",
 			Left: &bottomrightvalue.Node{
-				Value: "b",
+				Val: "b",
 				Right: &bottomrightvalue.Node{
-					Value: "d",
+					Val: "d",
 					Left: &bottomrightvalue.Node{
-						Value: "e",
+						Val: "e",
 						Left: &bottomrightvalue.Node{
-							Value: "f",
+							Val: "f",
 						},
 					},
 				},
 			},
 			Right: &bottomrightvalue.Node{
-				Value: "c",
+				Val: "c",
 			},
 		},
 		expected: "f",
@@ -118,7 +118,7 @@ var testCases = []testCase{
 	{
 		name: "test_04",
 		root: &bottomrightvalue.Node{
-			Value: 42,
+			Val: 42,
 		},
 		expected: 42,
 	},

@@ -1,13 +1,14 @@
 package bottomrightvalue
 
-func BreadthFirstIterative(root *Node) interface{} {
+func BreadthFirst(root *Node) interface{} {
 	queue := []*Node{root}
 
 	var node *Node
 
 	for len(queue) > 0 {
 		// get first
-		node, queue = queue[0], queue[1:]
+		node = queue[0]
+		queue = queue[1:]
 
 		// add last
 		if node.Left != nil {
@@ -20,5 +21,5 @@ func BreadthFirstIterative(root *Node) interface{} {
 		}
 	}
 
-	return node.Value
+	return node.Val
 }

@@ -1,7 +1,7 @@
 package bottomrightvalue
 
 type Node struct {
-	Value interface{}
+	Val   interface{}
 	Left  *Node
 	Right *Node
 }
