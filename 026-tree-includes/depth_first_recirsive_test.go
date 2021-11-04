@@ -17,7 +17,7 @@ func TestDepthFirstRecursive(t *testing.T) {
 
 			actual := treeincludes.DepthFirstRecursive(testCase.root, testCase.target)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}

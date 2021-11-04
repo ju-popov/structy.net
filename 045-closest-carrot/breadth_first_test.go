@@ -16,7 +16,7 @@ func TestBreadthFirst(t *testing.T) {
 			t.Parallel()
 			actual := closestcarrot.BreadthFirst(testCase.grid, testCase.startRow, testCase.startCol)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
