@@ -1,23 +1,24 @@
 package insertnode
 
 func Iterative(head *Node, value string, index int) *Node {
-	for i, current, previous := 0, head, (*Node)(nil); (current != nil) || (previous != nil); i, current, previous = i+1, current.Next, current {
+	//nolint:varnamelen
+	i := 0
+
+	for current, prev := head, (*Node)(nil); (current != nil) || (prev != nil); current, prev = current.Next, current {
 		if i == index {
 			newNode := NewNode(value)
 			newNode.Next = current
 
-			if previous == nil {
+			if prev == nil {
 				head = newNode
 			} else {
-				previous.Next = newNode
+				prev.Next = newNode
 			}
 
-			return head
+			break
 		}
 
-		if current == nil {
-			return head
-		}
+		i++
 	}
 
 	return head

@@ -17,7 +17,7 @@ func TestRecursive(t *testing.T) {
 
 			actual := insertnode.Recursive(testCase.head.Copy(), testCase.value, testCase.index)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for head: '%v' value: '%v' and targetVal: '%v' is: '%v', but the actual result is: '%v'", testCase.head, testCase.value, testCase.index, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
@@ -27,7 +27,7 @@ func benchmarkRecursive(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		insertnode.Recursive(testCase.head, testCase.value, testCase.index)
+		insertnode.Recursive(testCase.head.Copy(), testCase.value, testCase.index)
 	}
 }
 
