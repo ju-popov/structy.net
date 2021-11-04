@@ -16,7 +16,7 @@ func TestIterative(t *testing.T) {
 			t.Parallel()
 			actual := pairsum.Iterative(testCase.numbers, testCase.targetSum)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for numbers: '%v' and targetSum: '%v' is: '%v', but the actual result is: '%v'", testCase.numbers, testCase.targetSum, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
