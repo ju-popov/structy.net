@@ -16,9 +16,9 @@ func TestGenerator(t *testing.T) {
 			t.Parallel()
 			actual, err := uncompress.Generator(testCase.input)
 			if err != nil {
-				t.Errorf("Expected result for input '%v' is: '%v', but the actual result is error: '%v'", testCase.input, testCase.expected, err)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is error: '%v'", testCase.name, testCase.expected, err)
 			} else if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for input '%v' is: '%v', but the actual result is: '%v'", testCase.input, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
