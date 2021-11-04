@@ -16,7 +16,7 @@ const (
 	carrot = "C"
 )
 
-func offsets() [4][2]int {
+func neighborOffsets() [4][2]int {
 	return [4][2]int{
 		{-1, 0}, // top
 		{+1, 0}, // down
@@ -52,7 +52,7 @@ func BreadthFirst(grid [][]string, startY int, startX int) int {
 
 		visited[key] = true
 
-		for _, neighborOffset := range offsets() {
+		for _, neighborOffset := range neighborOffsets() {
 			neighborY := y + neighborOffset[0]
 			neighborX := x + neighborOffset[1]
 			neighborDistance := distance + 1
