@@ -9,26 +9,15 @@ type testCase struct {
 }
 
 func newLinkedList(values ...string) *linkedlistvalues.Node {
-	var (
-		first *linkedlistvalues.Node
-		last  *linkedlistvalues.Node
-	)
+	dummyHead := linkedlistvalues.NewNode("")
+	current := dummyHead
 
 	for _, value := range values {
-		node := linkedlistvalues.NewNode(value)
-
-		if first == nil {
-			first = node
-		}
-
-		if last != nil {
-			last.Next = node
-		}
-
-		last = node
+		current.Next = linkedlistvalues.NewNode(value)
+		current = current.Next
 	}
 
-	return first
+	return dummyHead.Next
 }
 
 //nolint:gochecknoglobals
