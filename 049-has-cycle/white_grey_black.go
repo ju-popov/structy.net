@@ -11,8 +11,8 @@ func isCyclic(graph map[string][]string, node string, visiting map[string]bool, 
 
 	visiting[node] = true
 
-	for _, next := range graph[node] {
-		if isCyclic(graph, next, visiting, visited) {
+	for _, neighbor := range graph[node] {
+		if isCyclic(graph, neighbor, visiting, visited) {
 			return true
 		}
 	}
