@@ -7,7 +7,7 @@ import (
 type testCase struct {
 	name     string
 	root     *treevaluecount.Node
-	target   int64
+	target   int
 	expected int
 }
 
@@ -16,20 +16,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &treevaluecount.Node{
-			Value: 12,
+			Val: 12,
 			Left: &treevaluecount.Node{
-				Value: 6,
+				Val: 6,
 				Left: &treevaluecount.Node{
-					Value: 4,
+					Val: 4,
 				},
 				Right: &treevaluecount.Node{
-					Value: 6,
+					Val: 6,
 				},
 			},
 			Right: &treevaluecount.Node{
-				Value: 6,
+				Val: 6,
 				Right: &treevaluecount.Node{
-					Value: 12,
+					Val: 12,
 				},
 			},
 		},
@@ -39,20 +39,20 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &treevaluecount.Node{
-			Value: 12,
+			Val: 12,
 			Left: &treevaluecount.Node{
-				Value: 6,
+				Val: 6,
 				Left: &treevaluecount.Node{
-					Value: 4,
+					Val: 4,
 				},
 				Right: &treevaluecount.Node{
-					Value: 6,
+					Val: 6,
 				},
 			},
 			Right: &treevaluecount.Node{
-				Value: 6,
+				Val: 6,
 				Right: &treevaluecount.Node{
-					Value: 12,
+					Val: 12,
 				},
 			},
 		},
@@ -62,25 +62,25 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &treevaluecount.Node{
-			Value: 7,
+			Val: 7,
 			Left: &treevaluecount.Node{
-				Value: 5,
+				Val: 5,
 				Left: &treevaluecount.Node{
-					Value: 1,
+					Val: 1,
 				},
 				Right: &treevaluecount.Node{
-					Value: 8,
+					Val: 8,
 					Left: &treevaluecount.Node{
-						Value: 1,
+						Val: 1,
 					},
 				},
 			},
 			Right: &treevaluecount.Node{
-				Value: 1,
+				Val: 1,
 				Right: &treevaluecount.Node{
-					Value: 7,
+					Val: 7,
 					Right: &treevaluecount.Node{
-						Value: 1,
+						Val: 1,
 					},
 				},
 			},
@@ -91,25 +91,25 @@ var testCases = []testCase{
 	{
 		name: "test_03",
 		root: &treevaluecount.Node{
-			Value: 7,
+			Val: 7,
 			Left: &treevaluecount.Node{
-				Value: 5,
+				Val: 5,
 				Left: &treevaluecount.Node{
-					Value: 1,
+					Val: 1,
 				},
 				Right: &treevaluecount.Node{
-					Value: 8,
+					Val: 8,
 					Left: &treevaluecount.Node{
-						Value: 1,
+						Val: 1,
 					},
 				},
 			},
 			Right: &treevaluecount.Node{
-				Value: 1,
+				Val: 1,
 				Right: &treevaluecount.Node{
-					Value: 7,
+					Val: 7,
 					Right: &treevaluecount.Node{
-						Value: 1,
+						Val: 1,
 					},
 				},
 			},

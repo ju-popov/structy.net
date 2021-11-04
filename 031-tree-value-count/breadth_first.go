@@ -1,6 +1,6 @@
 package treevaluecount
 
-func BreadthFirstIterative(root *Node, target int64) int {
+func BreadthFirst(root *Node, target int) int {
 	var result int
 
 	if root == nil {
@@ -9,13 +9,12 @@ func BreadthFirstIterative(root *Node, target int64) int {
 
 	queue := []*Node{root}
 
-	var node *Node
-
 	for len(queue) > 0 {
 		// get first
-		node, queue = queue[0], queue[1:]
+		node := queue[0]
+		queue = queue[1:]
 
-		if node.Value == target {
+		if node.Val == target {
 			result++
 		}
 

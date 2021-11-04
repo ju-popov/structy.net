@@ -1,6 +1,6 @@
 package treevaluecount
 
-func DepthFirstIterative(root *Node, target int64) int {
+func DepthFirst(root *Node, target int) int {
 	var result int
 
 	if root == nil {
@@ -9,13 +9,12 @@ func DepthFirstIterative(root *Node, target int64) int {
 
 	stack := []*Node{root}
 
-	var node *Node
-
 	for len(stack) > 0 {
 		// get last
-		node, stack = stack[len(stack)-1], stack[:len(stack)-1]
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
 
-		if node.Value == target {
+		if node.Val == target {
 			result++
 		}
 

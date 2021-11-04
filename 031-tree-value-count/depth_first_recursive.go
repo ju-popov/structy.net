@@ -1,13 +1,13 @@
 package treevaluecount
 
-func DepthFirstRecursive(root *Node, target int64) int {
+func DepthFirstRecursive(root *Node, target int) int {
 	var result int
 
 	if root == nil {
 		return result
 	}
 
-	if root.Value == target {
+	if root.Val == target {
 		result++
 	}
 
