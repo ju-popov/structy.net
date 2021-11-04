@@ -1,6 +1,6 @@
 package mostfrequentchar
 
-func TwoPass(input string) string {
+func Iterative(input string) string {
 	chars := make(map[int32]int)
 
 	for _, element := range input {
