@@ -17,7 +17,7 @@ func TestIterative(t *testing.T) {
 
 			actual := linkedlistfind.Iterative(testCase.head, testCase.target)
 			if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for head: '%v' and target: '%v' is: '%v', but the actual result is: '%v'", testCase.head, testCase.target, testCase.expected, actual)
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}

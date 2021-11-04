@@ -11,53 +11,64 @@ type testCase struct {
 	expected bool
 }
 
-func createLinkedList(values ...interface{}) *linkedlistfind.Node {
-	var head *linkedlistfind.Node
+func newLinkedList(values ...interface{}) *linkedlistfind.Node {
+	var (
+		first *linkedlistfind.Node
+		last  *linkedlistfind.Node
+	)
 
-	for index := len(values) - 1; index >= 0; index-- {
-		node := linkedlistfind.NewNode(values[index])
-		node.Next = head
-		head = node
+	for _, value := range values {
+		node := linkedlistfind.NewNode(value)
+
+		if first == nil {
+			first = node
+		}
+
+		if last != nil {
+			last.Next = node
+		}
+
+		last = node
 	}
 
-	return head
+	return first
 }
 
 //nolint:gochecknoglobals
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		head:     createLinkedList("a", "b", "c", "d"),
+		head:     newLinkedList("a", "b", "c", "d"),
 		target:   "c",
 		expected: true,
 	},
 	{
 		name:     "test_01",
-		head:     createLinkedList("a", "b", "c", "d"),
+		head:     newLinkedList("a", "b", "c", "d"),
 		target:   "d",
 		expected: true,
 	},
 	{
 		name:     "test_02",
-		head:     createLinkedList("a", "b", "c", "d"),
+		head:     newLinkedList("a", "b", "c", "d"),
 		target:   "q",
 		expected: false,
 	},
 	{
 		name:     "test_03",
-		head:     createLinkedList("jason", "leneli"),
+		head:     newLinkedList("jason", "leneli"),
 		target:   "jason",
 		expected: true,
 	},
 	{
 		name:     "test_04",
-		head:     createLinkedList(42),
+		head:     newLinkedList(42),
 		target:   42,
 		expected: true,
 	},
 	{
 		name:     "test_05",
-		head:     createLinkedList(42),
+		head:     newLinkedList(42),
 		target:   100,
 		expected: false,
 	},
