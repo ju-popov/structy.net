@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &howhigh.Node{
-			Value: "a",
+			Val: "a",
 			Left: &howhigh.Node{
-				Value: "b",
+				Val: "b",
 				Left: &howhigh.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &howhigh.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &howhigh.Node{
-				Value: "c",
+				Val: "c",
 				Right: &howhigh.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -37,23 +37,23 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &howhigh.Node{
-			Value: "a",
+			Val: "a",
 			Left: &howhigh.Node{
-				Value: "b",
+				Val: "b",
 				Left: &howhigh.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &howhigh.Node{
-					Value: "e",
+					Val: "e",
 					Left: &howhigh.Node{
-						Value: "g",
+						Val: "g",
 					},
 				},
 			},
 			Right: &howhigh.Node{
-				Value: "c",
+				Val: "c",
 				Right: &howhigh.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -62,9 +62,9 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &howhigh.Node{
-			Value: "a",
+			Val: "a",
 			Right: &howhigh.Node{
-				Value: "c",
+				Val: "c",
 			},
 		},
 		expected: 1,
@@ -72,7 +72,7 @@ var testCases = []testCase{
 	{
 		name: "test_03",
 		root: &howhigh.Node{
-			Value: "a",
+			Val: "a",
 		},
 		expected: 0,
 	},

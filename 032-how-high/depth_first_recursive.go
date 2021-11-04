@@ -1,22 +1,24 @@
 package howhigh
 
-func helper(root *Node) int {
-	if root == nil {
-		return 0
+func maxInt(values ...int) int {
+	maxValue := values[0]
+
+	for i := 1; i < len(values); i++ {
+		if values[i] > maxValue {
+			maxValue = values[i]
+		}
 	}
 
-	var (
-		left  int
-		right int
-	)
-
-	if left, right = helper(root.Left), helper(root.Right); left > right {
-		return left + 1
-	}
-
-	return right + 1
+	return maxValue
 }
 
 func DepthFirstRecursive(root *Node) int {
-	return helper(root) - 1
+	if root == nil {
+		return -1
+	}
+
+	left := DepthFirstRecursive(root.Left)
+	right := DepthFirstRecursive(root.Right)
+
+	return maxInt(left, right) + 1
 }
