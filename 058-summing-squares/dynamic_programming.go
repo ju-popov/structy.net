@@ -1,5 +1,6 @@
 package summingsquares
 
+//nolint:varnamelen
 func helper(n int, perfectSquares []int, memory map[int]int) int {
 	if value, ok := memory[n]; ok {
 		return value
@@ -37,7 +38,7 @@ func calcPerfectSquares(max int) []int {
 	return result
 }
 
-func Recursive(n int) int {
+func DynamicProgramming(n int) int {
 	perfectSquares := calcPerfectSquares(n)
 	memory := make(map[int]int)
 
