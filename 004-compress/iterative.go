@@ -46,7 +46,7 @@ func findAllStringSubmatch(s string) []struct {
 	return result
 }
 
-func Iterative(s string) (string, error) {
+func Iterative(s string) string {
 	var result strings.Builder
 
 	for _, match := range findAllStringSubmatch(s) {
@@ -59,5 +59,5 @@ func Iterative(s string) (string, error) {
 		}
 	}
 
-	return result.String(), nil
+	return result.String()
 }

@@ -14,11 +14,9 @@ func TestIterative(t *testing.T) {
 		testCase := testCase
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual, err := compress.Iterative(testCase.input)
-			if err != nil {
-				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is error: '%v'", testCase.input, testCase.expected, err)
-			} else if !reflect.DeepEqual(actual, testCase.expected) {
-				t.Errorf("Expected result for input: '%v' is: '%v', but the actual result is: '%v'", testCase.input, testCase.expected, actual)
+			actual := compress.Iterative(testCase.input)
+			if !reflect.DeepEqual(actual, testCase.expected) {
+				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
 		})
 	}
@@ -28,10 +26,7 @@ func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		_, err := compress.Iterative(testCase.input)
-		if err != nil {
-			b.Errorf("Unexpected error: '%v'", err)
-		}
+		compress.Iterative(testCase.input)
 	}
 }
 

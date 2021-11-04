@@ -51,7 +51,7 @@ func findAllStringSubmatchGenerator(s string) chan struct {
 	return c
 }
 
-func Generator(s string) (string, error) {
+func Generator(s string) string {
 	var result strings.Builder
 
 	for match := range findAllStringSubmatchGenerator(s) {
@@ -64,5 +64,5 @@ func Generator(s string) (string, error) {
 		}
 	}
 
-	return result.String(), nil
+	return result.String()
 }
