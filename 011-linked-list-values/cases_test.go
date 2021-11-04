@@ -8,38 +8,49 @@ type testCase struct {
 	expected []string
 }
 
-func createLinkedList(values ...string) *linkedlistvalues.Node {
-	var head *linkedlistvalues.Node
+func newLinkedList(values ...string) *linkedlistvalues.Node {
+	var (
+		first *linkedlistvalues.Node
+		last  *linkedlistvalues.Node
+	)
 
-	for index := len(values) - 1; index >= 0; index-- {
-		node := linkedlistvalues.NewNode(values[index])
-		node.Next = head
-		head = node
+	for _, value := range values {
+		node := linkedlistvalues.NewNode(value)
+
+		if first == nil {
+			first = node
+		}
+
+		if last != nil {
+			last.Next = node
+		}
+
+		last = node
 	}
 
-	return head
+	return first
 }
 
 //nolint:gochecknoglobals
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		head:     createLinkedList("a", "b", "c", "d"),
+		head:     newLinkedList("a", "b", "c", "d"),
 		expected: []string{"a", "b", "c", "d"},
 	},
 	{
 		name:     "test_01",
-		head:     createLinkedList("x", "y"),
+		head:     newLinkedList("x", "y"),
 		expected: []string{"x", "y"},
 	},
 	{
 		name:     "test_02",
-		head:     createLinkedList("q"),
+		head:     newLinkedList("q"),
 		expected: []string{"q"},
 	},
 	{
 		name:     "test_03",
-		head:     createLinkedList(),
+		head:     newLinkedList(),
 		expected: []string{},
 	},
 }

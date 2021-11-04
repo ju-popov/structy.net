@@ -7,7 +7,7 @@ import (
 	linkedlistvalues "github.com/ju-popov/structy.net/011-linked-list-values"
 )
 
-func TestIterative(t *testing.T) {
+func TestRecursive(t *testing.T) {
 	t.Parallel()
 
 	for _, testCase := range testCases {
@@ -15,7 +15,7 @@ func TestIterative(t *testing.T) {
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
 
-			actual := linkedlistvalues.Iterative(testCase.head)
+			actual := linkedlistvalues.Recursive(testCase.head)
 			if !reflect.DeepEqual(actual, testCase.expected) {
 				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
@@ -23,15 +23,15 @@ func TestIterative(t *testing.T) {
 	}
 }
 
-func benchmarkIterative(b *testing.B, testCase testCase) {
+func benchmarkRecursive(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		linkedlistvalues.Iterative(testCase.head)
+		linkedlistvalues.Recursive(testCase.head)
 	}
 }
 
-func BenchmarkIterative000(b *testing.B) { benchmarkIterative(b, testCases[0]) }
-func BenchmarkIterative001(b *testing.B) { benchmarkIterative(b, testCases[1]) }
-func BenchmarkIterative002(b *testing.B) { benchmarkIterative(b, testCases[2]) }
-func BenchmarkIterative003(b *testing.B) { benchmarkIterative(b, testCases[3]) }
+func BenchmarkRecursive000(b *testing.B) { benchmarkRecursive(b, testCases[0]) }
+func BenchmarkRecursive001(b *testing.B) { benchmarkRecursive(b, testCases[1]) }
+func BenchmarkRecursive002(b *testing.B) { benchmarkRecursive(b, testCases[2]) }
+func BenchmarkRecursive003(b *testing.B) { benchmarkRecursive(b, testCases[3]) }
