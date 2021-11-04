@@ -1,6 +1,6 @@
 package depthfirstvalues
 
-func Iterative(root *Node) []string {
+func DepthFirst(root *Node) []string {
 	result := []string{}
 
 	if root == nil {
@@ -9,12 +9,12 @@ func Iterative(root *Node) []string {
 
 	stack := []*Node{root}
 
-	var node *Node
 	for len(stack) > 0 {
 		// remove last
-		node, stack = stack[len(stack)-1], stack[:len(stack)-1]
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
 
-		result = append(result, node.Value)
+		result = append(result, node.Val)
 
 		// add last
 		if node.Right != nil {

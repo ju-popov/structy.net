@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &depthfirstvalues.Node{
-			Value: "a",
+			Val: "a",
 			Left: &depthfirstvalues.Node{
-				Value: "b",
+				Val: "b",
 				Left: &depthfirstvalues.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &depthfirstvalues.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &depthfirstvalues.Node{
-				Value: "c",
+				Val: "c",
 				Right: &depthfirstvalues.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -37,23 +37,23 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &depthfirstvalues.Node{
-			Value: "a",
+			Val: "a",
 			Left: &depthfirstvalues.Node{
-				Value: "b",
+				Val: "b",
 				Left: &depthfirstvalues.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &depthfirstvalues.Node{
-					Value: "e",
+					Val: "e",
 					Left: &depthfirstvalues.Node{
-						Value: "g",
+						Val: "g",
 					},
 				},
 			},
 			Right: &depthfirstvalues.Node{
-				Value: "c",
+				Val: "c",
 				Right: &depthfirstvalues.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -62,22 +62,22 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &depthfirstvalues.Node{
-			Value: "a",
+			Val: "a",
 		},
 		expected: []string{"a"},
 	},
 	{
 		name: "test_03",
 		root: &depthfirstvalues.Node{
-			Value: "a",
+			Val: "a",
 			Right: &depthfirstvalues.Node{
-				Value: "b",
+				Val: "b",
 				Left: &depthfirstvalues.Node{
-					Value: "c",
+					Val: "c",
 					Right: &depthfirstvalues.Node{
-						Value: "d",
+						Val: "d",
 						Right: &depthfirstvalues.Node{
-							Value: "e",
+							Val: "e",
 						},
 					},
 				},
