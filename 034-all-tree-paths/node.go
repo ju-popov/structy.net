@@ -1,7 +1,7 @@
 package alltreepaths
 
 type Node struct {
-	Value string
+	Val   string
 	Left  *Node
 	Right *Node
 }

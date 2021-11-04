@@ -15,20 +15,20 @@ var testCases = []testCase{
 	{
 		name: "test_00",
 		root: &alltreepaths.Node{
-			Value: "a",
+			Val: "a",
 			Left: &alltreepaths.Node{
-				Value: "b",
+				Val: "b",
 				Left: &alltreepaths.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &alltreepaths.Node{
-					Value: "e",
+					Val: "e",
 				},
 			},
 			Right: &alltreepaths.Node{
-				Value: "c",
+				Val: "c",
 				Right: &alltreepaths.Node{
-					Value: "f",
+					Val: "f",
 				},
 			},
 		},
@@ -37,28 +37,28 @@ var testCases = []testCase{
 	{
 		name: "test_01",
 		root: &alltreepaths.Node{
-			Value: "a",
+			Val: "a",
 			Left: &alltreepaths.Node{
-				Value: "b",
+				Val: "b",
 				Left: &alltreepaths.Node{
-					Value: "d",
+					Val: "d",
 				},
 				Right: &alltreepaths.Node{
-					Value: "e",
+					Val: "e",
 					Left: &alltreepaths.Node{
-						Value: "g",
+						Val: "g",
 					},
 					Right: &alltreepaths.Node{
-						Value: "h",
+						Val: "h",
 					},
 				},
 			},
 			Right: &alltreepaths.Node{
-				Value: "c",
+				Val: "c",
 				Right: &alltreepaths.Node{
-					Value: "f",
+					Val: "f",
 					Left: &alltreepaths.Node{
-						Value: "i",
+						Val: "i",
 					},
 				},
 			},
@@ -68,21 +68,21 @@ var testCases = []testCase{
 	{
 		name: "test_02",
 		root: &alltreepaths.Node{
-			Value: "q",
+			Val: "q",
 			Left: &alltreepaths.Node{
-				Value: "r",
+				Val: "r",
 				Right: &alltreepaths.Node{
-					Value: "t",
+					Val: "t",
 					Left: &alltreepaths.Node{
-						Value: "u",
+						Val: "u",
 						Left: &alltreepaths.Node{
-							Value: "v",
+							Val: "v",
 						},
 					},
 				},
 			},
 			Right: &alltreepaths.Node{
-				Value: "s",
+				Val: "s",
 			},
 		},
 		expected: [][]string{{"q", "r", "t", "u", "v"}, {"q", "s"}},
@@ -90,7 +90,7 @@ var testCases = []testCase{
 	{
 		name: "test_03",
 		root: &alltreepaths.Node{
-			Value: "z",
+			Val: "z",
 		},
 		expected: [][]string{{"z"}},
 	},

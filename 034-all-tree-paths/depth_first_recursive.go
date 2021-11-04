@@ -1,33 +1,29 @@
 package alltreepaths
 
-func helper(root *Node, path []string) [][]string {
-	path = append(path, root.Value)
+func DepthFirstRecursive(root *Node) [][]string {
+	result := make([][]string, 0)
+
+	if root == nil {
+		return result
+	}
 
 	if (root.Left == nil) && (root.Right == nil) {
-		// Important: Copy path array
-		pathCopy := make([]string, len(path))
-		copy(pathCopy, path)
+		result = append(result, []string{root.Val})
 
-		return [][]string{pathCopy}
+		return result
 	}
 
-	var result [][]string
+	leftPaths := DepthFirstRecursive(root.Left)
 
-	if root.Left != nil {
-		result = append(result, helper(root.Left, path)...)
+	for _, leftPath := range leftPaths {
+		result = append(result, append([]string{root.Val}, leftPath...))
 	}
 
-	if root.Right != nil {
-		result = append(result, helper(root.Right, path)...)
+	rightPaths := DepthFirstRecursive(root.Right)
+
+	for _, rightPath := range rightPaths {
+		result = append(result, append([]string{root.Val}, rightPath...))
 	}
 
 	return result
-}
-
-func DepthFirstRecursive(root *Node) [][]string {
-	if root == nil {
-		return [][]string{}
-	}
-
-	return helper(root, []string{})
 }
