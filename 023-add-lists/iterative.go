@@ -1,40 +1,27 @@
 package addlists
 
 func Iterative(head1 *Node, head2 *Node) *Node {
-	var (
-		carry int
-		head  *Node
-		prev  *Node
-	)
+	dummyHead := NewNode(0)
+	current := dummyHead
+	carry := 0
 
 	for (head1 != nil) || (head2 != nil) || (carry > 0) {
-		var (
-			v1 int
-			v2 int
-		)
-
+		val1 := 0
 		if head1 != nil {
-			v1 = head1.Value
+			val1 = head1.Val
 		}
 
+		val2 := 0
 		if head2 != nil {
-			v2 = head2.Value
+			val2 = head2.Val
 		}
 
-		total := v1 + v2 + carry
+		total := val1 + val2 + carry
 
 		//nolint:gomnd
 		newNode := NewNode(total % 10)
 		//nolint:gomnd
 		carry = total / 10
-
-		if head == nil {
-			head = newNode
-		}
-
-		if prev != nil {
-			prev.Next = newNode
-		}
 
 		if head1 != nil {
 			head1 = head1.Next
@@ -44,8 +31,9 @@ func Iterative(head1 *Node, head2 *Node) *Node {
 			head2 = head2.Next
 		}
 
-		prev = newNode
+		current.Next = newNode
+		current = newNode
 	}
 
-	return head
+	return dummyHead.Next
 }

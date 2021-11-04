@@ -5,20 +5,17 @@ func addLists(head1 *Node, head2 *Node, carry int) *Node {
 		return nil
 	}
 
-	var (
-		v1 int
-		v2 int
-	)
-
+	val1 := 0
 	if head1 != nil {
-		v1 = head1.Value
+		val1 = head1.Val
 	}
 
+	val2 := 0
 	if head2 != nil {
-		v2 = head2.Value
+		val2 = head2.Val
 	}
 
-	total := v1 + v2 + carry
+	total := val1 + val2 + carry
 
 	//nolint:gomnd
 	newNode := NewNode(total % 10)
