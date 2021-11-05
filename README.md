@@ -89,7 +89,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [065. paired parentheses](https://github.com/ju-popov/structy.net/tree/main/065-paired-parentheses)  
 [066. befitting brackets](https://github.com/ju-popov/structy.net/tree/main/066-befitting-brackets)  
 [067. decompress braces](https://github.com/ju-popov/structy.net/tree/main/067-decompress-braces)  
-068. nesting score  
+[068. nesting score](https://github.com/ju-popov/structy.net/tree/main/068-nesting-score)  
 
 ## VIII. Exhaustive Recursion
 
