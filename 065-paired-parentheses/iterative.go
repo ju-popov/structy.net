@@ -8,10 +8,10 @@ func Iterative(str string) bool {
 		case '(':
 			counter++
 		case ')':
-			counter--
-			if counter < 0 {
+			if counter == 0 {
 				return false
 			}
+			counter--
 		}
 	}
 
