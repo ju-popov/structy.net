@@ -94,7 +94,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 ## VIII. Exhaustive Recursion
 
 [069. subsets](https://github.com/ju-popov/structy.net/tree/main/069-subsets)  
-070. permutations  
+[070. permutations](https://github.com/ju-popov/structy.net/tree/main/070-permutations)  
 071. create combinations  
 072. parenthetical possibilities  
 073. substitute synonyms  
