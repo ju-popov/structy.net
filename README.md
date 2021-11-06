@@ -103,7 +103,7 @@ Solving [structy.net](https://structy.net/) data structures & algorithms program
 ## IX. Mixed Recall
 
 [074. linked palindrome](https://github.com/ju-popov/structy.net/tree/main/074-linked-palindrome)  
-075. middle value  
+[075. middle value](https://github.com/ju-popov/structy.net/tree/main/075-middle-value)  
 076. linked list cycle  
 077. lowest common ancestor  
 078. flip tree  
