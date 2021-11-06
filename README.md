@@ -107,7 +107,7 @@ Solving [structy.net](https://structy.net/) data structures & algorithms program
 [076. linked list cycle](https://github.com/ju-popov/structy.net/tree/main/076-linked-list-cycle)  
 [077. lowest common ancestor](https://github.com/ju-popov/structy.net/tree/main/077-lowest-common-ancestor)  
 [078. flip tree](https://github.com/ju-popov/structy.net/tree/main/078-flip-tree)  
-079. lefty nodes  
+[079. lefty nodes](https://github.com/ju-popov/structy.net/tree/main/079-lefty-nodes)  
 080. can color  
 081. tolerant teams  
 082. rare routing  
