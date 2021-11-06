@@ -7,11 +7,12 @@ func helper(words []string, synonyms map[string][]string) []string {
 
 	if len(words) == 0 {
 		results = append(results, "")
+
 		return results
 	}
 
 	firstWord := words[0]
-	otherWords := words[1:]
+	nextWords := words[1:]
 
 	replaceWords := []string{firstWord}
 	if _, ok := synonyms[firstWord]; ok {
@@ -19,7 +20,7 @@ func helper(words []string, synonyms map[string][]string) []string {
 	}
 
 	for _, replaceWord := range replaceWords {
-		for _, substituted := range helper(otherWords, synonyms) {
+		for _, substituted := range helper(nextWords, synonyms) {
 			if substituted == "" {
 				results = append(results, replaceWord)
 			} else {
