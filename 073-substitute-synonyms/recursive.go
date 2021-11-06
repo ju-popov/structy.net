@@ -21,10 +21,12 @@ func helper(sentances []string, synonyms map[string][]string) []string {
 
 		if wordIndex < 0 {
 			results = append(results, sentance)
+
 			continue
 		}
 
 		replaced := make([]string, 0)
+
 		for _, value := range synonyms[words[wordIndex]] {
 			words[wordIndex] = value
 			replaced = append(replaced, strings.Join(words, " "))
