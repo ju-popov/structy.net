@@ -1,5 +1,6 @@
 # structy.net
-Solving [structy.net](https://structy.net/) programming problems in Go (with Tests)
+
+Solving [structy.net](https://structy.net/) data structures & algorithms programming problems in Go (with Tests)
 
 ## I. Introduction
 
