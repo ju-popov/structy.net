@@ -126,5 +126,5 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 096. topological order  
 097. safe cracking  
 098. string search  
-099. token replace 
+099. token replace  
 100. token transform 
