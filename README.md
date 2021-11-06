@@ -105,7 +105,7 @@ Solving [structy.net](https://structy.net/) data structures & algorithms program
 [074. linked palindrome](https://github.com/ju-popov/structy.net/tree/main/074-linked-palindrome)  
 [075. middle value](https://github.com/ju-popov/structy.net/tree/main/075-middle-value)  
 [076. linked list cycle](https://github.com/ju-popov/structy.net/tree/main/076-linked-list-cycle)  
-077. lowest common ancestor  
+[077. lowest common ancestor](https://github.com/ju-popov/structy.net/tree/main/077-lowest-common-ancestor)  
 078. flip tree  
 079. lefty nodes  
 080. can color  
