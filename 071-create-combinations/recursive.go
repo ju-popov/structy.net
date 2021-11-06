@@ -4,7 +4,7 @@ package createcombinations
 func Recursive(items []interface{}, k int) [][]interface{} {
 	results := make([][]interface{}, 0)
 
-	if k > len(items) {
+	if len(items) < k {
 		return results
 	}
 
