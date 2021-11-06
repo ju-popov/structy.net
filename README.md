@@ -97,7 +97,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 [070. permutations](https://github.com/ju-popov/structy.net/tree/main/070-permutations)  
 [071. create combinations](https://github.com/ju-popov/structy.net/tree/main/071-create-combinations)  
 [072. parenthetical possibilities](https://github.com/ju-popov/structy.net/tree/main/072-parenthetical-possibilities)  
-073. substitute synonyms  
+[073. substitute synonyms](https://github.com/ju-popov/structy.net/tree/main/073-substitute-synonyms)  
 
 ## IX. Mixed Recall
 
