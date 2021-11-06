@@ -101,7 +101,7 @@ Solving [structy.net](https://structy.net/) programming problems in Go
 
 ## IX. Mixed Recall
 
-074. linked palindrome  
+[074. linked palindrome](https://github.com/ju-popov/structy.net/tree/main/074-linked-palindrome)  
 075. middle value  
 076. linked list cycle  
 077. lowest common ancestor  
