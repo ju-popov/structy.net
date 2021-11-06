@@ -110,7 +110,7 @@ Solving [structy.net](https://structy.net/) data structures & algorithms program
 [079. lefty nodes](https://github.com/ju-popov/structy.net/tree/main/079-lefty-nodes)  
 [080. can color](https://github.com/ju-popov/structy.net/tree/main/080-can-color)  
 [081. tolerant teams](https://github.com/ju-popov/structy.net/tree/main/081-tolerant-teams)  
-082. rare routing  
+[082. rare routing](https://github.com/ju-popov/structy.net/tree/main/082-rare-routing)  
 083. max increasing subseq  
 084. positioning plants  
 085. breaking boundaries  
