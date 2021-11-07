@@ -14,7 +14,7 @@ func TestConcatenation(t *testing.T) {
 		testCase := testCase
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := heyprogrammer.Concatenation(testCase.input)
+			actual := heyprogrammer.Concatenation(testCase.s)
 			if !reflect.DeepEqual(actual, testCase.expected) {
 				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
@@ -26,7 +26,7 @@ func benchmarkConcatenation(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		heyprogrammer.Concatenation(testCase.input)
+		heyprogrammer.Concatenation(testCase.s)
 	}
 }
 

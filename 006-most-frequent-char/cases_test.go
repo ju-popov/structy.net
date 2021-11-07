@@ -2,7 +2,7 @@ package mostfrequentchar_test
 
 type testCase struct {
 	name     string
-	input    string
+	s        string
 	expected string
 }
 
@@ -10,37 +10,37 @@ type testCase struct {
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		input:    "bookeeper",
+		s:        "bookeeper",
 		expected: "e",
 	},
 	{
 		name:     "test_01",
-		input:    "david",
+		s:        "david",
 		expected: "d",
 	},
 	{
 		name:     "test_02",
-		input:    "abby",
+		s:        "abby",
 		expected: "b",
 	},
 	{
 		name:     "test_03",
-		input:    "mississippi",
+		s:        "mississippi",
 		expected: "i",
 	},
 	{
 		name:     "test_04",
-		input:    "potato",
+		s:        "potato",
 		expected: "o",
 	},
 	{
 		name:     "test_05",
-		input:    "eleventennine",
+		s:        "eleventennine",
 		expected: "e",
 	},
 	{
 		name:     "test_06",
-		input:    "riverbed",
+		s:        "riverbed",
 		expected: "r",
 	},
 }

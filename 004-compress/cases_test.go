@@ -2,7 +2,7 @@ package compress_test
 
 type testCase struct {
 	name     string
-	input    string
+	s        string
 	expected string
 }
 
@@ -10,27 +10,27 @@ type testCase struct {
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		input:    "ccaaatsss",
+		s:        "ccaaatsss",
 		expected: "2c3at3s",
 	},
 	{
 		name:     "test_01",
-		input:    "ssssbbz",
+		s:        "ssssbbz",
 		expected: "4s2bz",
 	},
 	{
 		name:     "test_02",
-		input:    "ppoppppp",
+		s:        "ppoppppp",
 		expected: "2po5p",
 	},
 	{
 		name:     "test_03",
-		input:    "nnneeeeeeeeeeeezz",
+		s:        "nnneeeeeeeeeeeezz",
 		expected: "3n12e2z",
 	},
 	{
 		name:     "test_04",
-		input:    "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+		s:        "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
 		expected: "127y",
 	},
 }

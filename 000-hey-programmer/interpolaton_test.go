@@ -14,7 +14,7 @@ func TestInterpolation(t *testing.T) {
 		testCase := testCase
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := heyprogrammer.Interpolation(testCase.input)
+			actual := heyprogrammer.Interpolation(testCase.s)
 			if !reflect.DeepEqual(actual, testCase.expected) {
 				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
@@ -26,7 +26,7 @@ func benchmarkInterpolation(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		heyprogrammer.Interpolation(testCase.input)
+		heyprogrammer.Interpolation(testCase.s)
 	}
 }
 

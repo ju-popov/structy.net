@@ -14,7 +14,7 @@ func TestPair6K(t *testing.T) {
 		testCase := testCase
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := isprime.Pair6K(testCase.input)
+			actual := isprime.Pair6K(testCase.n)
 			if !reflect.DeepEqual(actual, testCase.expected) {
 				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
@@ -26,7 +26,7 @@ func benchmarkPair6K(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		isprime.Pair6K(testCase.input)
+		isprime.Pair6K(testCase.n)
 	}
 }
 

@@ -14,7 +14,7 @@ func TestIterative(t *testing.T) {
 		testCase := testCase
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := mostfrequentchar.Iterative(testCase.input)
+			actual := mostfrequentchar.Iterative(testCase.s)
 			if !reflect.DeepEqual(actual, testCase.expected) {
 				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
@@ -26,7 +26,7 @@ func benchmarkIterative(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		mostfrequentchar.Iterative(testCase.input)
+		mostfrequentchar.Iterative(testCase.s)
 	}
 }
 

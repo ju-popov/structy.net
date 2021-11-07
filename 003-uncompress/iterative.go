@@ -1,7 +1,6 @@
 package uncompress
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -34,17 +33,13 @@ func findAllStringSubmatch(s string) []struct {
 	return result
 }
 
-func Iterative(s string) (string, error) {
+func Iterative(s string) string {
 	var result strings.Builder
 
 	for _, match := range findAllStringSubmatch(s) {
-		count, err := strconv.Atoi(match.number)
-		if err != nil {
-			return "", fmt.Errorf("failed to convert '%s' to int: %w", match.number, err)
-		}
-
+		count, _ := strconv.Atoi(match.number)
 		result.WriteString(strings.Repeat(string(match.char), count))
 	}
 
-	return result.String(), nil
+	return result.String()
 }

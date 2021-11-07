@@ -2,7 +2,7 @@ package isprime_test
 
 type testCase struct {
 	name     string
-	input    int
+	n        int
 	expected bool
 }
 
@@ -10,62 +10,62 @@ type testCase struct {
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		input:    2,
+		n:        2,
 		expected: true,
 	},
 	{
 		name:     "test_01",
-		input:    3,
+		n:        3,
 		expected: true,
 	},
 	{
 		name:     "test_02",
-		input:    4,
+		n:        4,
 		expected: false,
 	},
 	{
 		name:     "test_03",
-		input:    5,
+		n:        5,
 		expected: true,
 	},
 	{
 		name:     "test_04",
-		input:    6,
+		n:        6,
 		expected: false,
 	},
 	{
 		name:     "test_05",
-		input:    7,
+		n:        7,
 		expected: true,
 	},
 	{
 		name:     "test_06",
-		input:    8,
+		n:        8,
 		expected: false,
 	},
 	{
 		name:     "test_07",
-		input:    25,
+		n:        25,
 		expected: false,
 	},
 	{
 		name:     "test_08",
-		input:    31,
+		n:        31,
 		expected: true,
 	},
 	{
 		name:     "test_09",
-		input:    2017,
+		n:        2017,
 		expected: true,
 	},
 	{
 		name:     "test_10",
-		input:    2048,
+		n:        2048,
 		expected: false,
 	},
 	{
 		name:     "test_11",
-		input:    1,
+		n:        1,
 		expected: false,
 	},
 }

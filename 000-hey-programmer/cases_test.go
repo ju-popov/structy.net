@@ -2,7 +2,7 @@ package heyprogrammer_test
 
 type testCase struct {
 	name     string
-	input    string
+	s        string
 	expected string
 }
 
@@ -10,17 +10,17 @@ type testCase struct {
 var testCases = []testCase{
 	{
 		name:     "test_00",
-		input:    "alvin",
+		s:        "alvin",
 		expected: "hey alvin",
 	},
 	{
 		name:     "test_01",
-		input:    "jason",
+		s:        "jason",
 		expected: "hey jason",
 	},
 	{
 		name:     "test_02",
-		input:    "how now brown cow",
+		s:        "how now brown cow",
 		expected: "hey how now brown cow",
 	},
 }

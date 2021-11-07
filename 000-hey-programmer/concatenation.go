@@ -1,5 +1,5 @@
 package heyprogrammer
 
-func Concatenation(name string) string {
-	return "hey " + name
+func Concatenation(s string) string {
+	return "hey " + s
 }

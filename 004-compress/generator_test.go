@@ -14,7 +14,7 @@ func TestGenerator(t *testing.T) {
 		testCase := testCase
 		t.Run(testCase.name, func(t *testing.T) {
 			t.Parallel()
-			actual := compress.Generator(testCase.input)
+			actual := compress.Generator(testCase.s)
 			if !reflect.DeepEqual(actual, testCase.expected) {
 				t.Errorf("Expected result for test name: '%v' is: '%v', but the actual result is: '%v'", testCase.name, testCase.expected, actual)
 			}
@@ -26,7 +26,7 @@ func benchmarkGenerator(b *testing.B, testCase testCase) {
 	b.Helper()
 
 	for n := 0; n < b.N; n++ {
-		compress.Generator(testCase.input)
+		compress.Generator(testCase.s)
 	}
 }
 
