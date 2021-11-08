@@ -1,7 +1,6 @@
 package haspath
 
 func BreadthFirst(graph map[string][]string, src string, dst string) bool {
-	visited := make(map[string]bool)
 	queue := []string{src}
 
 	for len(queue) > 0 {
@@ -12,13 +11,7 @@ func BreadthFirst(graph map[string][]string, src string, dst string) bool {
 			return true
 		}
 
-		visited[node] = true
-
-		for _, neighbor := range graph[node] {
-			if !visited[neighbor] {
-				queue = append(queue, neighbor)
-			}
-		}
+		queue = append(queue, graph[node]...)
 	}
 
 	return false
