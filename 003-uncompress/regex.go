@@ -7,14 +7,13 @@ import (
 )
 
 func Regex(s string) string {
-	var result strings.Builder
+	parts := make([]string, 0)
 
 	re := regexp.MustCompile(`(\d+)(.)`)
 	for _, match := range re.FindAllStringSubmatch(s, -1) {
 		number, _ := strconv.Atoi(match[1])
-		char := match[2]
-		result.WriteString(strings.Repeat(char, number))
+		parts = append(parts, strings.Repeat(match[2], number))
 	}
 
-	return result.String()
+	return strings.Join(parts, "")
 }

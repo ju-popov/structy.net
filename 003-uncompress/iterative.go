@@ -33,11 +33,11 @@ func findAllStringSubmatch(s string) []struct {
 }
 
 func Iterative(s string) string {
-	var result strings.Builder
+	parts := make([]string, 0)
 
 	for _, match := range findAllStringSubmatch(s) {
-		result.WriteString(strings.Repeat(match.char, match.number))
+		parts = append(parts, strings.Repeat(match.char, match.number))
 	}
 
-	return result.String()
+	return strings.Join(parts, "")
 }

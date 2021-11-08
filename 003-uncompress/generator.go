@@ -38,11 +38,11 @@ func findAllStringSubmatchGenerator(s string) chan struct {
 }
 
 func Generator(s string) string {
-	var result strings.Builder
+	parts := make([]string, 0)
 
 	for match := range findAllStringSubmatchGenerator(s) {
-		result.WriteString(strings.Repeat(match.char, match.number))
+		parts = append(parts, strings.Repeat(match.char, match.number))
 	}
 
-	return result.String()
+	return strings.Join(parts, "")
 }
