@@ -1,29 +1,28 @@
 package alltreepaths
 
 func DepthFirstRecursive(root *Node) [][]string {
-	result := make([][]string, 0)
+	results := make([][]string, 0)
 
 	if root == nil {
-		return result
+		return results
 	}
 
 	if (root.Left == nil) && (root.Right == nil) {
-		result = append(result, []string{root.Val})
-
-		return result
+		results = append(results, []string{root.Val})
+		return results
 	}
 
-	leftPaths := DepthFirstRecursive(root.Left)
-
-	for _, leftPath := range leftPaths {
-		result = append(result, append([]string{root.Val}, leftPath...))
+	if root.Left != nil {
+		for _, value := range DepthFirstRecursive(root.Left) {
+			results = append(results, append([]string{root.Val}, value...))
+		}
 	}
 
-	rightPaths := DepthFirstRecursive(root.Right)
-
-	for _, rightPath := range rightPaths {
-		result = append(result, append([]string{root.Val}, rightPath...))
+	if root.Right != nil {
+		for _, value := range DepthFirstRecursive(root.Right) {
+			results = append(results, append([]string{root.Val}, value...))
+		}
 	}
 
-	return result
+	return results
 }
