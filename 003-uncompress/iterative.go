@@ -1,32 +1,31 @@
 package uncompress
 
 import (
-	"strconv"
 	"strings"
 )
 
 //nolint:varnamelen
 func findAllStringSubmatch(s string) []struct {
-	number string
-	char   int32
+	number int
+	char   string
 } {
 	var result []struct {
-		number string
-		char   int32
+		number int
+		char   string
 	}
 
-	var number string
+	number := 0
 
 	for _, elem := range s {
 		if (elem >= '0') && (elem <= '9') {
-			number += string(elem)
+			//nolint:gomnd
+			number = number*10 + int(elem-'0')
 		} else {
-			char := elem
 			result = append(result, struct {
-				number string
-				char   int32
-			}{number: number, char: char})
-			number = ""
+				number int
+				char   string
+			}{number: number, char: string(elem)})
+			number = 0
 		}
 	}
 
@@ -37,8 +36,7 @@ func Iterative(s string) string {
 	var result strings.Builder
 
 	for _, match := range findAllStringSubmatch(s) {
-		count, _ := strconv.Atoi(match.number)
-		result.WriteString(strings.Repeat(string(match.char), count))
+		result.WriteString(strings.Repeat(match.char, match.number))
 	}
 
 	return result.String()
